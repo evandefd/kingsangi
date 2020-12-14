@@ -6,11 +6,13 @@ package calculator.enums;
  * @author Seungmin Yang
  */
 public enum Operator {
+    OPENBR("(", 0),
+    CLOSEBR(")", 0),
     ADD("+", 1),
     SUB("-", 1),
     MUL("×", 2),
     DIV("÷", 2),
-    POW("^", 3),
+    POW("^", 4),
     SQRT("\u221A", 3),
     FACT("!", 3),
     SIN("sin", 3),

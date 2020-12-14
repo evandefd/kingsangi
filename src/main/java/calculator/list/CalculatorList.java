@@ -16,4 +16,13 @@ public class CalculatorList extends LinkedList<Object> {
             throw new IllegalArgumentException("CalculatorList only can add a Number or Operator object.");
         }
     }
+
+    @Override
+    public void push(Object o) {
+        if(o instanceof Number || o instanceof Operator) {
+            super.push(o);
+        } else {
+            throw new IllegalArgumentException("CalculatorList only can add a Number or Operator object.");
+        }
+    }
 }
