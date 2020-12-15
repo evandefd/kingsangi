@@ -3,9 +3,11 @@ package calculator;
 import calculator.enums.CalculateMode;
 import calculator.enums.Operator;
 import calculator.list.CalculatorList;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
 import java.util.LinkedList;
+import java.util.Locale;
 import java.util.Stack;
 
 /**
@@ -30,21 +32,30 @@ public class Calculator {
         this.calculateMode = calculateMode;
     }
 
-    public CalculatorList infixToPostfix(String infixExpr) throws IllegalArgumentException {
+    public CalculatorList infixToPostfix(@NotNull String infixExpr) throws IllegalArgumentException {
         calculatorList = new CalculatorList();
         operatorStack = new LinkedList<>();
+        String before = null;
         for (String expr : infixExpr.split(" ")) {
+            //If the first expr is '-', insert 0 before being inserted '-'
+            if(before == null && expr.equals("-")) {
+                calculatorList.push(0.0);
+            }
+
             if (MathUtil.isNumeric(expr)) { //When the expr is numeric
                 calculatorList.push(Double.parseDouble(expr));
             } else {
-                switch (expr) {
+                switch (expr.toLowerCase(Locale.ROOT)) {
                     //When the expr is numeric but included non-number
-                    case "PI":
+                    case "pi":
+                        putMulIfMoj(before);
                         calculatorList.push(Math.PI);
                         break;
                     case "e":
+                        putMulIfMoj(before);
                         calculatorList.push(Math.E);
                         break;
+
                     case "(": //When the expr is (
                         operatorStack.push(Operator.OPENBR);
                         break;
@@ -54,6 +65,7 @@ public class Calculator {
                         }
                         operatorStack.pop();
                         break;
+
                     //When the expr is operators
                     case "+":
                         infixToPostfixOperator(Operator.ADD);
@@ -73,42 +85,61 @@ public class Calculator {
                         infixToPostfixOperator(Operator.POW);
                         break;
                     case "\u221A":
+                    case "sqrt":
+                        putMulIfMoj(before);
                         infixToPostfixOperator(Operator.SQRT);
                         break;
                     case "!":
                         infixToPostfixOperator(Operator.FACT);
                         break;
                     case "sin":
+                        putMulIfMoj(before);
                         infixToPostfixOperator(Operator.SIN);
                         break;
                     case "cos":
+                        putMulIfMoj(before);
                         infixToPostfixOperator(Operator.COS);
                         break;
                     case "tan":
+                        putMulIfMoj(before);
                         infixToPostfixOperator(Operator.TAN);
                         break;
                     case "sin\u207b\u00b9":
+                    case "asin":
+                    case "arcsin":
+                        putMulIfMoj(before);
                         infixToPostfixOperator(Operator.ASIN);
                         break;
                     case "cos\u207b\u00b9":
+                    case "acos":
+                    case "arccos":
+                        putMulIfMoj(before);
                         infixToPostfixOperator(Operator.ACOS);
                         break;
                     case "tan\u207b\u00b9":
+                    case "atan":
+                    case "arctan":
+                        putMulIfMoj(before);
                         infixToPostfixOperator(Operator.ATAN);
                         break;
                     case "log":
+                        putMulIfMoj(before);
                         infixToPostfixOperator(Operator.LOG);
                         break;
                     case "ln":
+                        putMulIfMoj(before);
                         infixToPostfixOperator(Operator.LN);
                         break;
                     case "%":
                         infixToPostfixOperator(Operator.PER);
                         break;
-                    default: //When the expr is not supported, throws IllegalArgumentException
+
+                    //When the expr is not supported, throws IllegalArgumentException
+                    default:
                         throw new IllegalArgumentException("Unsupported expression. Did you put a space between numbers and operators?");
                 }
             }
+            before = expr;
         }
 
         while (operatorStack.size() != 0) {
@@ -121,16 +152,26 @@ public class Calculator {
     }
 
     private void infixToPostfixOperator(Operator operator) {
-        if (operatorStack.size() == 0) operatorStack.push(operator);
-        else {
-            while (operatorStack.size() > 0 && operatorStack.peek() != Operator.OPENBR && operatorStack.peek().getPriority() >= operator.getPriority()) {
-                calculatorList.push(operatorStack.pop());
-            }
-            operatorStack.push(operator);
+        while (operatorStack.size() > 0 && operatorStack.peek() != Operator.OPENBR && operatorStack.peek().getPriority() >= operator.getPriority()) {
+            calculatorList.push(operatorStack.pop());
         }
+        operatorStack.push(operator);
     }
 
-    public double postfixCalculate(CalculatorList expr) throws ClassCastException {
+    private void putMulIfMoj(String before) {
+        if (before != null)
+            if (MathUtil.isNumeric(before)) {
+                infixToPostfixOperator(Operator.MUL);
+            } else {
+                switch (before) {
+                    case "pi":
+                    case "e":
+                        infixToPostfixOperator(Operator.MUL);
+                }
+            }
+    }
+
+    public double postfixCalculate(@NotNull CalculatorList expr) throws ClassCastException {
         numberStack = new Stack<>();
 
         for (Object value : expr) {
@@ -173,7 +214,7 @@ public class Calculator {
         return numberStack.pop();
     }
 
-    private double calcWithTwoOperands(double right, double left, Operator operator) {
+    private double calcWithTwoOperands(double right, double left, @NotNull Operator operator) {
         double result = 0;
         //Calculation part
         switch (operator) {
@@ -196,7 +237,7 @@ public class Calculator {
         return result;
     }
 
-    private double calcWithOneOperands(double value, Operator operator) {
+    private double calcWithOneOperands(double value, @NotNull Operator operator) {
         double radValue = value;
         double result = 0;
         //deg2rad part
