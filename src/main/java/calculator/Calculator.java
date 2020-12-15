@@ -13,6 +13,18 @@ import java.util.Stack;
 /**
  * <p>The calculator class that supports Four arithmetic operation and scientific calculation.</p>
  *
+ * <h3>Supported expression</h3>
+ * <p> Number (positive, negative, decimal, and reserved words such as PI(3.14...), e(2.72...))
+ * Four arithmetic operation ( + - * / )
+ * Braces ( '(' ')' )
+ * Pow ( ^ )
+ * Sqrt
+ * Percentage ( % )
+ * Factorial ( ! )
+ * Log (log10, loge[ln])
+ * Trigonometric operation ( sin cos tan asin acos atan ) with Degree or Radian calculation
+ * </p>
+ *
  * @author Seungmin Yang
  */
 public class Calculator {
@@ -21,17 +33,42 @@ public class Calculator {
 
     private Stack<Double> numberStack;
 
-    CalculatorList calculatorList;
-    LinkedList<Operator> operatorStack;
+    private CalculatorList calculatorList;
+    private LinkedList<Operator> operatorStack;
 
+    /**
+     * <p>The public constructor contains no parameter.
+     * Set {@code calculateMode} to Degree. It will calculate trigonometric function as Degree.</p>
+     *
+     * @see CalculateMode
+     */
     public Calculator() {
         calculateMode = CalculateMode.DEG;
     }
 
+    /**
+     * <p>The public constructor contains {@code calculateMode} parameter.</p>
+     * <p>You can initialize with {@code calculateMode}.</p>
+     *
+     * @see CalculateMode
+     *
+     * @param calculateMode {@code CalculateMode.DEG : Calculate trigonometric function as Degree.<br>CalculateMode.RAD : Calculate trigonometric function as Radian.}
+     */
     public Calculator(CalculateMode calculateMode) {
         this.calculateMode = calculateMode;
     }
 
+    /**
+     * <p>Convert infix string math expression to Postfix Calculator list.
+     * Note that you must be make space each element of expression like
+     * {@code "1 + 5 * sin ( 30 + 45 )"}</p>
+     *
+     * @see CalculatorList
+     *
+     * @param infixExpr Infix string math expression.
+     * @return postfix expression list inside {@code CalculatorList} object
+     * @throws IllegalArgumentException When the given expression contains not supported element, or space of each element of expression.
+     */
     public CalculatorList infixToPostfix(@NotNull String infixExpr) throws IllegalArgumentException {
         calculatorList = new CalculatorList();
         operatorStack = new LinkedList<>();
@@ -171,6 +208,12 @@ public class Calculator {
             }
     }
 
+    /**
+     * Calculate postfix expression {@code CalculatorList}
+     * @param expr postfix expression {@code CalculatorList} object
+     * @return The result of calculation
+     * @throws ClassCastException If the element inside CalculatorList is not supported element.
+     */
     public double postfixCalculate(@NotNull CalculatorList expr) throws ClassCastException {
         numberStack = new Stack<>();
 
