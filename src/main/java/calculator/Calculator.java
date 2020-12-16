@@ -201,7 +201,7 @@ public class Calculator {
             if (MathUtil.isNumeric(before)) {
                 infixToPostfixOperator(Operator.MUL);
             } else {
-                switch (before) {
+                switch (before.toLowerCase(Locale.ROOT)) {
                     case "pi":
                     case "e":
                         infixToPostfixOperator(Operator.MUL);
