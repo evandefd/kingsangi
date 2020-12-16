@@ -5,6 +5,7 @@ import calculator.enums.Operator;
 import calculator.list.CalculatorList;
 import org.jetbrains.annotations.NotNull;
 
+import java.text.DecimalFormat;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Locale;
@@ -334,5 +335,27 @@ public class Calculator {
                 result = value / 100;
         }
         return result;
+    }
+
+    /**
+     * <p>Returns a {@code DecimalFormat} with maximum 10 digits.</p>
+     * @return {@code DecimalFormat} object with maximum 10 digits.
+     */
+    public static DecimalFormat getDefaultDecimalFormat() {
+        return getDefaultDecimalFormat(10);
+    }
+
+    /**
+     * <p>Returns a {@code DecimalFormat} that will be used to format double to string.</p>
+     * @param digits Maximum number of digits.
+     * @return {@code DecimalFormat} object. It will be used to format calculation double value
+     */
+    public static DecimalFormat getDefaultDecimalFormat(int digits) {
+        StringBuilder pattern = new StringBuilder("0");
+        for(int i = 0; i < digits; i++) {
+            if(i == 0) pattern.append(".");
+            pattern.append("#");
+        }
+        return new DecimalFormat(pattern.toString());
     }
 }
