@@ -51,9 +51,8 @@ public class Calculator {
      * <p>The public constructor contains {@code calculateMode} parameter.</p>
      * <p>You can initialize with {@code calculateMode}.</p>
      *
-     * @see CalculateMode
-     *
      * @param calculateMode {@code CalculateMode.DEG : Calculate trigonometric function as Degree.<br>CalculateMode.RAD : Calculate trigonometric function as Radian.}
+     * @see CalculateMode
      */
     public Calculator(CalculateMode calculateMode) {
         this.calculateMode = calculateMode;
@@ -64,11 +63,10 @@ public class Calculator {
      * Note that you must be make space each element of expression like
      * {@code "1 + 5 * sin ( 30 + 45 )"}</p>
      *
-     * @see CalculatorList
-     *
      * @param infixExpr Infix string math expression.
      * @return postfix expression list inside {@code CalculatorList} object
      * @throws IllegalArgumentException When the given expression contains not supported element, or space of each element of expression.
+     * @see CalculatorList
      */
     public CalculatorList infixToPostfix(@NotNull String infixExpr) throws IllegalArgumentException {
         calculatorList = new CalculatorList();
@@ -76,7 +74,7 @@ public class Calculator {
         String before = null;
         for (String expr : infixExpr.split(" ")) {
             //If the first expr is '-', insert 0 before being inserted '-'
-            if(before == null && expr.equals("-")) {
+            if (before == null && expr.equals("-")) {
                 calculatorList.push(0.0);
             }
 
@@ -211,6 +209,7 @@ public class Calculator {
 
     /**
      * Calculate postfix expression {@code CalculatorList}
+     *
      * @param expr postfix expression {@code CalculatorList} object
      * @return The result of calculation
      * @throws ClassCastException If the element inside CalculatorList is not supported element.
@@ -289,9 +288,6 @@ public class Calculator {
             case SIN:
             case COS:
             case TAN:
-            case ASIN:
-            case ACOS:
-            case ATAN:
                 if (calculateMode == CalculateMode.DEG)
                     radValue = Math.toRadians(radValue);
                 break;
@@ -318,12 +314,18 @@ public class Calculator {
                 break;
             case ASIN:
                 result = Math.asin(radValue);
+                if (calculateMode == CalculateMode.DEG)
+                    result = Math.toDegrees(result);
                 break;
             case ACOS:
                 result = Math.acos(radValue);
+                if (calculateMode == CalculateMode.DEG)
+                    result = Math.toDegrees(result);
                 break;
             case ATAN:
                 result = Math.atan(radValue);
+                if (calculateMode == CalculateMode.DEG)
+                    result = Math.toDegrees(result);
                 break;
             case LOG:
                 result = Math.log10(value);
@@ -339,6 +341,7 @@ public class Calculator {
 
     /**
      * <p>Returns a {@code DecimalFormat} with maximum 10 digits.</p>
+     *
      * @return {@code DecimalFormat} object with maximum 10 digits.
      */
     public static DecimalFormat getDefaultDecimalFormat() {
@@ -347,13 +350,14 @@ public class Calculator {
 
     /**
      * <p>Returns a {@code DecimalFormat} that will be used to format double to string.</p>
+     *
      * @param digits Maximum number of digits.
      * @return {@code DecimalFormat} object. It will be used to format calculation double value
      */
     public static DecimalFormat getDefaultDecimalFormat(int digits) {
         StringBuilder pattern = new StringBuilder("0");
-        for(int i = 0; i < digits; i++) {
-            if(i == 0) pattern.append(".");
+        for (int i = 0; i < digits; i++) {
+            if (i == 0) pattern.append(".");
             pattern.append("#");
         }
         return new DecimalFormat(pattern.toString());
