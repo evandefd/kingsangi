@@ -362,4 +362,12 @@ public class Calculator {
         }
         return new DecimalFormat(pattern.toString());
     }
+
+    public CalculateMode getCalculateMode() {
+        return calculateMode;
+    }
+
+    public void setCalculateMode(CalculateMode calculateMode) {
+        this.calculateMode = calculateMode;
+    }
 }
