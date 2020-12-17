@@ -15,15 +15,15 @@ import java.util.Stack;
  * <p>The calculator class that supports Four arithmetic operation and scientific calculation.</p>
  *
  * <h3>Supported expression</h3>
- * <p> Number (positive, negative, decimal, and reserved words such as PI(3.14...), e(2.72...))
- * Four arithmetic operation ( + - * / )
- * Braces ( '(' ')' )
- * Pow ( ^ )
- * Sqrt
- * Percentage ( % )
- * Factorial ( ! )
- * Log (log10, loge[ln])
- * Trigonometric operation ( sin cos tan asin acos atan ) with Degree or Radian calculation
+ * <p>- Number (positive, negative, decimal, and reserved words such as PI(3.14...), e(2.72...))<br>
+ * - Four arithmetic operation ( + - * / )<br>
+ * - Braces ( '(' ')' )<br>
+ * - Pow ( ^ )<br>
+ * - Sqrt<br>
+ * - Percentage ( % )<br>
+ * - Factorial ( ! )<br>
+ * - Log (log10, loge[ln])<br>
+ * - Trigonometric operation ( sin cos tan asin acos atan ) with Degree or Radian calculation<br>
  * </p>
  *
  * @author Seungmin Yang
@@ -51,7 +51,8 @@ public class Calculator {
      * <p>The public constructor contains {@code calculateMode} parameter.</p>
      * <p>You can initialize with {@code calculateMode}.</p>
      *
-     * @param calculateMode {@code CalculateMode.DEG : Calculate trigonometric function as Degree.<br>CalculateMode.RAD : Calculate trigonometric function as Radian.}
+     * @param calculateMode <p>{@code CalculateMode.DEG} : Calculate trigonometric function as Degree.<br>
+     *     {@code CalculateMode.RAD} : Calculate trigonometric function as Radian.</p>
      * @see CalculateMode
      */
     public Calculator(CalculateMode calculateMode) {
@@ -60,8 +61,9 @@ public class Calculator {
 
     /**
      * <p>Convert infix string math expression to Postfix Calculator list.
-     * Note that you must be make space each element of expression like
-     * {@code "1 + 5 * sin ( 30 + 45 )"}</p>
+     * Note that you must be make a space each element of expression like
+     * {@code "1 + 5 * sin ( 30 + 45 )"}<br>
+     * {@code "3 sin ( pi / 2 ) ln e ^ 2"}</p>
      *
      * @param infixExpr Infix string math expression.
      * @return postfix expression list inside {@code CalculatorList} object
@@ -72,6 +74,7 @@ public class Calculator {
         calculatorList = new CalculatorList();
         operatorStack = new LinkedList<>();
         String before = null;
+        infixExpr = infixExpr.replaceAll(" {2,}", " ");
         for (String expr : infixExpr.split(" ")) {
             //If the first expr is '-', insert 0 before being inserted '-'
             if (before == null && expr.equals("-")) {
@@ -208,7 +211,7 @@ public class Calculator {
     }
 
     /**
-     * Calculate postfix expression {@code CalculatorList}
+     * <p>Calculate postfix expression {@code CalculatorList}</p>
      *
      * @param expr postfix expression {@code CalculatorList} object
      * @return The result of calculation
@@ -363,10 +366,19 @@ public class Calculator {
         return new DecimalFormat(pattern.toString());
     }
 
+    /**
+     * <p>Returns current calculate mode.</p>
+     * @return current calculate mode. this can be {@code CalculatorMode.DEG} or {@code CalculatorMode.DEG}.
+     */
     public CalculateMode getCalculateMode() {
         return calculateMode;
     }
 
+    /**
+     * Set calculate mode to {@code CalculatorMode.DEG} or {@code CalculatorMode.DEG}.
+     * @param calculateMode <p>{@code CalculateMode.DEG} : Calculate trigonometric function as Degree.<br>
+     *      *     {@code CalculateMode.RAD} : Calculate trigonometric function as Radian.</p>
+     */
     public void setCalculateMode(CalculateMode calculateMode) {
         this.calculateMode = calculateMode;
     }
