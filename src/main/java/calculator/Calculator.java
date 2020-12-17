@@ -122,6 +122,7 @@ public class Calculator {
                         break;
 
                     case "(": //When the expr is (
+                        putMulIfMoj(before);
                         operatorStack.push(Operator.OPENBR);
                         break;
                     case ")": //When the expr is )
