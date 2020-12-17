@@ -91,17 +91,18 @@ public class Calculator {
      * {@code "1 + 5 * sin ( 30 + 45 )"}<br>
      * {@code "3 sin ( pi / 2 ) ln e ^ 2"}</p>
      *
-     * @param infixExpr Infix string math expression.
+     * @param infixExpression Infix string math expression.
      * @return postfix expression list inside {@code CalculatorList} object
      * @throws IllegalArgumentException When the given expression contains not supported element, or space of each element of expression.
+     * @throws ClassCastException If the element inside CalculatorList is not supported element.
      * @see CalculatorList
      */
-    public CalculatorList infixToPostfix(@NotNull String infixExpr) throws IllegalArgumentException {
+    public CalculatorList infixToPostfix(@NotNull String infixExpression) throws IllegalArgumentException, ClassCastException {
         calculatorList = new CalculatorList();
         operatorStack = new LinkedList<>();
         String before = null;
-        infixExpr = infixExpr.replaceAll(" {2,}", " ");
-        for (String expr : infixExpr.split(" ")) {
+        infixExpression = infixExpression.replaceAll(" {2,}", " ");
+        for (String expr : infixExpression.split(" ")) {
             //If the first expr is '-', insert 0 before being inserted '-'
             if (before == null && expr.equals("-")) {
                 calculatorList.push(0.0);
@@ -235,6 +236,24 @@ public class Calculator {
                         infixToPostfixOperator(Operator.MUL);
                 }
             }
+    }
+
+    /**
+     * Calculate infix string expression.
+     *
+     * <p>
+     * Note that you must be make a space each element of expression like<br>
+     * {@code "1 + 5 * sin ( 30 + 45 )"}<br>
+     * {@code "3 sin ( pi / 2 ) ln e ^ 2"}
+     * </p>
+     *
+     * @param infixExpression Infix string math expression.
+     * @return The result of calculation
+     * @throws IllegalArgumentException When the given expression contains not supported element, or space of each element of expression.
+     * @throws ClassCastException If the element inside CalculatorList is not supported element.
+     */
+    public double calculate(@NotNull String infixExpression) throws IllegalArgumentException, ClassCastException{
+        return postfixCalculate(infixToPostfix(infixExpression));
     }
 
     /**
