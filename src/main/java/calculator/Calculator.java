@@ -15,7 +15,8 @@ import java.util.Stack;
  * <p>The calculator class that supports Four arithmetic operation and scientific calculation.</p>
  *
  * <h3>Supported expression</h3>
- * <p>- Number (positive, negative, decimal, and reserved words such as PI(3.14...), e(2.72...))<br>
+ * <p>
+ * - Number (positive, negative, decimal, and reserved words such as PI(3.14...), e(2.72...))<br>
  * - Four arithmetic operation ( + - * / )<br>
  * - Braces ( '(' ')' )<br>
  * - Pow ( ^ )<br>
@@ -29,7 +30,6 @@ import java.util.Stack;
  * @author Seungmin Yang
  */
 public class Calculator {
-
     private CalculateMode calculateMode;
 
     private Stack<Double> numberStack;
@@ -38,8 +38,10 @@ public class Calculator {
     private LinkedList<Operator> operatorStack;
 
     /**
-     * <p>The public constructor contains no parameter.
-     * Set {@code calculateMode} to Degree. It will calculate trigonometric function as Degree.</p>
+     * <p>
+     * The public constructor contains no parameter.
+     * Set {@code calculateMode} to Degree. It will calculate trigonometric function as Degree.
+     * </p>
      *
      * @see CalculateMode
      */
@@ -52,7 +54,7 @@ public class Calculator {
      * <p>You can initialize with {@code calculateMode}.</p>
      *
      * @param calculateMode <p>{@code CalculateMode.DEG} : Calculate trigonometric function as Degree.<br>
-     *     {@code CalculateMode.RAD} : Calculate trigonometric function as Radian.</p>
+     *                      {@code CalculateMode.RAD} : Calculate trigonometric function as Radian.</p>
      * @see CalculateMode
      */
     public Calculator(CalculateMode calculateMode) {
@@ -60,8 +62,32 @@ public class Calculator {
     }
 
     /**
-     * <p>Convert infix string math expression to Postfix Calculator list.
-     * Note that you must be make a space each element of expression like
+     * <p>Returns a {@code DecimalFormat} with maximum 10 digits.</p>
+     *
+     * @return {@code DecimalFormat} object with maximum 10 digits.
+     */
+    public static DecimalFormat getDefaultDecimalFormat() {
+        return getDefaultDecimalFormat(10);
+    }
+
+    /**
+     * <p>Returns a {@code DecimalFormat} that will be used to format double to string.</p>
+     *
+     * @param digits Maximum number of digits.
+     * @return {@code DecimalFormat} object. It will be used to format calculation double value
+     */
+    public static DecimalFormat getDefaultDecimalFormat(int digits) {
+        StringBuilder pattern = new StringBuilder("0");
+        for (int i = 0; i < digits; i++) {
+            if (i == 0) pattern.append(".");
+            pattern.append("#");
+        }
+        return new DecimalFormat(pattern.toString());
+    }
+
+    /**
+     * <p>Convert infix string math expression to Postfix Calculator list.<br>
+     * Note that you must be make a space each element of expression like<br>
      * {@code "1 + 5 * sin ( 30 + 45 )"}<br>
      * {@code "3 sin ( pi / 2 ) ln e ^ 2"}</p>
      *
@@ -343,31 +369,8 @@ public class Calculator {
     }
 
     /**
-     * <p>Returns a {@code DecimalFormat} with maximum 10 digits.</p>
-     *
-     * @return {@code DecimalFormat} object with maximum 10 digits.
-     */
-    public static DecimalFormat getDefaultDecimalFormat() {
-        return getDefaultDecimalFormat(10);
-    }
-
-    /**
-     * <p>Returns a {@code DecimalFormat} that will be used to format double to string.</p>
-     *
-     * @param digits Maximum number of digits.
-     * @return {@code DecimalFormat} object. It will be used to format calculation double value
-     */
-    public static DecimalFormat getDefaultDecimalFormat(int digits) {
-        StringBuilder pattern = new StringBuilder("0");
-        for (int i = 0; i < digits; i++) {
-            if (i == 0) pattern.append(".");
-            pattern.append("#");
-        }
-        return new DecimalFormat(pattern.toString());
-    }
-
-    /**
      * <p>Returns current calculate mode.</p>
+     *
      * @return current calculate mode. this can be {@code CalculatorMode.DEG} or {@code CalculatorMode.DEG}.
      */
     public CalculateMode getCalculateMode() {
@@ -376,8 +379,9 @@ public class Calculator {
 
     /**
      * Set calculate mode to {@code CalculatorMode.DEG} or {@code CalculatorMode.DEG}.
+     *
      * @param calculateMode <p>{@code CalculateMode.DEG} : Calculate trigonometric function as Degree.<br>
-     *      *     {@code CalculateMode.RAD} : Calculate trigonometric function as Radian.</p>
+     *                           {@code CalculateMode.RAD} : Calculate trigonometric function as Radian.</p>
      */
     public void setCalculateMode(CalculateMode calculateMode) {
         this.calculateMode = calculateMode;

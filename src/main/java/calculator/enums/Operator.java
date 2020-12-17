@@ -25,19 +25,13 @@ public enum Operator {
     LN("ln", 3),
     PER("%", 3);
 
-    /**
-     * Display string of each enumeration.
-     */
     private final String display;
-
-    /**
-     * Calculation priority
-     */
     private final int priority;
 
     /**
      * The private default constructor.
-     * @param display Display string of each enumeration.
+     *
+     * @param display  Display string of each enumeration.
      * @param priority Calculation priority
      */
     Operator(String display, int priority) {
@@ -47,6 +41,7 @@ public enum Operator {
 
     /**
      * Get a display string of each enumeration.
+     *
      * @return Display string of each enumeration
      */
     public String getDisplayString() {
@@ -55,6 +50,7 @@ public enum Operator {
 
     /**
      * Get a priority integer of each enumeration.
+     *
      * @return Calculation priority of each enumeration.
      */
     public int getPriority() {
