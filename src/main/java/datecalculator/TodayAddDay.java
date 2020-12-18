@@ -1,11 +1,12 @@
 package main.java;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class TodayAddDay {
     public static String todayAddDay(int addDayNumber){
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy.MM.dd(E)");
+        DateFormat dateFormat = SimpleDateFormat.getDateInstance(DateFormat.DEFAULT);
 
         Calendar today = Calendar.getInstance();
 
