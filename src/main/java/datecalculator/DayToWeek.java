@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class DayToWeek {
     public static String dateToWeek(long millisecond) {
-        DateFormat outputDataFormat = SimpleDateFormat.getDateInstance(DateFormat.DEFAULT);
+        DateFormat outputDataFormat = SimpleDateFormat.getDateInstance(DateFormat.FULL);
 
         Date millisecondToDate = new Date(millisecond);
 
