@@ -10,7 +10,7 @@ public class AreaConversion {
         SQUARE_METER,
         PYEONG
     }
-    public static String areaConversion(String before_command, String after_command, double num){
+    public static String areaConversion(Enum before_command, Enum after_command, double num){
         if(before_command.equals(String.valueOf(areaEnum.ACRE))){
             if(after_command.equals(String.valueOf(areaEnum.ACRE))){
                 result.append(num);
