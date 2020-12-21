@@ -417,6 +417,7 @@ public class CalculatorTest {
         list2.add(Operator.LN);
 
         Assert.assertEquals(4, calculator.postfixCalculate(list1), 0.0000000001);
+        Assert.assertEquals(4, calculator.postfixCalculate(list2), 0.0000000001);
     }
 
     @Test
