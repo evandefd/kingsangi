@@ -11,7 +11,7 @@ King + 계산기 = 킹산기
 -양력을 음력으로 변환 (dateToLunarDate)
 -음력을 양력으로 변환 (lunarDateToDate)
 
-###Usage
+### Usage
 -todayAddDay를 제외한 함수들은 long millisecond를 parameter로 갖는다.
  ex)
 ```
@@ -21,7 +21,7 @@ System.out.println(date);
 >>> 2020. 12. 25
 ```
 
-###Caution
+### Caution
 -음력을 양력으로 계산하는 DateToLunarDate 클래스의 함수들은 ChineseCalendar라는 클래스를 사용하는데
  이 클래스는 icu4j라는 외부라이브러리를 프로젝트 classpath에 추가시켜주어야 사용가능하다.
  
