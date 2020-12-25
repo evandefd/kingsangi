@@ -2,201 +2,176 @@ package unitconversioncalculator;
 
 import java.math.BigDecimal;
 
-public enum PressureUnitConvertor {
-    ATOMASPHERICPRESSURE{
+public enum TimeUnit {
+    SECOND{
         @Override
-        BigDecimal convert(BigDecimal value, PressureUnitConvertor pressureUnit) throws IllegalArgumentException, ArithmeticException{
+        public BigDecimal convert(BigDecimal value, TimeUnit timeUnit) {
             String calculatevalue;
             BigDecimal string_to_bigdecimal;
             BigDecimal calculated_value;
-            switch (pressureUnit) {
-                case ATOMASPHERICPRESSURE: {
+            switch (timeUnit) {
+                case SECOND:
                     calculated_value = value;
                     return calculated_value;
-                }
-                case BAR: {
-                    calculatevalue = "1.013";
+                case MINUTE:
+                    calculatevalue = "0.0166666667";
                     string_to_bigdecimal = new BigDecimal(calculatevalue);
                     calculated_value = value.multiply(string_to_bigdecimal);
                     return calculated_value;
-                }
-                case POUNDFORCEPERSQUAREINCH: {
-                    calculatevalue = "14.696";
+                case HOUR:
+                    calculatevalue = "0.0002777778";
                     string_to_bigdecimal = new BigDecimal(calculatevalue);
                     calculated_value = value.multiply(string_to_bigdecimal);
                     return calculated_value;
-                }
-                case TORR: {
-                    calculatevalue = "760";
+                case DAY:
+                    calculatevalue = "0.0000115741";
                     string_to_bigdecimal = new BigDecimal(calculatevalue);
                     calculated_value = value.multiply(string_to_bigdecimal);
                     return calculated_value;
-                }
-                case PASCAL: {
-                    calculatevalue = "101325";
+                case WEEK:
+                    calculatevalue = "0.0000016534";
                     string_to_bigdecimal = new BigDecimal(calculatevalue);
                     calculated_value = value.multiply(string_to_bigdecimal);
                     return calculated_value;
-                }
             }
             throw new IllegalArgumentException();
         }
     },
-    BAR{
+    MINUTE{
         @Override
-        BigDecimal convert(BigDecimal value, PressureUnitConvertor pressureUnit) throws IllegalArgumentException{
+        public BigDecimal convert(BigDecimal value, TimeUnit timeUnit) {
             String calculatevalue;
             BigDecimal string_to_bigdecimal;
             BigDecimal calculated_value;
-            switch (pressureUnit) {
-                case ATOMASPHERICPRESSURE: {
-                    calculatevalue = "0.986923";
+            switch (timeUnit) {
+                case SECOND:
+                    calculatevalue = "60";
                     string_to_bigdecimal = new BigDecimal(calculatevalue);
                     calculated_value = value.multiply(string_to_bigdecimal);
                     return calculated_value;
-                }
-                case BAR: {
+                case MINUTE:
                     calculated_value = value;
                     return calculated_value;
-                }
-                case POUNDFORCEPERSQUAREINCH: {
-                    calculatevalue = "14.504";
+                case HOUR:
+                    calculatevalue = "0.0166666667";
                     string_to_bigdecimal = new BigDecimal(calculatevalue);
                     calculated_value = value.multiply(string_to_bigdecimal);
                     return calculated_value;
-                }
-                case TORR: {
-                    calculatevalue = "750";
+                case DAY:
+                    calculatevalue = "0.0006944444";
                     string_to_bigdecimal = new BigDecimal(calculatevalue);
                     calculated_value = value.multiply(string_to_bigdecimal);
                     return calculated_value;
-                }
-                case PASCAL: {
-                    calculatevalue = "100000";
+                case WEEK:
+                    calculatevalue = "0.0000992063";
                     string_to_bigdecimal = new BigDecimal(calculatevalue);
                     calculated_value = value.multiply(string_to_bigdecimal);
                     return calculated_value;
-                }
             }
             throw new IllegalArgumentException();
         }
     },
-    POUNDFORCEPERSQUAREINCH{
+    HOUR{
         @Override
-        BigDecimal convert(BigDecimal value, PressureUnitConvertor pressureUnit) throws IllegalArgumentException{
+        public BigDecimal convert(BigDecimal value, TimeUnit timeUnit) {
             String calculatevalue;
             BigDecimal string_to_bigdecimal;
             BigDecimal calculated_value;
-            switch (pressureUnit) {
-                case ATOMASPHERICPRESSURE: {
-                    calculatevalue = "0.068046";
+            switch (timeUnit) {
+                case SECOND:
+                    calculatevalue = "3600";
                     string_to_bigdecimal = new BigDecimal(calculatevalue);
                     calculated_value = value.multiply(string_to_bigdecimal);
                     return calculated_value;
-                }
-                case BAR: {
-                    calculatevalue = "0.0689476";
+                case MINUTE:
+                    calculatevalue = "60";
                     string_to_bigdecimal = new BigDecimal(calculatevalue);
                     calculated_value = value.multiply(string_to_bigdecimal);
                     return calculated_value;
-                }
-                case POUNDFORCEPERSQUAREINCH: {
+                case HOUR:
                     calculated_value = value;
                     return calculated_value;
-                }
-                case TORR: {
-                    calculatevalue = "51.714952902379";
+                case DAY:
+                    calculatevalue = "0.0416666667";
                     string_to_bigdecimal = new BigDecimal(calculatevalue);
                     calculated_value = value.multiply(string_to_bigdecimal);
                     return calculated_value;
-                }
-                case PASCAL: {
-                    calculatevalue = "6894.76";
+                case WEEK:
+                    calculatevalue = "0.005952381";
                     string_to_bigdecimal = new BigDecimal(calculatevalue);
                     calculated_value = value.multiply(string_to_bigdecimal);
                     return calculated_value;
-                }
             }
             throw new IllegalArgumentException();
         }
     },
-    TORR{
+    DAY{
         @Override
-        BigDecimal convert(BigDecimal value, PressureUnitConvertor pressureUnit) throws IllegalArgumentException{
+        public BigDecimal convert(BigDecimal value, TimeUnit timeUnit) {
             String calculatevalue;
             BigDecimal string_to_bigdecimal;
             BigDecimal calculated_value;
-            switch (pressureUnit) {
-                case ATOMASPHERICPRESSURE: {
-                    calculatevalue = "0.00131579";
+            switch (timeUnit) {
+                case SECOND:
+                    calculatevalue = "86400";
                     string_to_bigdecimal = new BigDecimal(calculatevalue);
                     calculated_value = value.multiply(string_to_bigdecimal);
                     return calculated_value;
-                }
-                case BAR: {
-                    calculatevalue = "0.00133322";
+                case MINUTE:
+                    calculatevalue = "1440";
                     string_to_bigdecimal = new BigDecimal(calculatevalue);
                     calculated_value = value.multiply(string_to_bigdecimal);
                     return calculated_value;
-                }
-                case POUNDFORCEPERSQUAREINCH: {
-                    calculatevalue = "0.0193368";
+                case HOUR:
+                    calculatevalue = "24";
                     string_to_bigdecimal = new BigDecimal(calculatevalue);
                     calculated_value = value.multiply(string_to_bigdecimal);
                     return calculated_value;
-                }
-                case TORR: {
+                case DAY:
                     calculated_value = value;
                     return calculated_value;
-                }
-                case PASCAL: {
-                    calculatevalue = "133.322";
+                case WEEK:
+                    calculatevalue = "0.1428571429";
                     string_to_bigdecimal = new BigDecimal(calculatevalue);
                     calculated_value = value.multiply(string_to_bigdecimal);
                     return calculated_value;
-                }
             }
             throw new IllegalArgumentException();
         }
     },
-    PASCAL{
+    WEEK{
         @Override
-        BigDecimal convert(BigDecimal value, PressureUnitConvertor pressureUnit) throws IllegalArgumentException{
+        public BigDecimal convert(BigDecimal value, TimeUnit timeUnit) {
             String calculatevalue;
             BigDecimal string_to_bigdecimal;
             BigDecimal calculated_value;
-            switch (pressureUnit) {
-                case ATOMASPHERICPRESSURE: {
-                    calculatevalue = Double.toString(9.8692 * Math.pow(10, -6));
+            switch (timeUnit) {
+                case SECOND:
+                    calculatevalue = "604800";
                     string_to_bigdecimal = new BigDecimal(calculatevalue);
                     calculated_value = value.multiply(string_to_bigdecimal);
                     return calculated_value;
-                }
-                case BAR: {
-                    calculatevalue = Double.toString(Math.pow(10, -5));
+                case MINUTE:
+                    calculatevalue = "10080";
                     string_to_bigdecimal = new BigDecimal(calculatevalue);
                     calculated_value = value.multiply(string_to_bigdecimal);
                     return calculated_value;
-                }
-                case POUNDFORCEPERSQUAREINCH: {
-                    calculatevalue = "0.000145038";
+                case HOUR:
+                    calculatevalue = "168";
                     string_to_bigdecimal = new BigDecimal(calculatevalue);
                     calculated_value = value.multiply(string_to_bigdecimal);
                     return calculated_value;
-                }
-                case TORR: {
-                    calculatevalue = "0.00750062";
+                case DAY:
+                    calculatevalue = "7";
                     string_to_bigdecimal = new BigDecimal(calculatevalue);
                     calculated_value = value.multiply(string_to_bigdecimal);
                     return calculated_value;
-                }
-                case PASCAL: {
+                case WEEK:
                     calculated_value = value;
                     return calculated_value;
-                }
             }
             throw new IllegalArgumentException();
         }
     };
-    abstract BigDecimal convert(BigDecimal value, PressureUnitConvertor pressureUnit);
+    public abstract BigDecimal convert(BigDecimal value, TimeUnit timeUnit);
 }
