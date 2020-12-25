@@ -1,5 +1,6 @@
-import exception.NetworkException;
-import org.jsoup.Jsoup;
+package exchangecalculator;
+
+import exchangecalculator.exception.NetworkException;
 
 import javax.net.ssl.HttpsURLConnection;
 import java.io.BufferedReader;

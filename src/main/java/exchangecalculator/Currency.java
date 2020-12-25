@@ -1,3 +1,5 @@
+package exchangecalculator;
+
 public enum Currency {
     CAD("CAD"),
     HKD("HKD"),

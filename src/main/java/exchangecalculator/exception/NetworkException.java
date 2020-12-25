@@ -1,4 +1,4 @@
-package exception;
+package exchangecalculator.exception;
 
 public class NetworkException extends KingsangiException {
     public NetworkException() {
