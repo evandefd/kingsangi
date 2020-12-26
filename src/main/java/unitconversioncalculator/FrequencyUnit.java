@@ -1,123 +1,105 @@
 package unitconversioncalculator;
 
-import java.math.BigDecimal;
-
 public enum FrequencyUnit {
     HERTZ{
         @Override
-        public BigDecimal convert(BigDecimal value, FrequencyUnit frequencyUnit) throws IllegalArgumentException{
-            String calculatevalue;
-            BigDecimal string_to_bigdecimal;
-            BigDecimal calculated_value;
+        public double convert(double value, FrequencyUnit frequencyUnit) throws IllegalArgumentException{
+            double calculateValue;
+            double calculatedValue;
             switch (frequencyUnit) {
                 case HERTZ:
-                    calculated_value = value;
-                    return calculated_value;
+                    calculatedValue = value;
+                    return calculatedValue;
                 case KILOHERTZ:
-                    calculatevalue = "0.001";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 0.001;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
                 case MEGAHERTZ:
-                    calculatevalue = Double.toString(Math.pow(10, -6));
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = Math.pow(10, -6);
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
                 case GIGAHERTZ:
-                    calculatevalue = Double.toString(Math.pow(10, -9));
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = Math.pow(10, -9);
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
             }
             throw new IllegalArgumentException();
         }
     },
     KILOHERTZ{
         @Override
-        public BigDecimal convert(BigDecimal value, FrequencyUnit frequencyUnit) {
-            String calculatevalue;
-            BigDecimal string_to_bigdecimal;
-            BigDecimal calculated_value;
+        public double convert(double value, FrequencyUnit frequencyUnit) {
+            double calculateValue;
+            double calculatedValue;
             switch (frequencyUnit) {
                 case HERTZ:
-                    calculatevalue = "1000";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 1000;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
                 case KILOHERTZ:
-                    calculated_value = value;
-                    return calculated_value;
+                    calculatedValue = value;
+                    return calculatedValue;
                 case MEGAHERTZ:
-                    calculatevalue = "0.001";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 0.001;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
                 case GIGAHERTZ:
-                    calculatevalue = Double.toString(Math.pow(10, -6));
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = Math.pow(10, -6);
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
             }
             throw new IllegalArgumentException();
         }
     },
     MEGAHERTZ{
         @Override
-        public BigDecimal convert(BigDecimal value, FrequencyUnit frequencyUnit) {
-            String calculatevalue;
-            BigDecimal string_to_bigdecimal;
-            BigDecimal calculated_value;
+        public double convert(double value, FrequencyUnit frequencyUnit) {
+            double calculateValue;
+            double calculatedValue;
             switch (frequencyUnit) {
                 case HERTZ:
-                    calculatevalue = Double.toString(Math.pow(10, 6));
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = Math.pow(10, 6);
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
                 case KILOHERTZ:
-                    calculatevalue = "1000";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 1000;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
                 case MEGAHERTZ:
-                    calculated_value = value;
-                    return calculated_value;
+                    calculatedValue = value;
+                    return calculatedValue;
                 case GIGAHERTZ:
-                    calculatevalue = "0.001";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 0.001;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
             }
             throw new IllegalArgumentException();
         }
     },
     GIGAHERTZ{
         @Override
-        public BigDecimal convert(BigDecimal value, FrequencyUnit frequencyUnit) {
-            String calculatevalue;
-            BigDecimal string_to_bigdecimal;
-            BigDecimal calculated_value;
+        public double convert(double value, FrequencyUnit frequencyUnit) {
+            double calculateValue;
+            double calculatedValue;
             switch (frequencyUnit) {
                 case HERTZ:
-                    calculatevalue = Double.toString(Math.pow(10, 9));
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = Math.pow(10, 9);
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
                 case KILOHERTZ:
-                    calculatevalue = Double.toString(Math.pow(10, 6));
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = Math.pow(10, 6);
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
                 case MEGAHERTZ:
-                    calculatevalue = "1000";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 1000;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
                 case GIGAHERTZ:
-                    calculated_value = value;
-                    return calculated_value;
+                    calculatedValue = value;
+                    return calculatedValue;
             }
             throw new IllegalArgumentException();
         }
     };
-    public abstract BigDecimal convert(BigDecimal value, FrequencyUnit frequencyUnit);
+    public abstract double convert(double value, FrequencyUnit frequencyUnit);
 }

@@ -1,367 +1,311 @@
 package unitconversioncalculator;
 
-import java.math.BigDecimal;
-
 public enum VolumeUnit {
     BRITISH_GALLON{
         @Override
-        public BigDecimal convert(BigDecimal value, VolumeUnit volumeUnit) {
-            String calculatevalue;
-            BigDecimal string_to_bigdecimal;
-            BigDecimal calculated_value;
+        public double convert(double value, VolumeUnit volumeUnit) {
+            double calculateValue;
+            
+            double calculatedValue;
             switch (volumeUnit) {
                 case BRITISH_GALLON: 
-                    calculated_value = value;
-                    return calculated_value;
+                    calculatedValue = value;
+                    return calculatedValue;
                 case US_GALLON: 
-                    calculatevalue = "1.2009499255";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 1.2009499255;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
                 case LITER: 
-                    calculatevalue = "4.54609";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 4.54609;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
                 case MILLILITER:
                 case CUBIC_CENTIMETER: 
-                    calculatevalue = "4546.09";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 4546.09;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
                 case CUBIC_METER: 
-                    calculatevalue = "0.00454609";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 220;
+                    calculatedValue = value / calculateValue;
+                    return calculatedValue;
                 case CUBIC_INCH: 
-                    calculatevalue = "277.4194327916";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 277.4194327916;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
                 case CUBIC_FEET: 
-                    calculatevalue = "0.1605436532";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 6.229;
+                    calculatedValue = value / calculateValue;
+                    return calculatedValue;
             }
             throw new IllegalArgumentException();
         }
     },
     US_GALLON{
         @Override
-        public BigDecimal convert(BigDecimal value, VolumeUnit volumeUnit) {
-            String calculatevalue;
-            BigDecimal string_to_bigdecimal;
-            BigDecimal calculated_value;
+        public double convert(double value, VolumeUnit volumeUnit) {
+            double calculateValue;
+            double calculatedValue;
             switch (volumeUnit) {
                 case BRITISH_GALLON: 
-                    calculatevalue = "0.8326741846";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 1.201;
+                    calculatedValue = value / calculateValue;
+                    return calculatedValue;
                 case US_GALLON: 
-                    calculated_value = value;
-                    return calculated_value;
+                    calculatedValue = value;
+                    return calculatedValue;
                 case LITER: 
-                    calculatevalue = "3.785411784";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 3.785411784;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
                 case MILLILITER:
                 case CUBIC_CENTIMETER: 
-                    calculatevalue = "3785.411784";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 3785.411784;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
                 case CUBIC_METER: 
-                    calculatevalue = "0.0037854118";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 264;
+                    calculatedValue = value / calculateValue;
+                    return calculatedValue;
                 case CUBIC_INCH: 
-                    calculatevalue = "231";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 231;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
                 case CUBIC_FEET: 
-                    calculatevalue = "0.1336805556";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 7.481;
+                    calculatedValue = value / calculateValue;
+                    return calculatedValue;
             }
             throw new IllegalArgumentException();
         }
     },
     LITER{
         @Override
-        public BigDecimal convert(BigDecimal value, VolumeUnit volumeUnit) {
-            String calculatevalue;
-            BigDecimal string_to_bigdecimal;
-            BigDecimal calculated_value;
+        public double convert(double value, VolumeUnit volumeUnit) {
+            double calculateValue;
+            double calculatedValue;
             switch (volumeUnit) {
                 case BRITISH_GALLON: 
-                    calculatevalue = "0.2199692483";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 4.546;
+                    calculatedValue = value / calculateValue;
+                    return calculatedValue;
                 case US_GALLON: 
-                    calculatevalue = "0.2641720524";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 3.785;
+                    calculatedValue = value / calculateValue;
+                    return calculatedValue;
                 case LITER: 
-                    calculated_value = value;
-                    return calculated_value;
+                    calculatedValue = value;
+                    return calculatedValue;
                 case MILLILITER:
                 case CUBIC_CENTIMETER: 
-                    calculatevalue = "1000";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 1000;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
                 case CUBIC_METER: 
-                    calculatevalue = "0.001";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 1000;
+                    calculatedValue = value / calculateValue;
+                    return calculatedValue;
                 case CUBIC_INCH: 
-                    calculatevalue = "61.0237440947";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 61.0237440947;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
                 case CUBIC_FEET: 
-                    calculatevalue = "0.0353146667";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 28.317;
+                    calculatedValue = value / calculateValue;
+                    return calculatedValue;
             }
             throw new IllegalArgumentException();
         }
     },
     MILLILITER{
         @Override
-        public BigDecimal convert(BigDecimal value, VolumeUnit volumeUnit) {
-            String calculatevalue;
-            BigDecimal string_to_bigdecimal;
-            BigDecimal calculated_value;
+        public double convert(double value, VolumeUnit volumeUnit) {
+            double calculateValue;
+            double calculatedValue;
             switch (volumeUnit) {
                 case BRITISH_GALLON: 
-                    calculatevalue = "0.0002199692";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 4546;
+                    calculatedValue = value / calculateValue;
+                    return calculatedValue;
                 case US_GALLON: 
-                    calculatevalue = "0.0002641721";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 0.0002641721;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
                 case LITER: 
-                    calculatevalue = "0.001";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 3785;
+                    calculatedValue = value / calculateValue;
+                    return calculatedValue;
                 case MILLILITER:
                 case CUBIC_CENTIMETER: 
-                    calculated_value = value;
-                    return calculated_value;
+                    calculatedValue = value;
+                    return calculatedValue;
                 case CUBIC_METER: 
-                    calculatevalue = "0.000001";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 0.000001;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
                 case CUBIC_INCH: 
-                    calculatevalue = "0.0610237441";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 16.387;
+                    calculatedValue = value / calculateValue;
+                    return calculatedValue;
                 case CUBIC_FEET: 
-                    calculatevalue = "0.0000353147";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 28317;
+                    calculatedValue = value / calculateValue;
+                    return calculatedValue;
             }
             throw new IllegalArgumentException();
         }
     },
     CUBIC_CENTIMETER{
         @Override
-        public BigDecimal convert(BigDecimal value, VolumeUnit volumeUnit) {
-            String calculatevalue;
-            BigDecimal string_to_bigdecimal;
-            BigDecimal calculated_value;
+        public double convert(double value, VolumeUnit volumeUnit) {
+            double calculateValue;
+            double calculatedValue;
             switch (volumeUnit) {
-                case BRITISH_GALLON: 
-                    calculatevalue = "0.0002199692";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
-                case US_GALLON: 
-                    calculatevalue = "0.0002641721";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
-                case LITER: 
-                    calculatevalue = "0.001";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                case BRITISH_GALLON:
+                    calculateValue = 4546;
+                    calculatedValue = value / calculateValue;
+                    return calculatedValue;
+                case US_GALLON:
+                    calculateValue = 0.0002641721;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
+                case LITER:
+                    calculateValue = 3785;
+                    calculatedValue = value / calculateValue;
+                    return calculatedValue;
                 case MILLILITER:
-                case CUBIC_CENTIMETER: 
-                    calculated_value = value;
-                    return calculated_value;
-                case CUBIC_METER: 
-                    calculatevalue = "0.000001";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
-                case CUBIC_INCH: 
-                    calculatevalue = "0.0610237441";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
-                case CUBIC_FEET: 
-                    calculatevalue = "0.0000353147";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                case CUBIC_CENTIMETER:
+                    calculatedValue = value;
+                    return calculatedValue;
+                case CUBIC_METER:
+                    calculateValue = 0.000001;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
+                case CUBIC_INCH:
+                    calculateValue = 16.387;
+                    calculatedValue = value / calculateValue;
+                    return calculatedValue;
+                case CUBIC_FEET:
+                    calculateValue = 28317;
+                    calculatedValue = value / calculateValue;
+                    return calculatedValue;
             }
             throw new IllegalArgumentException();
         }
     },
     CUBIC_METER{
         @Override
-        public BigDecimal convert(BigDecimal value, VolumeUnit volumeUnit) {
-            String calculatevalue;
-            BigDecimal string_to_bigdecimal;
-            BigDecimal calculated_value;
+        public double convert(double value, VolumeUnit volumeUnit) {
+            double calculateValue;
+            
+            double calculatedValue;
             switch (volumeUnit) {
                 case BRITISH_GALLON: 
-                    calculatevalue = "219.9692482991";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 219.9692482991;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
                 case US_GALLON: 
-                    calculatevalue = "234.1720523581";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 234.1720523581;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
                 case LITER: 
-                    calculatevalue = "1000";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 1000;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
                 case MILLILITER:
                 case CUBIC_CENTIMETER: 
-                    calculatevalue = "1000000";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 1000000;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
                 case CUBIC_METER: 
-                    calculated_value = value;
-                    return calculated_value;
+                    calculatedValue = value;
+                    return calculatedValue;
                 case CUBIC_INCH: 
-                    calculatevalue = "61023.744094732";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 61023.744094732;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
                 case CUBIC_FEET: 
-                    calculatevalue = "35.3146667215";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 35.3146667215;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
             }
             throw new IllegalArgumentException();
         }
     },
     CUBIC_INCH{
         @Override
-        public BigDecimal convert(BigDecimal value, VolumeUnit volumeUnit) {
-            String calculatevalue;
-            BigDecimal string_to_bigdecimal;
-            BigDecimal calculated_value;
+        public double convert(double value, VolumeUnit volumeUnit) {
+            double calculateValue;
+            double calculatedValue;
             switch (volumeUnit) {
                 case BRITISH_GALLON: 
-                    calculatevalue = "0.0036046501";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 277;
+                    calculatedValue = value / calculateValue;
+                    return calculatedValue;
                 case US_GALLON: 
-                    calculatevalue = "0.0043290043";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 231;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
                 case LITER: 
-                    calculatevalue = "0.016387064";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 61.024;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
                 case MILLILITER:
                 case CUBIC_CENTIMETER: 
-                    calculatevalue = "16.387064";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 16.387064;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
                 case CUBIC_METER: 
-                    calculatevalue = "0.0000163871";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 61024;
+                    calculatedValue = value / calculateValue;
+                    return calculatedValue;
                 case CUBIC_INCH: 
-                    calculated_value = value;
-                    return calculated_value;
+                    calculatedValue = value;
+                    return calculatedValue;
                 case CUBIC_FEET: 
-                    calculatevalue = "0.0005787037";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 1728;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
             }
             throw new IllegalArgumentException();
         }
     },
     CUBIC_FEET{
         @Override
-        public BigDecimal convert(BigDecimal value, VolumeUnit volumeUnit) {
-            String calculatevalue;
-            BigDecimal string_to_bigdecimal;
-            BigDecimal calculated_value;
+        public double convert(double value, VolumeUnit volumeUnit) {
+            double calculateValue;
+            double calculatedValue;
             switch (volumeUnit) {
                 case BRITISH_GALLON: 
-                    calculatevalue = "6.228835459";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 6.228835459;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
                 case US_GALLON: 
-                    calculatevalue = "7.4805194805";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 7.4805194805;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
                 case LITER: 
-                    calculatevalue = "28.316846592";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 28.316846592;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
                 case MILLILITER:
                 case CUBIC_CENTIMETER: 
-                    calculatevalue = "28316.846592";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 28316.846592;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
                 case CUBIC_METER: 
-                    calculatevalue = "0.0283168466";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 35.315;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
                 case CUBIC_INCH: 
-                    calculatevalue = "1728";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 1728;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
                 case CUBIC_FEET: 
-                    calculated_value = value;
-                    return calculated_value;
+                    calculatedValue = value;
+                    return calculatedValue;
             }
             throw new IllegalArgumentException();
         }
     };
-    public abstract BigDecimal convert(BigDecimal value, VolumeUnit volumeUnit);
+    public abstract double convert(double value, VolumeUnit volumeUnit);
 }

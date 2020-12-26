@@ -1,27 +1,22 @@
 package unitconversioncalculator;
 
-import java.math.BigDecimal;
-
 public enum TemperatureUnit {
     CELSIUS{
         @Override
-        public BigDecimal convert(BigDecimal value, TemperatureUnit temperatureUnit) throws IllegalArgumentException {
-            String calculateValue;
-            BigDecimal stringToBigDecimal;
-            BigDecimal calculatedValue;
+        public double convert(double value, TemperatureUnit temperatureUnit) throws IllegalArgumentException {
+            double calculateValue;
+            double calculatedValue;
             switch (temperatureUnit) {
                 case CELSIUS:
                     calculatedValue = value;
                     return calculatedValue;
                 case FAHRENHEIT:
-                    calculateValue = "0.5555555556";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.multiply(stringToBigDecimal).add(new BigDecimal("32"));
+                    calculateValue = 5.0 / 9;
+                    calculatedValue = value * calculateValue + 32;
                     return calculatedValue;
                 case KELVIN:
-                    calculateValue = "273.15";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.add(stringToBigDecimal);
+                    calculateValue = 273.15;
+                    calculatedValue = value + calculateValue;
                     return calculatedValue;
             }
             throw new IllegalArgumentException();
@@ -29,23 +24,20 @@ public enum TemperatureUnit {
     },
     FAHRENHEIT{
         @Override
-        public BigDecimal convert(BigDecimal value, TemperatureUnit temperatureUnit) throws IllegalArgumentException {
-            String calculateValue;
-            BigDecimal stringToBigDecimal;
-            BigDecimal calculatedValue;
+        public double convert(double value, TemperatureUnit temperatureUnit) throws IllegalArgumentException {
+            double calculateValue;
+            double calculatedValue;
             switch (temperatureUnit) {
                 case CELSIUS:
-                    calculateValue = "0.5555555556";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.subtract(new BigDecimal("32")).multiply(stringToBigDecimal);
+                    calculateValue = 5.0 / 9;
+                    calculatedValue = (value - 32) * calculateValue;
                     return calculatedValue;
                 case FAHRENHEIT:
                     calculatedValue = value;
                     return calculatedValue;
                 case KELVIN:
-                    calculateValue = "0.5555555556";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.subtract(new BigDecimal("32")).multiply(stringToBigDecimal).add(new BigDecimal("273.15"));
+                    calculateValue = 5.0 / 9;
+                    calculatedValue = (value-32) * calculateValue + 273.15;
                     return calculatedValue;
             }
             throw new IllegalArgumentException();
@@ -53,20 +45,17 @@ public enum TemperatureUnit {
     },
     KELVIN{
         @Override
-        public BigDecimal convert(BigDecimal value, TemperatureUnit temperatureUnit) throws IllegalArgumentException {
-            String calculateValue;
-            BigDecimal stringToBigDecimal;
-            BigDecimal calculatedValue;
+        public double convert(double value, TemperatureUnit temperatureUnit) throws IllegalArgumentException {
+            double calculateValue;
+            double calculatedValue;
             switch (temperatureUnit) {
                 case CELSIUS:
-                    calculateValue = "273.15";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.subtract(stringToBigDecimal);
+                    calculateValue = 273.15;
+                    calculatedValue = value- calculateValue;
                     return calculatedValue;
                 case FAHRENHEIT:
-                    calculateValue = "0.5555555556";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.subtract(new BigDecimal("273.15")).multiply(stringToBigDecimal).add(new BigDecimal("32"));
+                    calculateValue = 5.0 / 9;
+                    calculatedValue = (value - 273.15) * calculateValue + 32;
                     return calculatedValue;
                 case KELVIN:
                     calculatedValue = value;
@@ -75,5 +64,5 @@ public enum TemperatureUnit {
             throw new IllegalArgumentException();
         }
     };
-    public abstract BigDecimal convert(BigDecimal value, TemperatureUnit tempUnit);
+    public abstract double convert(double value, TemperatureUnit tempUnit);
 }

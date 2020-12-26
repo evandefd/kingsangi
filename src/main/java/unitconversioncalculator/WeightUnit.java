@@ -1,46 +1,38 @@
 package unitconversioncalculator;
-import java.math.BigDecimal;
 
 public enum WeightUnit {
     TON{
         @Override
-        public BigDecimal convert(BigDecimal value, WeightUnit weightUnit) throws IllegalArgumentException{
-            String calculateValue;
-            BigDecimal stringToBigDecimal;
-            BigDecimal calculatedValue;
+        public double convert(double value, WeightUnit weightUnit) throws IllegalArgumentException{
+            double calculateValue;
+            double calculatedValue;
             switch (weightUnit) {
                 case TON: 
                     calculatedValue = value;
                     return calculatedValue;
                 case BRITISH_TON:
-                    calculateValue = "0.9842065276";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.multiply(stringToBigDecimal);
+                    calculateValue = 1.016;
+                    calculatedValue = value / calculateValue;
                     return calculatedValue;
                 case US_TON:
-                    calculateValue = "1.1023113109";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.multiply(stringToBigDecimal);
+                    calculateValue = 1.1023113109;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case POUND: 
-                    calculateValue = "2204.6226218488";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.multiply(stringToBigDecimal);
+                    calculateValue = 2204.6226218488;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case OUNCE: 
-                    calculateValue = "35273.96194958";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.multiply(stringToBigDecimal);
+                    calculateValue = 35273.96194958;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case KILOGRAM: 
-                    calculateValue = "1000";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.multiply(stringToBigDecimal);
+                    calculateValue = 1000;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case GRAM: 
-                    calculateValue = "1000000";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.multiply(stringToBigDecimal);
+                    calculateValue = 1000000;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
             }
             throw new IllegalArgumentException();
@@ -48,43 +40,36 @@ public enum WeightUnit {
     },
     BRITISH_TON{
         @Override
-        public BigDecimal convert(BigDecimal value, WeightUnit weightUnit) throws IllegalArgumentException{
-            String calculateValue;
-            BigDecimal stringToBigDecimal;
-            BigDecimal calculatedValue;
+        public double convert(double value, WeightUnit weightUnit) throws IllegalArgumentException{
+            double calculateValue;
+            double calculatedValue;
             switch (weightUnit) {
                 case TON: 
-                    calculateValue = "1.0160469088";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.multiply(stringToBigDecimal);
+                    calculateValue = 1.0160469088;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case BRITISH_TON: 
                     calculatedValue = value;
                     return calculatedValue;
                 case US_TON: 
-                    calculateValue = "1.12";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.multiply(stringToBigDecimal);
+                    calculateValue = 1.12;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case POUND: 
-                    calculateValue = "2240";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.multiply(stringToBigDecimal);
+                    calculateValue = 2240;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case OUNCE: 
-                    calculateValue = "35840";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.multiply(stringToBigDecimal);
+                    calculateValue = 35840;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case KILOGRAM: 
-                    calculateValue = "1016.0469088";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.multiply(stringToBigDecimal);
+                    calculateValue = 1016.0469088;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case GRAM: 
-                    calculateValue = "1016046.9088";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.multiply(stringToBigDecimal);
+                    calculateValue = 1016046.9088;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
             }
             throw new IllegalArgumentException();
@@ -92,43 +77,36 @@ public enum WeightUnit {
     },
     US_TON{
         @Override
-        public BigDecimal convert(BigDecimal value, WeightUnit weightUnit) throws IllegalArgumentException{
-            String calculateValue;
-            BigDecimal stringToBigDecimal;
-            BigDecimal calculatedValue;
+        public double convert(double value, WeightUnit weightUnit) throws IllegalArgumentException{
+            double calculateValue;
+            double calculatedValue;
             switch (weightUnit) {
                 case TON:
-                    calculateValue = "0.90718474";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.multiply(stringToBigDecimal);
+                    calculateValue = 1.102;
+                    calculatedValue = value / calculateValue;
                     return calculatedValue;
                 case BRITISH_TON:
-                    calculateValue = "0.8928571429";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.multiply(stringToBigDecimal);
+                    calculateValue = 1.12;
+                    calculatedValue = value / calculateValue;
                     return calculatedValue;
                 case US_TON:
                     calculatedValue = value;
                     return calculatedValue;
                 case POUND:
-                    calculateValue = "2000";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.multiply(stringToBigDecimal);
+                    calculateValue = 2000;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case OUNCE:
-                    calculateValue = "32000";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.multiply(stringToBigDecimal);
+                    calculateValue = 32000;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case KILOGRAM:
-                    calculateValue = "907.18474";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.multiply(stringToBigDecimal);
+                    calculateValue = 907.18474;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case GRAM:
-                    calculateValue = "907184.74";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.multiply(stringToBigDecimal);
+                    calculateValue = 907184.74;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
             }
             throw new IllegalArgumentException();
@@ -136,43 +114,36 @@ public enum WeightUnit {
     },
     POUND{
         @Override
-        public BigDecimal convert(BigDecimal value, WeightUnit weightUnit) throws IllegalArgumentException{
-            String calculateValue;
-            BigDecimal stringToBigDecimal;
-            BigDecimal calculatedValue;
+        public double convert(double value, WeightUnit weightUnit) throws IllegalArgumentException{
+            double calculateValue;
+            double calculatedValue;
             switch (weightUnit) {
                 case TON:
-                    calculateValue = "0.0004535924";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.multiply(stringToBigDecimal);
+                    calculateValue = 2205;
+                    calculatedValue = value / calculateValue;
                     return calculatedValue;
                 case BRITISH_TON:
-                    calculateValue = "0.0004464286";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.multiply(stringToBigDecimal);
+                    calculateValue = 2240;
+                    calculatedValue = value / calculateValue;
                     return calculatedValue;
                 case US_TON:
-                    calculateValue = "0.0005";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.multiply(stringToBigDecimal);
+                    calculateValue = 2000;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case POUND:
                     calculatedValue = value;
                     return calculatedValue;
                 case OUNCE:
-                    calculateValue = "16";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.multiply(stringToBigDecimal);
+                    calculateValue = 16;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case KILOGRAM:
-                    calculateValue = "0.45359237";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.multiply(stringToBigDecimal);
+                    calculateValue = 2.205;
+                    calculatedValue = value / calculateValue;
                     return calculatedValue;
                 case GRAM:
-                    calculateValue = "453.59237";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.multiply(stringToBigDecimal);
+                    calculateValue = 453.59237;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
             }
             throw new IllegalArgumentException();
@@ -180,43 +151,36 @@ public enum WeightUnit {
     },
     OUNCE{
         @Override
-        public BigDecimal convert(BigDecimal value, WeightUnit weightUnit) throws IllegalArgumentException{
-            String calculateValue;
-            BigDecimal stringToBigDecimal;
-            BigDecimal calculatedValue;
+        public double convert(double value, WeightUnit weightUnit) throws IllegalArgumentException{
+            double calculateValue;
+            double calculatedValue;
             switch (weightUnit) {
                 case TON:
-                    calculateValue = "0.0000283495";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.multiply(stringToBigDecimal);
+                    calculateValue = 35274;
+                    calculatedValue = value / calculateValue;
                     return calculatedValue;
                 case BRITISH_TON:
-                    calculateValue = "0.0000279018";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.multiply(stringToBigDecimal);
+                    calculateValue = 35840;
+                    calculatedValue = value / calculateValue;
                     return calculatedValue;
                 case US_TON:
-                    calculateValue = "0.00003125";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.multiply(stringToBigDecimal);
+                    calculateValue = 32000;
+                    calculatedValue = value / calculateValue;
                     return calculatedValue;
                 case POUND:
-                    calculateValue = "0.0625";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.multiply(stringToBigDecimal);
+                    calculateValue = 16;
+                    calculatedValue = value / calculateValue;
                     return calculatedValue;
                 case OUNCE:
                     calculatedValue = value;
                     return calculatedValue;
                 case KILOGRAM:
-                    calculateValue = "0.0283495231";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.multiply(stringToBigDecimal);
+                    calculateValue = 35.274;
+                    calculatedValue = value / calculateValue;
                     return calculatedValue;
                 case GRAM:
-                    calculateValue = "28.349523125";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.multiply(stringToBigDecimal);
+                    calculateValue = 28.349523125;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
             }
             throw new IllegalArgumentException();
@@ -224,43 +188,36 @@ public enum WeightUnit {
     },
     KILOGRAM{
         @Override
-        public BigDecimal convert(BigDecimal value, WeightUnit weightUnit) throws IllegalArgumentException{
-            String calculateValue;
-            BigDecimal stringToBigDecimal;
-            BigDecimal calculatedValue;
+        public double convert(double value, WeightUnit weightUnit) throws IllegalArgumentException{
+            double calculateValue;
+            double calculatedValue;
             switch (weightUnit) {
                 case TON:
-                    calculateValue = "0.001";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.multiply(stringToBigDecimal);
+                    calculateValue = 1000;
+                    calculatedValue = value / calculateValue;
                     return calculatedValue;
                 case BRITISH_TON:
-                    calculateValue = "0.0009842065";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.multiply(stringToBigDecimal);
+                    calculateValue = 1016;
+                    calculatedValue = value / calculateValue;
                     return calculatedValue;
                 case US_TON:
-                    calculateValue = "0.0011023113";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.multiply(stringToBigDecimal);
+                    calculateValue = 907;
+                    calculatedValue = value / calculateValue;
                     return calculatedValue;
                 case POUND:
-                    calculateValue = "2.2046226218";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.multiply(stringToBigDecimal);
+                    calculateValue = 2.2046226218;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case OUNCE:
-                    calculateValue = "35.2739619496";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.multiply(stringToBigDecimal);
+                    calculateValue = 35.2739619496;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case KILOGRAM:
                     calculatedValue = value;
                     return calculatedValue;
                 case GRAM:
-                    calculateValue = "1000";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.multiply(stringToBigDecimal);
+                    calculateValue = 1000;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
             }
             throw new IllegalArgumentException();
@@ -268,40 +225,33 @@ public enum WeightUnit {
     },
     GRAM{
         @Override
-        public BigDecimal convert(BigDecimal value, WeightUnit weightUnit) throws IllegalArgumentException{
-            String calculateValue;
-            BigDecimal stringToBigDecimal;
-            BigDecimal calculatedValue;
+        public double convert(double value, WeightUnit weightUnit) throws IllegalArgumentException{
+            double calculateValue;
+            double calculatedValue;
             switch (weightUnit) {
                 case TON:
-                    calculateValue = "0.000001";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.multiply(stringToBigDecimal);
+                    calculateValue = 0.000001;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case BRITISH_TON:
-                    calculateValue = Double.toString(9.84206528 * Math.pow(10, -7));
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.multiply(stringToBigDecimal);
+                    calculateValue = 1.013 * Math.pow(10, 6);
+                    calculatedValue = value / calculateValue;
                     return calculatedValue;
                 case US_TON:
-                    calculateValue = "0.0000011023";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.multiply(stringToBigDecimal);
+                    calculateValue = 907185;
+                    calculatedValue = value / calculateValue;
                     return calculatedValue;
                 case POUND:
-                    calculateValue = "0.0022046226";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.multiply(stringToBigDecimal);
+                    calculateValue = 454;
+                    calculatedValue = value / calculateValue;
                     return calculatedValue;
                 case OUNCE:
-                    calculateValue = "0.0352739619";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.multiply(stringToBigDecimal);
+                    calculateValue = 28.35;
+                    calculatedValue = value / calculateValue;
                     return calculatedValue;
                 case KILOGRAM:
-                    calculateValue = "0.001";
-                    stringToBigDecimal = new BigDecimal(calculateValue);
-                    calculatedValue = value.multiply(stringToBigDecimal);
+                    calculateValue = 1000;
+                    calculatedValue = value / calculateValue;
                     return calculatedValue;
                 case GRAM:
                     calculatedValue = value;
@@ -310,5 +260,5 @@ public enum WeightUnit {
             throw new IllegalArgumentException();
         }
     };
-    public abstract BigDecimal convert(BigDecimal value, WeightUnit weightUnit);
+    public abstract double convert(double value, WeightUnit weightUnit);
 }

@@ -1,177 +1,150 @@
 package unitconversioncalculator;
 
-import java.math.BigDecimal;
-
 public enum TimeUnit {
     SECOND{
         @Override
-        public BigDecimal convert(BigDecimal value, TimeUnit timeUnit) {
-            String calculatevalue;
-            BigDecimal string_to_bigdecimal;
-            BigDecimal calculated_value;
+        public double convert(double value, TimeUnit timeUnit) {
+            double calculateValue;
+            double calculatedValue;
             switch (timeUnit) {
                 case SECOND:
-                    calculated_value = value;
-                    return calculated_value;
+                    calculatedValue = value;
+                    return calculatedValue;
                 case MINUTE:
-                    calculatevalue = "0.0166666667";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 60;
+                    calculatedValue = value / calculateValue;
+                    return calculatedValue;
                 case HOUR:
-                    calculatevalue = "0.0002777778";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 3600;
+                    calculatedValue = value / calculateValue;
+                    return calculatedValue;
                 case DAY:
-                    calculatevalue = "0.0000115741";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 86400;
+                    calculatedValue = value / calculateValue;
+                    return calculatedValue;
                 case WEEK:
-                    calculatevalue = "0.0000016534";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 604800;
+                    calculatedValue = value / calculateValue;
+                    return calculatedValue;
             }
             throw new IllegalArgumentException();
         }
     },
     MINUTE{
         @Override
-        public BigDecimal convert(BigDecimal value, TimeUnit timeUnit) {
-            String calculatevalue;
-            BigDecimal string_to_bigdecimal;
-            BigDecimal calculated_value;
+        public double convert(double value, TimeUnit timeUnit) {
+            double calculateValue;
+            double calculatedValue;
             switch (timeUnit) {
                 case SECOND:
-                    calculatevalue = "60";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 60;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
                 case MINUTE:
-                    calculated_value = value;
-                    return calculated_value;
+                    calculatedValue = value;
+                    return calculatedValue;
                 case HOUR:
-                    calculatevalue = "0.0166666667";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 60;
+                    calculatedValue = value / calculateValue;
+                    return calculatedValue;
                 case DAY:
-                    calculatevalue = "0.0006944444";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 1440;
+                    calculatedValue = value / calculateValue;
+                    return calculatedValue;
                 case WEEK:
-                    calculatevalue = "0.0000992063";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 10080;
+                    calculatedValue = value / calculateValue;
+                    return calculatedValue;
             }
             throw new IllegalArgumentException();
         }
     },
     HOUR{
         @Override
-        public BigDecimal convert(BigDecimal value, TimeUnit timeUnit) {
-            String calculatevalue;
-            BigDecimal string_to_bigdecimal;
-            BigDecimal calculated_value;
+        public double convert(double value, TimeUnit timeUnit) {
+            double calculateValue;
+            double calculatedValue;
             switch (timeUnit) {
                 case SECOND:
-                    calculatevalue = "3600";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 3600;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
                 case MINUTE:
-                    calculatevalue = "60";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 60;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
                 case HOUR:
-                    calculated_value = value;
-                    return calculated_value;
+                    calculatedValue = value;
+                    return calculatedValue;
                 case DAY:
-                    calculatevalue = "0.0416666667";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 24;
+                    calculatedValue = value / calculateValue;
+                    return calculatedValue;
                 case WEEK:
-                    calculatevalue = "0.005952381";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 168;
+                    calculatedValue = value / calculateValue;
+                    return calculatedValue;
             }
             throw new IllegalArgumentException();
         }
     },
     DAY{
         @Override
-        public BigDecimal convert(BigDecimal value, TimeUnit timeUnit) {
-            String calculatevalue;
-            BigDecimal string_to_bigdecimal;
-            BigDecimal calculated_value;
+        public double convert(double value, TimeUnit timeUnit) {
+            double calculateValue;
+            double calculatedValue;
             switch (timeUnit) {
                 case SECOND:
-                    calculatevalue = "86400";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 86400;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
                 case MINUTE:
-                    calculatevalue = "1440";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 1440;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
                 case HOUR:
-                    calculatevalue = "24";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 24;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
                 case DAY:
-                    calculated_value = value;
-                    return calculated_value;
+                    calculatedValue = value;
+                    return calculatedValue;
                 case WEEK:
-                    calculatevalue = "0.1428571429";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 7;
+                    calculatedValue = value / calculateValue;
+                    return calculatedValue;
             }
             throw new IllegalArgumentException();
         }
     },
     WEEK{
         @Override
-        public BigDecimal convert(BigDecimal value, TimeUnit timeUnit) {
-            String calculatevalue;
-            BigDecimal string_to_bigdecimal;
-            BigDecimal calculated_value;
+        public double convert(double value, TimeUnit timeUnit) {
+            double calculateValue;
+            double calculatedValue;
             switch (timeUnit) {
                 case SECOND:
-                    calculatevalue = "604800";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 604800;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
                 case MINUTE:
-                    calculatevalue = "10080";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 10080;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
                 case HOUR:
-                    calculatevalue = "168";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 168;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
                 case DAY:
-                    calculatevalue = "7";
-                    string_to_bigdecimal = new BigDecimal(calculatevalue);
-                    calculated_value = value.multiply(string_to_bigdecimal);
-                    return calculated_value;
+                    calculateValue = 7;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
                 case WEEK:
-                    calculated_value = value;
-                    return calculated_value;
+                    calculatedValue = value;
+                    return calculatedValue;
             }
             throw new IllegalArgumentException();
         }
     };
-    public abstract BigDecimal convert(BigDecimal value, TimeUnit timeUnit);
+    public abstract double convert(double value, TimeUnit timeUnit);
 }
