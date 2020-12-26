@@ -11,7 +11,7 @@ public enum TemperatureUnit {
                     calculatedValue = value;
                     return calculatedValue;
                 case FAHRENHEIT:
-                    calculateValue = 5.0 / 9;
+                    calculateValue = 9.0 / 5;
                     calculatedValue = value * calculateValue + 32;
                     return calculatedValue;
                 case KELVIN:
@@ -54,7 +54,7 @@ public enum TemperatureUnit {
                     calculatedValue = value- calculateValue;
                     return calculatedValue;
                 case FAHRENHEIT:
-                    calculateValue = 5.0 / 9;
+                    calculateValue = 9.0 / 5;
                     calculatedValue = (value - 273.15) * calculateValue + 32;
                     return calculatedValue;
                 case KELVIN:
