@@ -13,6 +13,14 @@ import java.util.Map;
 import java.util.logging.Handler;
 import java.util.logging.LogRecord;
 
+/**
+ * The {@code Exchange} class is the exchange rate for base currency.
+ * <p>You can only access from ExchangeFactory</p>
+ * <p>e.g)If base currency is USD, target currency is KRW, it works like 1 USD to 1100 KRW
+ * If you want to change base currency, you must get other base currency {@code Exchange} object from ExchangeFactory.</p>
+ *
+ * @see ExchangeFactory
+ */
 public class Exchange {
     private final Currency baseCurrency;
     private final Map<Currency, Double> exchangeRateMap;
@@ -22,43 +30,30 @@ public class Exchange {
         this.exchangeRateMap = exchangeRateMap;
     }
 
+    /**
+     * Get current base currency.
+     * @return Current base currency
+     */
     public Currency getBaseCurrency() {
         return baseCurrency;
     }
 
+    /**
+     * Get exchange rate for base currency.
+     * @param targetCurrency Target currency
+     * @return Target currency exchange rate for base currency
+     */
     public double getExchangeRate(Currency targetCurrency) {
         return exchangeRateMap.get(targetCurrency);
     }
 
+    /**
+     * Convert currency value directly to target currency.
+     * @param value Currency value(e.g. '10' USD)
+     * @param targetCurrency Target currency
+     * @return Converted currency value
+     */
     public double convertWithExchangeRate(double value, Currency targetCurrency) {
         return value * getExchangeRate(targetCurrency);
     }
-
-    /*public static Exchange get(Currency baseCurrency) throws IOException, NetworkException {
-        URL url = new URL("https://api.exchangeratesapi.io/latest?base=" + baseCurrency.getCurrencyName());
-
-        HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
-
-        if (connection.getResponseCode() == 200) {
-            BufferedReader bufferedReader = new BufferedReader(
-                    new InputStreamReader(connection.getInputStream())
-            );
-            StringBuilder stringBuilder = new StringBuilder();
-            String line = "";
-            while((line = bufferedReader.readLine()) != null) {
-                stringBuilder.append(line);
-            }
-
-            String[] rates = stringBuilder.toString().split("\\{")[2].split("}")[0].split(",");
-            Map<Currency, Double> exchangeRateMap = new HashMap<>();
-            for(String rate : rates) {
-                String[] rateSplit = rate.split(":");
-                exchangeRateMap.put(Currency.valueOf(rateSplit[0].replaceAll("\"", "")), Double.parseDouble(rateSplit[1]));
-            }
-
-            return new Exchange(baseCurrency, exchangeRateMap);
-        } else {
-            throw new NetworkException("Can't get data from server: " + connection.getResponseCode());
-        }
-    }*/
 }

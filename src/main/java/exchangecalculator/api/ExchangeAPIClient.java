@@ -3,10 +3,17 @@ package exchangecalculator.api;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 
+/**
+ * The {@code ExchangeAPIClient} class is an API Client that offer to exchange rate.
+ * <p>Note that this class is based on Retrofit2.</p>
+ *
+ * @see Retrofit
+ * @see ExchangeFactory
+ */
 public class ExchangeAPIClient {
     private static Retrofit retrofit = null;
 
-    public static Retrofit getClient() {
+    private static Retrofit getClient() {
         OkHttpClient client = new OkHttpClient.Builder().build();
 
         if (retrofit == null)
@@ -19,6 +26,10 @@ public class ExchangeAPIClient {
         return retrofit;
     }
 
+    /**
+     * Get @{code ExchangeFactory} instance that is used to get proper {@code Exchange} object.
+     * @return {@code ExchangeFactory} instance
+     */
     public static ExchangeFactory getExchangeFactory() {
         return getClient().create(ExchangeFactory.class);
     }

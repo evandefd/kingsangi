@@ -1,47 +1,40 @@
 package exchangecalculator;
 
+/**
+ * The {@code Currency} enum is supported currency enumeration.
+ */
 public enum Currency {
-    CAD("CAD"),
-    HKD("HKD"),
-    ISK("ISK"),
-    PHP("PHP"),
-    DKK("DKK"),
-    HUF("HUF"),
-    CZK("CZK"),
-    AUD("AUD"),
-    RON("RON"),
-    SEK("SEK"),
-    IDR("IDR"),
-    INR("INR"),
-    BRL("BRL"),
-    RUB("RUB"),
-    HRK("HRK"),
-    JPY("JPY"),
-    THB("THB"),
-    CHF("CHF"),
-    SGD("SGD"),
-    PLN("PLN"),
-    BGN("BGN"),
-    TRY("TRY"),
-    CNY("CNY"),
-    NOK("NOK"),
-    NZD("NZD"),
-    ZAR("ZAR"),
-    USD("USD"),
-    MXN("MXN"),
-    ILS("ILS"),
-    GBP("GBP"),
-    KRW("KRW"),
-    MYR("MYR"),
-    EUR("EUR");
-
-    private final String currencyName;
-
-    Currency(String currencyName) {
-        this.currencyName = currencyName;
-    }
-
-    public String getCurrencyName() {
-        return currencyName;
-    }
+    CAD,
+    HKD,
+    ISK,
+    PHP,
+    DKK,
+    HUF,
+    CZK,
+    AUD,
+    RON,
+    SEK,
+    IDR,
+    INR,
+    BRL,
+    RUB,
+    HRK,
+    JPY,
+    THB,
+    CHF,
+    SGD,
+    PLN,
+    BGN,
+    TRY,
+    CNY,
+    NOK,
+    NZD,
+    ZAR,
+    USD,
+    MXN,
+    ILS,
+    GBP,
+    KRW,
+    MYR,
+    EUR
 }
