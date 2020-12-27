@@ -4,6 +4,8 @@
 네트워크로 환율 정보를 받아와 환율 정보 및 환율 계산을 수행할 수 있다.  
 Retrofit2 라이브러리를 사용한다.
 
+https://exchangeratesapi.io/ 의 API를 사용하여 환율 데이터를 사용한다. 위 API는 Euporian Central Bank에서 환율 데이터를 수집한다.
+
 #### Supported currency
 > Use Ctrl + F to faster searching
 - CAD : Canadian dollar(🇨🇦 Canada)
