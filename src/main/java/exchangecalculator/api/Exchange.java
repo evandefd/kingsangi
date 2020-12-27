@@ -1,5 +1,6 @@
-package exchangecalculator;
+package exchangecalculator.api;
 
+import exchangecalculator.Currency;
 import exchangecalculator.exception.NetworkException;
 
 import javax.net.ssl.HttpsURLConnection;
@@ -9,13 +10,14 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Handler;
+import java.util.logging.LogRecord;
 
 public class Exchange {
-
     private final Currency baseCurrency;
     private final Map<Currency, Double> exchangeRateMap;
 
-    private Exchange(Currency baseCurrency, Map<Currency, Double> exchangeRateMap) throws IOException {
+    Exchange(Currency baseCurrency, Map<Currency, Double> exchangeRateMap) throws IOException {
         this.baseCurrency = baseCurrency;
         this.exchangeRateMap = exchangeRateMap;
     }
@@ -32,7 +34,7 @@ public class Exchange {
         return value * getExchangeRate(targetCurrency);
     }
 
-    public static Exchange get(Currency baseCurrency) throws IOException, NetworkException {
+    /*public static Exchange get(Currency baseCurrency) throws IOException, NetworkException {
         URL url = new URL("https://api.exchangeratesapi.io/latest?base=" + baseCurrency.getCurrencyName());
 
         HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
@@ -58,5 +60,5 @@ public class Exchange {
         } else {
             throw new NetworkException("Can't get data from server: " + connection.getResponseCode());
         }
-    }
+    }*/
 }
