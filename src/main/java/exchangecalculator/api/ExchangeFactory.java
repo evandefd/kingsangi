@@ -3,6 +3,7 @@ package exchangecalculator.api;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 /**
  * The {@code ExchangeFactory} interface is used to get proper {@code Exchange} object.
@@ -15,8 +16,8 @@ public interface ExchangeFactory {
     @GET("/latest")
     Call<Exchange> getLatestExchange();
 
-    @GET("/base={baseCurrency}")
+    @GET("/latest")
     Call<Exchange> getLatestExchangeWithBaseCurrency(
-            @Path("baseCurrency") String baseCurrency
+            @Query("base") String baseCurrency
     );
 }
