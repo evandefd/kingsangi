@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/datecalculator.iml" filepath="$PROJECT_DIR$/datecalculator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/kingsangi.iml" filepath="$PROJECT_DIR$/.idea/kingsangi.iml" />
     </modules>
   </component>
 </project>

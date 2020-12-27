@@ -1,0 +1,66 @@
+package src.main.java.datecalculator;
+
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Scanner;
+
+
+public class PublicHoliday {
+
+    public static void getDates() throws ParseException {
+        Calendar calendar = Calendar.getInstance();
+        Date date = new Date();
+        DateFormat dfm = SimpleDateFormat.getDateInstance(DateFormat.DEFAULT);
+        Scanner stdin = new Scanner(System.in);
+        int holidayDate[] = {101, 101, 301, 408, 505, 606, 815, 815, 1003, 1009, 1225};
+        //신정, 설날, 삼일절, 석가탄신일, 어린이날, 현충일, 광복절, 추석, 개천절, 한글날, 크리스마스
+
+        long millisecond[] = new long[];
+        int year = stdin.nextInt();
+
+        for (int i = 0; i<holidayDate.length+4; i++){
+            calendar.set(year,holidayDate[i]/100-1,holidayDate[i]%100);
+
+            if(i==1||i==7){
+                date = dfm.parse(datecalculator.DateToLunarDate.lunarDateToDate(calendar.getTimeInMillis()));
+                calendar.setTime(date);
+                calendar.add(Calendar.DAY_OF_MONTH,-1);
+                millisecond[i]= calendar.getTimeInMillis();
+
+                i++;
+
+                date = dfm.parse(datecalculator.DateToLunarDate.lunarDateToDate(calendar.getTimeInMillis()));
+                calendar.setTime(date);
+                calendar.add(Calendar.DAY_OF_MONTH,1);
+                millisecond[i]= calendar.getTimeInMillis();
+
+                i++;
+
+                date = dfm.parse(datecalculator.DateToLunarDate.lunarDateToDate(calendar.getTimeInMillis()));
+                calendar.setTime(date);
+                calendar.add(Calendar.DAY_OF_MONTH,1);
+                millisecond[i]= calendar.getTimeInMillis();
+
+            }
+            else if(i==3){
+                date=dfm.parse(datecalculator.DateToLunarDate.lunarDateToDate(calendar.getTimeInMillis()));
+                calendar.setTime(date);
+                millisecond[i]=calendar.getTimeInMillis();
+
+            }
+            else{
+                millisecond[i]=calendar.getTimeInMillis();
+            }
+
+        }
+
+        for(int i=0; i< millisecond.length;i++){
+            System.out.println(dfm.format(millisecond[i]));
+        }
+
+    }
+}
