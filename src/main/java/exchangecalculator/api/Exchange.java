@@ -1,17 +1,9 @@
 package exchangecalculator.api;
 
 import exchangecalculator.Currency;
-import exchangecalculator.exception.NetworkException;
 
-import javax.net.ssl.HttpsURLConnection;
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.URL;
-import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Handler;
-import java.util.logging.LogRecord;
 
 /**
  * The {@code Exchange} class is the exchange rate for base currency.
@@ -32,6 +24,7 @@ public class Exchange {
 
     /**
      * Get current base currency.
+     *
      * @return Current base currency
      */
     public Currency getBaseCurrency() {
@@ -40,6 +33,7 @@ public class Exchange {
 
     /**
      * Get exchange rate for base currency.
+     *
      * @param targetCurrency Target currency
      * @return Target currency exchange rate for base currency
      */
@@ -49,7 +43,8 @@ public class Exchange {
 
     /**
      * Convert currency value directly to target currency.
-     * @param value Currency value(e.g. '10' USD)
+     *
+     * @param value          Currency value(e.g. '10' USD)
      * @param targetCurrency Target currency
      * @return Converted currency value
      */

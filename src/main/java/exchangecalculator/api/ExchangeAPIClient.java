@@ -28,6 +28,7 @@ public class ExchangeAPIClient {
 
     /**
      * Get @{code ExchangeFactory} instance that is used to get proper {@code Exchange} object.
+     *
      * @return {@code ExchangeFactory} instance
      */
     public static ExchangeFactory getExchangeFactory() {

@@ -23,9 +23,9 @@ public interface ExchangeFactory {
 
     /**
      * Get latest(today) custom BaseCurrency based {@code Exchange} object.
+     *
      * @param baseCurrency custom baseCurrency. You must set the value in Currency enumeration.
      * @return latest(today) custom BaseCurrency based {@code Exchange} object
-     *
      * @see exchangecalculator.Currency
      */
     @GET("/latest")

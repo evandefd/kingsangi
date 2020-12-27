@@ -26,7 +26,7 @@ public class CurrencyConvertFactory extends Converter.Factory {
             String bodyString = value.string();
             String[] rates = bodyString.split("\\{")[2].split("}")[0].split(",");
             Map<Currency, Double> exchangeRateMap = new HashMap<>();
-            for(String rate : rates) {
+            for (String rate : rates) {
                 String[] rateSplit = rate.split(":");
                 exchangeRateMap.put(Currency.valueOf(rateSplit[0].replaceAll("\"", "")), Double.parseDouble(rateSplit[1]));
             }
