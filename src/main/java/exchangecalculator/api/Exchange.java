@@ -1,6 +1,7 @@
 package exchangecalculator.api;
 
 import exchangecalculator.Currency;
+import org.joda.time.DateTime;
 
 import java.io.IOException;
 import java.util.Map;
@@ -16,8 +17,10 @@ import java.util.Map;
 public class Exchange {
     private final Currency baseCurrency;
     private final Map<Currency, Double> exchangeRateMap;
+    private final DateTime dateTime;
 
-    Exchange(Currency baseCurrency, Map<Currency, Double> exchangeRateMap) throws IOException {
+    Exchange(DateTime dateTime, Currency baseCurrency, Map<Currency, Double> exchangeRateMap) throws IOException {
+        this.dateTime = dateTime;
         this.baseCurrency = baseCurrency;
         this.exchangeRateMap = exchangeRateMap;
     }
@@ -50,5 +53,13 @@ public class Exchange {
      */
     public double convertWithExchangeRate(double value, Currency targetCurrency) {
         return value * getExchangeRate(targetCurrency);
+    }
+
+    /**
+     * Get date of the exchange rate. This is a Joda-Time DateTime instance.
+     * @return Joda-Time DataTime instance
+     */
+    public DateTime getDateTime() {
+        return dateTime;
     }
 }

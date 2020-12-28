@@ -2,6 +2,7 @@ package exchangecalculator.api;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 /**
@@ -32,4 +33,10 @@ public interface ExchangeFactory {
     Call<Exchange> getLatestExchange(
             @Query("base") String baseCurrency
     );
+
+    @GET("/{date}")
+    Call<Exchange> getSpecificDateExchange(@Path("date") String date);
+
+    @GET("/{date}")
+    Call<Exchange> getSpecificDateExchange(@Path("date") String date, @Query("base") String baseCurrency);
 }
