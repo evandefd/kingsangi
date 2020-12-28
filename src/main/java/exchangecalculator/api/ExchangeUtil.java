@@ -12,6 +12,7 @@ public class ExchangeUtil {
     /**
      * Returns a Joda-Time DateTime instance.<br>
      * Note that parameter string must be yyyy-MM-dd pattern.
+     *
      * @param stringDate String date expression thar has yyyy-MM-dd pattern
      * @return Joda-Time DateTime instance
      */
@@ -22,6 +23,7 @@ public class ExchangeUtil {
     /**
      * Returns a parsed string date from DateTime.<br>
      * The pattern of the returned string is yyyy-MM-dd
+     *
      * @param dateTime Joda-Time DateTime instance
      * @return String date expression thar has yyyy-MM-dd pattern
      */
@@ -31,9 +33,10 @@ public class ExchangeUtil {
 
     /**
      * Generate DateTime instance.
-     * @param year Year
+     *
+     * @param year        Year
      * @param monthOfYear Month of year
-     * @param dayOfMonth Day of month
+     * @param dayOfMonth  Day of month
      * @return Joda-Time DateTime instance
      */
     public static DateTime generateSimpleDateTime(
@@ -45,9 +48,10 @@ public class ExchangeUtil {
 
     /**
      * Generate a string date expression that has yyyy-MM-dd pattern.
-     * @param year Year
+     *
+     * @param year        Year
      * @param monthOfYear Month of year
-     * @param dayOfMonth Day of month
+     * @param dayOfMonth  Day of month
      * @return String date expression thar has yyyy-MM-dd pattern
      */
     public static String generateSimpleFormattedStringDate(

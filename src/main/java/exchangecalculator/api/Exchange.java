@@ -57,6 +57,7 @@ public class Exchange {
 
     /**
      * Get date of the exchange rate. This is a Joda-Time DateTime instance.
+     *
      * @return Joda-Time DataTime instance
      */
     public DateTime getDateTime() {
