@@ -30,9 +30,7 @@ public interface ExchangeFactory {
      * @see exchangecalculator.Currency
      */
     @GET("/latest")
-    Call<Exchange> getLatestExchange(
-            @Query("base") String baseCurrency
-    );
+    Call<Exchange> getLatestExchange(@Query("base") String baseCurrency);
 
     @GET("/{date}")
     Call<Exchange> getSpecificDateExchange(@Path("date") String date);
