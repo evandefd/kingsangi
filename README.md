@@ -61,6 +61,11 @@ e.g. Currency.USD, Currency.KRW, Currency.HKD ...
   ```
   Call<Exchange> exchangeCall = exchangeFactory.getLatestExchange(Currency.USD.name());
   ```
+  - 지원되는 메소드는 다음과 같다
+    - ```Call<Exchange> getLatestExchange();```
+    - ```Call<Exchange> getLatestExchange(String baseCurrency);```
+    - ```Call<Exchange> getSpecificDateExchange(String date);```
+    - ```Call<Exchange> getSpecificDateExchange(String date, String baseCurrency);```
   - 해당 객체는 Retrofit2에서 제공하는 Call<Exchange> 타입이며 콜백 함수를 사용하여 성공 실패 여부를 확인할 수 있다.
 3. Callback<Exchange> 콜백 메소드를 사용하여 Exchange 객체를 가져온다.
   ```
