@@ -45,7 +45,7 @@ class CurrencyConvertFactory extends Converter.Factory {
         }
 
         /**
-         * If the map is not contains all declared Currencies. put the exchange rate value 1.0 if currency is same as base currency else -1.0.
+         * fillMap can do if the map is not contains all declared Currencies, put the exchange rate value 1.0 if currency is same as base currency else -1.0.
          *
          * @param exchangeRateMap Exchange rate map
          * @param baseCurrency    Base currency

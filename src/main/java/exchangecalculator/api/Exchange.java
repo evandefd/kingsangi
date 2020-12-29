@@ -19,7 +19,7 @@ public class Exchange {
     private final Map<Currency, Double> exchangeRateMap;
     private final DateTime dateTime;
 
-    Exchange(DateTime dateTime, Currency baseCurrency, Map<Currency, Double> exchangeRateMap) throws IOException {
+    Exchange(DateTime dateTime, Currency baseCurrency, Map<Currency, Double> exchangeRateMap) {
         this.dateTime = dateTime;
         this.baseCurrency = baseCurrency;
         this.exchangeRateMap = exchangeRateMap;

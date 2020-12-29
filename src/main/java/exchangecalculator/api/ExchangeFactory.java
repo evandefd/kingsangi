@@ -25,16 +25,27 @@ public interface ExchangeFactory {
     /**
      * Get latest(today) custom BaseCurrency based {@code Exchange} object.
      *
-     * @param baseCurrency custom baseCurrency. You must set the value in Currency enumeration.
+     * @param baseCurrency custom baseCurrency. We strongly recommend set the value from Currency enumeration.
      * @return latest(today) custom BaseCurrency based {@code Exchange} object
      * @see exchangecalculator.Currency
      */
     @GET("/latest")
     Call<Exchange> getLatestExchange(@Query("base") String baseCurrency);
 
+    /**
+     * Get specific date EUR based {@code Exchange} objects.
+     * @param date String date expression. That must be yyyy-MM-dd format.
+     * @return specific date EUR based {@code Exchange} objects
+     */
     @GET("/{date}")
     Call<Exchange> getSpecificDateExchange(@Path("date") String date);
 
+    /**
+     * Get specific date custom base currency based {@code Exchange} objects.
+     * @param date String date expression. That must be yyyy-MM-dd format.
+     * @param baseCurrency custom baseCurrency. We strongly recommend set the value from Currency enumeration.
+     * @return specific date custom base currency based {@code Exchange} objects.
+     */
     @GET("/{date}")
     Call<Exchange> getSpecificDateExchange(@Path("date") String date, @Query("base") String baseCurrency);
 }
