@@ -222,7 +222,7 @@ public class Calculator {
         while (operatorStack.size() > 0 && operatorStack.peek() != Operator.OPENBR && operatorStack.peek().getPriority() >= operator.getPriority()) {
             postfixList.push(operatorStack.pop());
         }
-        
+
         operatorStack.push(operator);
     }
 

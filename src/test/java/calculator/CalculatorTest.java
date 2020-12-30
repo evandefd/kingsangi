@@ -7,7 +7,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class CalculatorTest {
-    private static double delta = 0.0000000001;
+    private static final double delta = 0.0000000001;
 
     @Test
     public void testPostfixAdd() {
