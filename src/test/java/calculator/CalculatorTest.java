@@ -390,7 +390,151 @@ public class CalculatorTest {
         Assert.assertEquals(0, calculator.postfixCalculate(list8), 0.0000000001);
     }
 
-    //TODO asin, acos, atan
+    @Test
+    public void testPostfixAsinDeg() {
+        Calculator calculator = new Calculator();
+
+        PostfixList list1 = new PostfixList();
+        list1.add(1.0);
+        list1.add(Operator.ASIN);
+
+        PostfixList list4 = new PostfixList();
+        list4.add(0.5);
+        list4.add(Operator.ASIN);
+
+        PostfixList list5 = new PostfixList();
+        list5.add(0);
+        list5.add(Operator.ASIN);
+
+        PostfixList list6 = new PostfixList();
+        list6.add(-1.0);
+        list6.add(Operator.ASIN);
+
+        Assert.assertEquals(90, calculator.postfixCalculate(list1), 0.0000000001);
+        Assert.assertEquals(30, calculator.postfixCalculate(list4), 0.0000000001);
+        Assert.assertEquals(0, calculator.postfixCalculate(list5), 0.0000000001);
+        Assert.assertEquals(-90, calculator.postfixCalculate(list6), 0.0000000001);
+    }
+
+    @Test
+    public void testPostfixAsinRad() {
+        Calculator calculator = new Calculator(CalculateMode.RAD);
+
+        PostfixList list1 = new PostfixList();
+        list1.add(1.0);
+        list1.add(Operator.ASIN);
+
+        PostfixList list4 = new PostfixList();
+        list4.add(0.5);
+        list4.add(Operator.ASIN);
+
+        PostfixList list5 = new PostfixList();
+        list5.add(0);
+        list5.add(Operator.ASIN);
+
+        PostfixList list6 = new PostfixList();
+        list6.add(-1.0);
+        list6.add(Operator.ASIN);
+
+        Assert.assertEquals(Math.PI / 2, calculator.postfixCalculate(list1), 0.0000000001);
+        Assert.assertEquals(Math.PI / 6, calculator.postfixCalculate(list4), 0.0000000001);
+        Assert.assertEquals(0, calculator.postfixCalculate(list5), 0.0000000001);
+        Assert.assertEquals(-Math.PI / 2, calculator.postfixCalculate(list6), 0.0000000001);
+    }
+
+    @Test
+    public void testPostfixAcosDeg() {
+        Calculator calculator = new Calculator();
+
+        PostfixList list1 = new PostfixList();
+        list1.add(1.0);
+        list1.add(Operator.ACOS);
+
+        PostfixList list4 = new PostfixList();
+        list4.add(0.5);
+        list4.add(Operator.ACOS);
+
+        PostfixList list5 = new PostfixList();
+        list5.add(0);
+        list5.add(Operator.ACOS);
+
+        PostfixList list6 = new PostfixList();
+        list6.add(-1.0);
+        list6.add(Operator.ACOS);
+
+        Assert.assertEquals(0, calculator.postfixCalculate(list1), 0.0000000001);
+        Assert.assertEquals(60, calculator.postfixCalculate(list4), 0.0000000001);
+        Assert.assertEquals(90, calculator.postfixCalculate(list5), 0.0000000001);
+        Assert.assertEquals(180, calculator.postfixCalculate(list6), 0.0000000001);
+    }
+
+    @Test
+    public void testPostfixAcosRad() {
+        Calculator calculator = new Calculator(CalculateMode.RAD);
+
+        PostfixList list1 = new PostfixList();
+        list1.add(1.0);
+        list1.add(Operator.ACOS);
+
+        PostfixList list4 = new PostfixList();
+        list4.add(0.5);
+        list4.add(Operator.ACOS);
+
+        PostfixList list5 = new PostfixList();
+        list5.add(0);
+        list5.add(Operator.ACOS);
+
+        PostfixList list6 = new PostfixList();
+        list6.add(-1.0);
+        list6.add(Operator.ACOS);
+
+        Assert.assertEquals(0, calculator.postfixCalculate(list1), 0.0000000001);
+        Assert.assertEquals(Math.PI / 3, calculator.postfixCalculate(list4), 0.0000000001);
+        Assert.assertEquals(Math.PI / 2, calculator.postfixCalculate(list5), 0.0000000001);
+        Assert.assertEquals(Math.PI, calculator.postfixCalculate(list6), 0.0000000001);
+    }
+
+    @Test
+    public void testPostfixAtanDeg() {
+        Calculator calculator = new Calculator(CalculateMode.DEG);
+
+        PostfixList list1 = new PostfixList();
+        list1.add(0);
+        list1.add(Operator.ATAN);
+
+        PostfixList list2 = new PostfixList();
+        list2.add(Double.MAX_VALUE);
+        list2.add(Operator.ATAN);
+
+        PostfixList list3 = new PostfixList();
+        list3.add(1);
+        list3.add(Operator.ATAN);
+
+        Assert.assertEquals(0, calculator.postfixCalculate(list1), 0.0000000001);
+        Assert.assertEquals(90.0, calculator.postfixCalculate(list2), 0.0000000001);
+        Assert.assertEquals(45.0, calculator.postfixCalculate(list3), 0.0000000001);
+    }
+
+    @Test
+    public void testPostfixAtanRad() {
+        Calculator calculator = new Calculator(CalculateMode.RAD);
+
+        PostfixList list1 = new PostfixList();
+        list1.add(0);
+        list1.add(Operator.ATAN);
+
+        PostfixList list2 = new PostfixList();
+        list2.add(Double.MAX_VALUE);
+        list2.add(Operator.ATAN);
+
+        PostfixList list3 = new PostfixList();
+        list3.add(1);
+        list3.add(Operator.ATAN);
+
+        Assert.assertEquals(0, calculator.postfixCalculate(list1), 0.0000000001);
+        Assert.assertEquals(Math.PI / 2, calculator.postfixCalculate(list2), 0.0000000001);
+        Assert.assertEquals(Math.PI / 4, calculator.postfixCalculate(list3), 0.0000000001);
+    }
 
     @Test
     public void testPostfixLog() {
