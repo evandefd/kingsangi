@@ -26,7 +26,5 @@ public class MathUtilTest {
         Assert.assertFalse(MathUtil.isNumeric("/"));
         Assert.assertFalse(MathUtil.isNumeric("\u221A"));
         Assert.assertFalse(MathUtil.isNumeric("%"));
-
     }
-
 }

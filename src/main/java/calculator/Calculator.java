@@ -94,7 +94,7 @@ public class Calculator {
      * @param infixExpression Infix string math expression.
      * @return postfix expression list inside {@code PostfixList} object
      * @throws IllegalArgumentException When the given expression contains not supported element, or space of each element of expression.
-     * @throws ClassCastException If the element inside PostfixList is not supported element.
+     * @throws ClassCastException       If the element inside PostfixList is not supported element.
      * @see PostfixList
      */
     public PostfixList infixToPostfix(@NotNull String infixExpression) throws IllegalArgumentException, ClassCastException {
@@ -222,6 +222,7 @@ public class Calculator {
         while (operatorStack.size() > 0 && operatorStack.peek() != Operator.OPENBR && operatorStack.peek().getPriority() >= operator.getPriority()) {
             postfixList.push(operatorStack.pop());
         }
+        
         operatorStack.push(operator);
     }
 
@@ -233,6 +234,7 @@ public class Calculator {
                 switch (before.toLowerCase(Locale.ROOT)) {
                     case "pi":
                     case "e":
+                    case ")":
                         infixToPostfixOperator(Operator.MUL);
                 }
             }
@@ -250,9 +252,9 @@ public class Calculator {
      * @param infixExpression Infix string math expression.
      * @return The result of calculation
      * @throws IllegalArgumentException When the given expression contains not supported element, or space of each element of expression.
-     * @throws ClassCastException If the element inside PostfixList is not supported element.
+     * @throws ClassCastException       If the element inside PostfixList is not supported element.
      */
-    public double calculate(@NotNull String infixExpression) throws IllegalArgumentException, ClassCastException{
+    public double calculate(@NotNull String infixExpression) throws IllegalArgumentException, ClassCastException {
         return postfixCalculate(infixToPostfix(infixExpression));
     }
 
@@ -401,7 +403,7 @@ public class Calculator {
      * Set calculate mode to {@code CalculatorMode.DEG} or {@code CalculatorMode.DEG}.
      *
      * @param calculateMode <p>{@code CalculateMode.DEG} : Calculate trigonometric function as Degree.<br>
-     *                           {@code CalculateMode.RAD} : Calculate trigonometric function as Radian.</p>
+     *                      {@code CalculateMode.RAD} : Calculate trigonometric function as Radian.</p>
      */
     public void setCalculateMode(CalculateMode calculateMode) {
         this.calculateMode = calculateMode;

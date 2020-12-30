@@ -33,6 +33,7 @@ public class MathUtil {
         if (str == null) {
             return false;
         }
+
         return pattern.matcher(str).matches();
     }
 }
