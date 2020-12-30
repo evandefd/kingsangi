@@ -2,8 +2,7 @@ package calculator;
 
 import calculator.enums.CalculateMode;
 import calculator.enums.Operator;
-import calculator.list.CalculatorList;
-import junit.framework.TestCase;
+import calculator.list.PostfixList;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -13,7 +12,7 @@ public class CalculatorTest {
     public void testPostfixAdd() {
         Calculator calculator = new Calculator();
 
-        CalculatorList list1 = new CalculatorList();
+        PostfixList list1 = new PostfixList();
         list1.add(3);
         list1.add(5);
         list1.add(Operator.ADD);
@@ -25,7 +24,7 @@ public class CalculatorTest {
     public void testPostfixSub() {
         Calculator calculator = new Calculator();
 
-        CalculatorList list1 = new CalculatorList();
+        PostfixList list1 = new PostfixList();
         list1.add(3);
         list1.add(5);
         list1.add(Operator.SUB);
@@ -37,7 +36,7 @@ public class CalculatorTest {
     public void testPostfixMul() {
         Calculator calculator = new Calculator();
 
-        CalculatorList list1 = new CalculatorList();
+        PostfixList list1 = new PostfixList();
         list1.add(3);
         list1.add(5);
         list1.add(Operator.MUL);
@@ -49,7 +48,7 @@ public class CalculatorTest {
     public void testPostfixDiv() {
         Calculator calculator = new Calculator();
 
-        CalculatorList list1 = new CalculatorList();
+        PostfixList list1 = new PostfixList();
         list1.add(3);
         list1.add(5);
         list1.add(Operator.DIV);
@@ -61,7 +60,7 @@ public class CalculatorTest {
     public void testPostfixAddSubMul() {
         Calculator calculator = new Calculator();
 
-        CalculatorList list1 = new CalculatorList();
+        PostfixList list1 = new PostfixList();
         list1.add(3);
         list1.add(5);
         list1.add(8);
@@ -77,7 +76,7 @@ public class CalculatorTest {
     public void testPostfixAddSubMulDiv() {
         Calculator calculator = new Calculator();
 
-        CalculatorList list1 = new CalculatorList();
+        PostfixList list1 = new PostfixList();
         list1.add(3);
         list1.add(5);
         list1.add(8);
@@ -95,7 +94,7 @@ public class CalculatorTest {
     public void testPostfixSqrt() {
         Calculator calculator = new Calculator();
 
-        CalculatorList list1 = new CalculatorList();
+        PostfixList list1 = new PostfixList();
         list1.add(2);
         list1.add(Operator.SQRT);
 
@@ -106,7 +105,7 @@ public class CalculatorTest {
     public void testPostfixFact() {
         Calculator calculator = new Calculator();
 
-        CalculatorList list1 = new CalculatorList();
+        PostfixList list1 = new PostfixList();
         list1.add(6);
         list1.add(Operator.FACT);
 
@@ -117,35 +116,35 @@ public class CalculatorTest {
     public void testPostfixSinDeg() {
         Calculator calculator = new Calculator();
 
-        CalculatorList list1 = new CalculatorList();
+        PostfixList list1 = new PostfixList();
         list1.add(0);
         list1.add(Operator.SIN);
 
-        CalculatorList list2 = new CalculatorList();
+        PostfixList list2 = new PostfixList();
         list2.add(30);
         list2.add(Operator.SIN);
 
-        CalculatorList list3 = new CalculatorList();
+        PostfixList list3 = new PostfixList();
         list3.add(45);
         list3.add(Operator.SIN);
 
-        CalculatorList list4 = new CalculatorList();
+        PostfixList list4 = new PostfixList();
         list4.add(60);
         list4.add(Operator.SIN);
 
-        CalculatorList list5 = new CalculatorList();
+        PostfixList list5 = new PostfixList();
         list5.add(90);
         list5.add(Operator.SIN);
 
-        CalculatorList list6 = new CalculatorList();
+        PostfixList list6 = new PostfixList();
         list6.add(180);
         list6.add(Operator.SIN);
 
-        CalculatorList list7 = new CalculatorList();
+        PostfixList list7 = new PostfixList();
         list7.add(270);
         list7.add(Operator.SIN);
 
-        CalculatorList list8 = new CalculatorList();
+        PostfixList list8 = new PostfixList();
         list8.add(360);
         list8.add(Operator.SIN);
 
@@ -164,35 +163,35 @@ public class CalculatorTest {
     public void testPostfixSinRad() {
         Calculator calculator = new Calculator(CalculateMode.RAD);
 
-        CalculatorList list1 = new CalculatorList();
+        PostfixList list1 = new PostfixList();
         list1.add(0);
         list1.add(Operator.SIN);
 
-        CalculatorList list2 = new CalculatorList();
+        PostfixList list2 = new PostfixList();
         list2.add(Math.PI / 6);
         list2.add(Operator.SIN);
 
-        CalculatorList list3 = new CalculatorList();
+        PostfixList list3 = new PostfixList();
         list3.add(Math.PI / 4);
         list3.add(Operator.SIN);
 
-        CalculatorList list4 = new CalculatorList();
+        PostfixList list4 = new PostfixList();
         list4.add(Math.PI / 3);
         list4.add(Operator.SIN);
 
-        CalculatorList list5 = new CalculatorList();
+        PostfixList list5 = new PostfixList();
         list5.add(Math.PI / 2);
         list5.add(Operator.SIN);
 
-        CalculatorList list6 = new CalculatorList();
+        PostfixList list6 = new PostfixList();
         list6.add(Math.PI);
         list6.add(Operator.SIN);
 
-        CalculatorList list7 = new CalculatorList();
+        PostfixList list7 = new PostfixList();
         list7.add(Math.PI * 1.5);
         list7.add(Operator.SIN);
 
-        CalculatorList list8 = new CalculatorList();
+        PostfixList list8 = new PostfixList();
         list8.add(Math.PI * 2);
         list8.add(Operator.SIN);
 
@@ -211,35 +210,35 @@ public class CalculatorTest {
     public void testPostfixCosDeg() {
         Calculator calculator = new Calculator();
 
-        CalculatorList list1 = new CalculatorList();
+        PostfixList list1 = new PostfixList();
         list1.add(0);
         list1.add(Operator.COS);
 
-        CalculatorList list2 = new CalculatorList();
+        PostfixList list2 = new PostfixList();
         list2.add(30);
         list2.add(Operator.COS);
 
-        CalculatorList list3 = new CalculatorList();
+        PostfixList list3 = new PostfixList();
         list3.add(45);
         list3.add(Operator.COS);
 
-        CalculatorList list4 = new CalculatorList();
+        PostfixList list4 = new PostfixList();
         list4.add(60);
         list4.add(Operator.COS);
 
-        CalculatorList list5 = new CalculatorList();
+        PostfixList list5 = new PostfixList();
         list5.add(90);
         list5.add(Operator.COS);
 
-        CalculatorList list6 = new CalculatorList();
+        PostfixList list6 = new PostfixList();
         list6.add(180);
         list6.add(Operator.COS);
 
-        CalculatorList list7 = new CalculatorList();
+        PostfixList list7 = new PostfixList();
         list7.add(270);
         list7.add(Operator.COS);
 
-        CalculatorList list8 = new CalculatorList();
+        PostfixList list8 = new PostfixList();
         list8.add(360);
         list8.add(Operator.COS);
 
@@ -258,35 +257,35 @@ public class CalculatorTest {
     public void testPostfixCosRad() {
         Calculator calculator = new Calculator(CalculateMode.RAD);
 
-        CalculatorList list1 = new CalculatorList();
+        PostfixList list1 = new PostfixList();
         list1.add(0);
         list1.add(Operator.COS);
 
-        CalculatorList list2 = new CalculatorList();
+        PostfixList list2 = new PostfixList();
         list2.add(Math.PI / 6);
         list2.add(Operator.COS);
 
-        CalculatorList list3 = new CalculatorList();
+        PostfixList list3 = new PostfixList();
         list3.add(Math.PI / 4);
         list3.add(Operator.COS);
 
-        CalculatorList list4 = new CalculatorList();
+        PostfixList list4 = new PostfixList();
         list4.add(Math.PI / 3);
         list4.add(Operator.COS);
 
-        CalculatorList list5 = new CalculatorList();
+        PostfixList list5 = new PostfixList();
         list5.add(Math.PI / 2);
         list5.add(Operator.COS);
 
-        CalculatorList list6 = new CalculatorList();
+        PostfixList list6 = new PostfixList();
         list6.add(Math.PI);
         list6.add(Operator.COS);
 
-        CalculatorList list7 = new CalculatorList();
+        PostfixList list7 = new PostfixList();
         list7.add(Math.PI * 1.5);
         list7.add(Operator.COS);
 
-        CalculatorList list8 = new CalculatorList();
+        PostfixList list8 = new PostfixList();
         list8.add(Math.PI * 2);
         list8.add(Operator.COS);
 
@@ -305,35 +304,35 @@ public class CalculatorTest {
     public void testPostfixTanDeg() {
         Calculator calculator = new Calculator();
 
-        CalculatorList list1 = new CalculatorList();
+        PostfixList list1 = new PostfixList();
         list1.add(0);
         list1.add(Operator.TAN);
 
-        CalculatorList list2 = new CalculatorList();
+        PostfixList list2 = new PostfixList();
         list2.add(30);
         list2.add(Operator.TAN);
 
-        CalculatorList list3 = new CalculatorList();
+        PostfixList list3 = new PostfixList();
         list3.add(45);
         list3.add(Operator.TAN);
 
-        CalculatorList list4 = new CalculatorList();
+        PostfixList list4 = new PostfixList();
         list4.add(60);
         list4.add(Operator.TAN);
 
-        CalculatorList list5 = new CalculatorList();
+        PostfixList list5 = new PostfixList();
         list5.add(90);
         list5.add(Operator.TAN);
 
-        CalculatorList list6 = new CalculatorList();
+        PostfixList list6 = new PostfixList();
         list6.add(180);
         list6.add(Operator.TAN);
 
-        CalculatorList list7 = new CalculatorList();
+        PostfixList list7 = new PostfixList();
         list7.add(270);
         list7.add(Operator.TAN);
 
-        CalculatorList list8 = new CalculatorList();
+        PostfixList list8 = new PostfixList();
         list8.add(360);
         list8.add(Operator.TAN);
 
@@ -350,35 +349,35 @@ public class CalculatorTest {
     public void testPostfixTanRad() {
         Calculator calculator = new Calculator(CalculateMode.RAD);
 
-        CalculatorList list1 = new CalculatorList();
+        PostfixList list1 = new PostfixList();
         list1.add(0);
         list1.add(Operator.TAN);
 
-        CalculatorList list2 = new CalculatorList();
+        PostfixList list2 = new PostfixList();
         list2.add(Math.PI / 6);
         list2.add(Operator.TAN);
 
-        CalculatorList list3 = new CalculatorList();
+        PostfixList list3 = new PostfixList();
         list3.add(Math.PI / 4);
         list3.add(Operator.TAN);
 
-        CalculatorList list4 = new CalculatorList();
+        PostfixList list4 = new PostfixList();
         list4.add(Math.PI / 3);
         list4.add(Operator.TAN);
 
-        CalculatorList list5 = new CalculatorList();
+        PostfixList list5 = new PostfixList();
         list5.add(Math.PI / 2);
         list5.add(Operator.TAN);
 
-        CalculatorList list6 = new CalculatorList();
+        PostfixList list6 = new PostfixList();
         list6.add(Math.PI);
         list6.add(Operator.TAN);
 
-        CalculatorList list7 = new CalculatorList();
+        PostfixList list7 = new PostfixList();
         list7.add(Math.PI * 1.5);
         list7.add(Operator.TAN);
 
-        CalculatorList list8 = new CalculatorList();
+        PostfixList list8 = new PostfixList();
         list8.add(Math.PI * 2);
         list8.add(Operator.TAN);
 
@@ -397,7 +396,7 @@ public class CalculatorTest {
     public void testPostfixLog() {
         Calculator calculator = new Calculator();
 
-        CalculatorList list1 = new CalculatorList();
+        PostfixList list1 = new PostfixList();
         list1.add(1000);
         list1.add(Operator.LOG);
 
@@ -408,11 +407,11 @@ public class CalculatorTest {
     public void testPostfixLn() {
         Calculator calculator = new Calculator();
 
-        CalculatorList list1 = new CalculatorList();
+        PostfixList list1 = new PostfixList();
         list1.add(Math.E * Math.E * Math.E * Math.E);
         list1.add(Operator.LN);
 
-        CalculatorList list2 = new CalculatorList();
+        PostfixList list2 = new PostfixList();
         list2.add(Math.pow(2.7182818284, 4));
         list2.add(Operator.LN);
 
@@ -424,7 +423,7 @@ public class CalculatorTest {
     public void testPostfixPer() {
         Calculator calculator = new Calculator();
 
-        CalculatorList list1 = new CalculatorList();
+        PostfixList list1 = new PostfixList();
         list1.add(45.6);
         list1.add(Operator.PER);
 

@@ -2,7 +2,7 @@ package calculator;
 
 import calculator.enums.CalculateMode;
 import calculator.enums.Operator;
-import calculator.list.CalculatorList;
+import calculator.list.PostfixList;
 import org.jetbrains.annotations.NotNull;
 
 import java.text.DecimalFormat;
@@ -34,7 +34,7 @@ public class Calculator {
 
     private Stack<Double> numberStack;
 
-    private CalculatorList calculatorList;
+    private PostfixList postfixList;
     private LinkedList<Operator> operatorStack;
 
     /**
@@ -92,34 +92,34 @@ public class Calculator {
      * {@code "3 sin ( pi / 2 ) ln e ^ 2"}</p>
      *
      * @param infixExpression Infix string math expression.
-     * @return postfix expression list inside {@code CalculatorList} object
+     * @return postfix expression list inside {@code PostfixList} object
      * @throws IllegalArgumentException When the given expression contains not supported element, or space of each element of expression.
-     * @throws ClassCastException If the element inside CalculatorList is not supported element.
-     * @see CalculatorList
+     * @throws ClassCastException If the element inside PostfixList is not supported element.
+     * @see PostfixList
      */
-    public CalculatorList infixToPostfix(@NotNull String infixExpression) throws IllegalArgumentException, ClassCastException {
-        calculatorList = new CalculatorList();
+    public PostfixList infixToPostfix(@NotNull String infixExpression) throws IllegalArgumentException, ClassCastException {
+        postfixList = new PostfixList();
         operatorStack = new LinkedList<>();
         String before = null;
         infixExpression = infixExpression.replaceAll(" {2,}", " ");
         for (String expr : infixExpression.split(" ")) {
             //If the first expr is '-', insert 0 before being inserted '-'
             if (before == null && expr.equals("-")) {
-                calculatorList.push(0.0);
+                postfixList.push(0.0);
             }
 
             if (MathUtil.isNumeric(expr)) { //When the expr is numeric
-                calculatorList.push(Double.parseDouble(expr));
+                postfixList.push(Double.parseDouble(expr));
             } else {
                 switch (expr.toLowerCase(Locale.ROOT)) {
                     //When the expr is numeric but included non-number
                     case "pi":
                         putMulIfMoj(before);
-                        calculatorList.push(Math.PI);
+                        postfixList.push(Math.PI);
                         break;
                     case "e":
                         putMulIfMoj(before);
-                        calculatorList.push(Math.E);
+                        postfixList.push(Math.E);
                         break;
 
                     case "(": //When the expr is (
@@ -128,7 +128,7 @@ public class Calculator {
                         break;
                     case ")": //When the expr is )
                         while (operatorStack.peek() != Operator.OPENBR) {
-                            calculatorList.push(operatorStack.pop());
+                            postfixList.push(operatorStack.pop());
                         }
                         operatorStack.pop();
                         break;
@@ -210,17 +210,17 @@ public class Calculator {
         }
 
         while (operatorStack.size() != 0) {
-            calculatorList.push(operatorStack.pop());
+            postfixList.push(operatorStack.pop());
         }
 
-        Collections.reverse(calculatorList);
+        Collections.reverse(postfixList);
 
-        return calculatorList;
+        return postfixList;
     }
 
     private void infixToPostfixOperator(Operator operator) {
         while (operatorStack.size() > 0 && operatorStack.peek() != Operator.OPENBR && operatorStack.peek().getPriority() >= operator.getPriority()) {
-            calculatorList.push(operatorStack.pop());
+            postfixList.push(operatorStack.pop());
         }
         operatorStack.push(operator);
     }
@@ -250,20 +250,20 @@ public class Calculator {
      * @param infixExpression Infix string math expression.
      * @return The result of calculation
      * @throws IllegalArgumentException When the given expression contains not supported element, or space of each element of expression.
-     * @throws ClassCastException If the element inside CalculatorList is not supported element.
+     * @throws ClassCastException If the element inside PostfixList is not supported element.
      */
     public double calculate(@NotNull String infixExpression) throws IllegalArgumentException, ClassCastException{
         return postfixCalculate(infixToPostfix(infixExpression));
     }
 
     /**
-     * <p>Calculate postfix expression {@code CalculatorList}</p>
+     * <p>Calculate postfix expression {@code PostfixList}</p>
      *
-     * @param expr postfix expression {@code CalculatorList} object
+     * @param expr postfix expression {@code PostfixList} object
      * @return The result of calculation
-     * @throws ClassCastException If the element inside CalculatorList is not supported element.
+     * @throws ClassCastException If the element inside PostfixList is not supported element.
      */
-    public double postfixCalculate(@NotNull CalculatorList expr) throws ClassCastException {
+    public double postfixCalculate(@NotNull PostfixList expr) throws ClassCastException {
         numberStack = new Stack<>();
 
         for (Object value : expr) {

@@ -7,10 +7,10 @@ import java.util.LinkedList;
 
 /**
  * <p>
- * The {@code CalculatorList} class is the custom LinkedList class that can be added only {@code double} and {@code Operator} objects.
+ * The {@code PostfixList} class is the custom LinkedList class that can be added only {@code double} and {@code Operator} objects.
  * </p>
  */
-public class CalculatorList extends LinkedList<Object> {
+public class PostfixList extends LinkedList<Object> {
     private static final long serialVersionUID = 5089839441432360300L;
 
     /**
@@ -117,7 +117,7 @@ public class CalculatorList extends LinkedList<Object> {
 
     private void checkTypeOrThrow(Object o) {
         if (!(o instanceof Number) && !(o instanceof Operator)) {
-            throw new IllegalArgumentException("CalculatorList only can add a Number or Operator object.");
+            throw new IllegalArgumentException("PostfixList only can add a Number or Operator object.");
         }
     }
 }
