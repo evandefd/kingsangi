@@ -15,22 +15,22 @@ public enum AreaUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case HECTARE:
-                    calculateValue = 0.4046856422;
+                    calculateValue = 0.40468564224;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
-                case SQUARE_CENTIMETER:
+                case SQUARECENTIMETER:
                     calculateValue = 40468564.224;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
-                case SQUARE_FEET:
+                case SQUAREFEET:
                     calculateValue = 43560;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
-                case SQUARE_INCH:
+                case SQUAREINCH:
                     calculateValue = 6272640;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
-                case SQUARE_METER:
+                case SQUAREMETER:
                     calculateValue = 4046.8564224;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
@@ -59,19 +59,19 @@ public enum AreaUnit {
                     calculateValue = 0.01;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
-                case SQUARE_CENTIMETER:
-                    calculateValue = 1000;
+                case SQUARECENTIMETER:
+                    calculateValue = 1000000;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
-                case SQUARE_FEET:
+                case SQUAREFEET:
                     calculateValue = 1076.391041671;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
-                case SQUARE_INCH:
+                case SQUAREINCH:
                     calculateValue = 155000.31000062;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
-                case SQUARE_METER:
+                case SQUAREMETER:
                     calculateValue = 100;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
@@ -100,19 +100,19 @@ public enum AreaUnit {
                 case HECTARE:
                     calculatedValue = value;
                     return calculatedValue;
-                case SQUARE_CENTIMETER:
-                    calculateValue = 100000;
+                case SQUARECENTIMETER:
+                    calculateValue = Math.pow(10, 8);
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
-                case SQUARE_FEET:
+                case SQUAREFEET:
                     calculateValue = 107639.1041671;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
-                case SQUARE_INCH:
+                case SQUAREINCH:
                     calculateValue = 15500031.000062;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
-                case SQUARE_METER:
+                case SQUAREMETER:
                     calculateValue = 10000;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
@@ -124,7 +124,7 @@ public enum AreaUnit {
             throw new IllegalArgumentException();
         }
     },
-    SQUARE_CENTIMETER{
+    SQUARECENTIMETER{
         @Override
         public double convert(double value, AreaUnit areaUnit) throws IllegalArgumentException{
             double calculateValue;
@@ -142,18 +142,18 @@ public enum AreaUnit {
                     calculateValue = Math.pow(10, -8);
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
-                case SQUARE_CENTIMETER:
+                case SQUARECENTIMETER:
                     calculatedValue = value;
                     return calculatedValue;
-                case SQUARE_FEET:
-                    calculateValue = 0.00107391;
+                case SQUAREFEET:
+                    calculateValue = 0.001076391;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
-                case SQUARE_INCH:
-                    calculateValue = 0.15500031;
+                case SQUAREINCH:
+                    calculateValue = 0.15500031000062;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
-                case SQUARE_METER:
+                case SQUAREMETER:
                     calculateValue = 0.0001;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
@@ -165,14 +165,14 @@ public enum AreaUnit {
             throw new IllegalArgumentException();
         }
     },
-    SQUARE_FEET{
+    SQUAREFEET{
         @Override
         public double convert(double value, AreaUnit areaUnit) throws IllegalArgumentException{
             double calculateValue;
             double calculatedValue;
             switch (areaUnit) {
                 case ACRE:
-                    calculateValue = 0.0000229568;
+                    calculateValue = 0.000022956841138659;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case ARE:
@@ -183,18 +183,18 @@ public enum AreaUnit {
                     calculateValue = 0.0000092903;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
-                case SQUARE_CENTIMETER:
+                case SQUARECENTIMETER:
                     calculateValue = 929.0304;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
-                case SQUARE_FEET:
+                case SQUAREFEET:
                     calculatedValue = value;
                     return calculatedValue;
-                case SQUARE_INCH:
+                case SQUAREINCH:
                     calculateValue = 144;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
-                case SQUARE_METER:
+                case SQUAREMETER:
                     calculateValue = 0.09290304;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
@@ -206,14 +206,14 @@ public enum AreaUnit {
             throw new IllegalArgumentException();
         }
     },
-    SQUARE_INCH{
+    SQUAREINCH{
         @Override
         public double convert(double value, AreaUnit areaUnit) throws IllegalArgumentException{
             double calculateValue;
             double calculatedValue;
             switch (areaUnit) {
                 case ACRE:
-                    calculateValue = 1.59422508 * Math.pow(10, -7);
+                    calculateValue = 1.5942250790736 * Math.pow(10, -7);
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case ARE:
@@ -224,30 +224,30 @@ public enum AreaUnit {
                     calculateValue = 6.45160000 * Math.pow(10, -8);
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
-                case SQUARE_CENTIMETER:
+                case SQUARECENTIMETER:
                     calculateValue = 6.4516;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
-                case SQUARE_FEET:
+                case SQUAREFEET:
                     calculateValue = 0.0069444444;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
-                case SQUARE_INCH:
+                case SQUAREINCH:
                     calculatedValue = value;
                     return calculatedValue;
-                case SQUARE_METER:
+                case SQUAREMETER:
                     calculateValue = 0.00064516;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case PYEONG:
-                    calculateValue = 0.0001951609;
+                    calculateValue = 0.000195161;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
             }
             throw new IllegalArgumentException();
         }
     },
-    SQUARE_METER{
+    SQUAREMETER{
         @Override
         public double convert(double value, AreaUnit areaUnit) throws IllegalArgumentException{
             double calculateValue;
@@ -265,19 +265,19 @@ public enum AreaUnit {
                     calculateValue = 0.0001;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
-                case SQUARE_CENTIMETER:
+                case SQUARECENTIMETER:
                     calculateValue = 10000;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
-                case SQUARE_FEET:
+                case SQUAREFEET:
                     calculateValue = 10.7639104167;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
-                case SQUARE_INCH:
+                case SQUAREINCH:
                     calculateValue = 1550.0031000062;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
-                case SQUARE_METER:
+                case SQUAREMETER:
                     calculatedValue = value;
                     return calculatedValue;
                 case PYEONG:
@@ -306,19 +306,19 @@ public enum AreaUnit {
                     calculateValue = 0.0003305785;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
-                case SQUARE_CENTIMETER:
+                case SQUARECENTIMETER:
                     calculateValue = 33057.85;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
-                case SQUARE_FEET:
+                case SQUAREFEET:
                     calculateValue = 35.5831735969;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
-                case SQUARE_INCH:
+                case SQUAREINCH:
                     calculateValue = 5123.946997954;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
-                case SQUARE_METER:
+                case SQUAREMETER:
                     calculateValue = 3.305785;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;

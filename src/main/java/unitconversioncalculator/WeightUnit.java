@@ -10,11 +10,11 @@ public enum WeightUnit {
                 case TON: 
                     calculatedValue = value;
                     return calculatedValue;
-                case BRITISH_TON:
+                case BRITISHTON:
                     calculateValue = 1.016;
                     calculatedValue = value / calculateValue;
                     return calculatedValue;
-                case US_TON:
+                case USTON:
                     calculateValue = 1.1023113109;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
@@ -38,7 +38,7 @@ public enum WeightUnit {
             throw new IllegalArgumentException();
         }
     },
-    BRITISH_TON{
+    BRITISHTON{
         @Override
         public double convert(double value, WeightUnit weightUnit) throws IllegalArgumentException{
             double calculateValue;
@@ -48,10 +48,10 @@ public enum WeightUnit {
                     calculateValue = 1.0160469088;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
-                case BRITISH_TON: 
+                case BRITISHTON: 
                     calculatedValue = value;
                     return calculatedValue;
-                case US_TON: 
+                case USTON: 
                     calculateValue = 1.12;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
@@ -75,7 +75,7 @@ public enum WeightUnit {
             throw new IllegalArgumentException();
         }
     },
-    US_TON{
+    USTON{
         @Override
         public double convert(double value, WeightUnit weightUnit) throws IllegalArgumentException{
             double calculateValue;
@@ -85,11 +85,11 @@ public enum WeightUnit {
                     calculateValue = 1.102;
                     calculatedValue = value / calculateValue;
                     return calculatedValue;
-                case BRITISH_TON:
+                case BRITISHTON:
                     calculateValue = 1.12;
                     calculatedValue = value / calculateValue;
                     return calculatedValue;
-                case US_TON:
+                case USTON:
                     calculatedValue = value;
                     return calculatedValue;
                 case POUND:
@@ -122,11 +122,11 @@ public enum WeightUnit {
                     calculateValue = 2205;
                     calculatedValue = value / calculateValue;
                     return calculatedValue;
-                case BRITISH_TON:
+                case BRITISHTON:
                     calculateValue = 2240;
                     calculatedValue = value / calculateValue;
                     return calculatedValue;
-                case US_TON:
+                case USTON:
                     calculateValue = 2000;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
@@ -159,11 +159,11 @@ public enum WeightUnit {
                     calculateValue = 35274;
                     calculatedValue = value / calculateValue;
                     return calculatedValue;
-                case BRITISH_TON:
+                case BRITISHTON:
                     calculateValue = 35840;
                     calculatedValue = value / calculateValue;
                     return calculatedValue;
-                case US_TON:
+                case USTON:
                     calculateValue = 32000;
                     calculatedValue = value / calculateValue;
                     return calculatedValue;
@@ -196,11 +196,11 @@ public enum WeightUnit {
                     calculateValue = 1000;
                     calculatedValue = value / calculateValue;
                     return calculatedValue;
-                case BRITISH_TON:
+                case BRITISHTON:
                     calculateValue = 1016;
                     calculatedValue = value / calculateValue;
                     return calculatedValue;
-                case US_TON:
+                case USTON:
                     calculateValue = 907;
                     calculatedValue = value / calculateValue;
                     return calculatedValue;
@@ -233,11 +233,11 @@ public enum WeightUnit {
                     calculateValue = 0.000001;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
-                case BRITISH_TON:
+                case BRITISHTON:
                     calculateValue = 1.013 * Math.pow(10, 6);
                     calculatedValue = value / calculateValue;
                     return calculatedValue;
-                case US_TON:
+                case USTON:
                     calculateValue = 907185;
                     calculatedValue = value / calculateValue;
                     return calculatedValue;
