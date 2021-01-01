@@ -22,6 +22,10 @@ public enum FrequencyUnit {
                     calculateValue = Math.pow(10, -9);
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
+                case TERAHERTZ:
+                    calculateValue = Math.pow(10, -12);
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
             }
             throw new IllegalArgumentException();
         }
@@ -45,6 +49,10 @@ public enum FrequencyUnit {
                     return calculatedValue;
                 case GIGAHERTZ:
                     calculateValue = Math.pow(10, -6);
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
+                case TERAHERTZ:
+                    calculateValue = Math.pow(10, -9);
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
             }
@@ -72,6 +80,10 @@ public enum FrequencyUnit {
                     calculateValue = 0.001;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
+                case TERAHERTZ:
+                    calculateValue = Math.pow(10, -6);
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
             }
             throw new IllegalArgumentException();
         }
@@ -95,6 +107,39 @@ public enum FrequencyUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case GIGAHERTZ:
+                    calculatedValue = value;
+                    return calculatedValue;
+                case TERAHERTZ:
+                    calculateValue = 0.001;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
+            }
+            throw new IllegalArgumentException();
+        }
+    },
+    TERAHERTZ{
+        @Override
+        public double convert(double value, FrequencyUnit frequencyUnit) {
+            double calculateValue;
+            double calculatedValue;
+            switch (frequencyUnit) {
+                case HERTZ:
+                    calculateValue = Math.pow(10, 12);
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
+                case KILOHERTZ:
+                    calculateValue = Math.pow(10, 9);
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
+                case MEGAHERTZ:
+                    calculateValue = Math.pow(10, 6);
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
+                case GIGAHERTZ:
+                    calculateValue = 1000;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
+                case TERAHERTZ:
                     calculatedValue = value;
                     return calculatedValue;
             }
