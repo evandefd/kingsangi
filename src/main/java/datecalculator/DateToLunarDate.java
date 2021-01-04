@@ -10,7 +10,7 @@ public class DateToLunarDate {
 
     public static final int different = 2637; //음력과 양력간 년수 차이
 
-    public static String dateToLunarDate(long millisecond){
+    public static long dateToLunarDate(long millisecond){
         DateFormat dfm = SimpleDateFormat.getDateInstance(DateFormat.DEFAULT);
 
         Calendar cal = Calendar.getInstance();
@@ -26,12 +26,10 @@ public class DateToLunarDate {
 
         cal.set(year,month,day);
 
-        String str = dfm.format(cal.getTime());
-
-        return str;
+        return cal.getTimeInMillis();
     }
 
-    public static String lunarDateToDate (long millisecond){ //음력을 양력으로 변환
+    public static long lunarDateToDate (long millisecond){ //음력을 양력으로 변환
         DateFormat dfm = SimpleDateFormat.getDateInstance(DateFormat.DEFAULT);
 
         Calendar cal = Calendar.getInstance();
@@ -44,10 +42,7 @@ public class DateToLunarDate {
         chineseCalendar.set(ChineseCalendar.DAY_OF_MONTH,cal.get(Calendar.DAY_OF_MONTH));
 
         cal.setTimeInMillis(chineseCalendar.getTimeInMillis());
-
-        String str = dfm.format(cal.getTime());
-
-        return str;
+        return cal.getTimeInMillis();
 
     }
 }
