@@ -1,12 +1,10 @@
-package datecalculator;
-
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-public class Holiday {
+public class DayOff {
     public static final int NEWYEAR = 0;
     public static final int LUNARNEWYEAR = 1;
     public static final int INDEPENDENCEMOVEMENTDAY = 2;
@@ -106,7 +104,7 @@ public class Holiday {
         Calendar calendar = Calendar.getInstance();
         Date lunarNewYear=new Date();
         calendar.set(year,0,1);
-        lunarNewYear.setTime(datecalculator.DateToLunarDate.lunarDateToDate(calendar.getTimeInMillis()));
+        lunarNewYear.setTime(DateToLunarDate.lunarDateToDate(calendar.getTimeInMillis()));
         calendar.setTime(lunarNewYear);
         return calendar.getTimeInMillis();
     }
@@ -122,7 +120,7 @@ public class Holiday {
         Calendar calendar = Calendar.getInstance();
         Date thanksgiving=new Date();
         calendar.set(year,7,15);
-        thanksgiving.setTime(datecalculator.DateToLunarDate.lunarDateToDate(calendar.getTimeInMillis()));
+        thanksgiving.setTime(DateToLunarDate.lunarDateToDate(calendar.getTimeInMillis()));
         calendar.setTime(thanksgiving);
         return calendar.getTimeInMillis();
     }
@@ -131,7 +129,7 @@ public class Holiday {
         Calendar calendar = Calendar.getInstance();
         Date buddhasDay=new Date();
         calendar.set(year,3,8);
-        buddhasDay.setTime(datecalculator.DateToLunarDate.lunarDateToDate(calendar.getTimeInMillis()));
+        buddhasDay.setTime(DateToLunarDate.lunarDateToDate(calendar.getTimeInMillis()));
         calendar.setTime(buddhasDay);
         return calendar.getTimeInMillis();
     }
