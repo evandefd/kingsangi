@@ -14,7 +14,7 @@ public class ExchangeTest {
 
     @Test
     public void testGetBaseCurrency() {
-        ExchangeAPIClient.getExchangeFactory().getSpecificDateExchange("2010-01-12", Currency.USD.name())
+        ExchangeAPIClient.getAPIExchangeFactory().getSpecificDateExchange("2010-01-12", Currency.USD.name())
                 .enqueue(new Callback<>() {
                     @Override
                     public void onResponse(Call<Exchange> call, Response<Exchange> response) {
@@ -35,7 +35,7 @@ public class ExchangeTest {
 
     @Test
     public void testGetExchangeRate() {
-        ExchangeAPIClient.getExchangeFactory().getSpecificDateExchange("2010-01-12", Currency.USD.name())
+        ExchangeAPIClient.getAPIExchangeFactory().getSpecificDateExchange("2010-01-12", Currency.USD.name())
                 .enqueue(new Callback<>() {
                     @Override
                     public void onResponse(Call<Exchange> call, Response<Exchange> response) {
@@ -56,7 +56,7 @@ public class ExchangeTest {
 
     @Test
     public void testConvertWithExchangeRate() {
-        ExchangeAPIClient.getExchangeFactory().getSpecificDateExchange("2010-01-12", Currency.USD.name())
+        ExchangeAPIClient.getAPIExchangeFactory().getSpecificDateExchange("2010-01-12", Currency.USD.name())
                 .enqueue(new Callback<>() {
                     @Override
                     public void onResponse(Call<Exchange> call, Response<Exchange> response) {
@@ -77,7 +77,7 @@ public class ExchangeTest {
 
     @Test
     public void testGetDateTime() {
-        ExchangeAPIClient.getExchangeFactory().getSpecificDateExchange("2010-01-12", Currency.USD.name())
+        ExchangeAPIClient.getAPIExchangeFactory().getSpecificDateExchange("2010-01-12", Currency.USD.name())
                 .enqueue(new Callback<>() {
                     @Override
                     public void onResponse(Call<Exchange> call, Response<Exchange> response) {

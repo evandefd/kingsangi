@@ -7,6 +7,6 @@ import static org.junit.Assert.*;
 public class ExchangeAPIClientTest {
     @Test
     public void testGetExchangeFactory() {
-        assertNotEquals(ExchangeAPIClient.getExchangeFactory(), null);
+        assertNotEquals(ExchangeAPIClient.getAPIExchangeFactory(), null);
     }
 }

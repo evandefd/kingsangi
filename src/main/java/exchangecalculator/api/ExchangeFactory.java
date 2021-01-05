@@ -1,51 +1,75 @@
 package exchangecalculator.api;
 
+import exchangecalculator.Currency;
+import org.joda.time.DateTime;
 import retrofit2.Call;
-import retrofit2.http.GET;
-import retrofit2.http.Path;
-import retrofit2.http.Query;
+import retrofit2.Callback;
+import retrofit2.Response;
 
-/**
- * The {@code ExchangeFactory} interface is used to get proper {@code Exchange} object.
- *
- * <p>Based on Retrofit2</p>
- *
- * @see Exchange
- */
-public interface ExchangeFactory {
+public class ExchangeFactory {
+
+    private static ExchangeListener exchangeListener;
+
+    private static Callback<Exchange> callback = new Callback<>() {
+        @Override
+        public void onResponse(Call<Exchange> call, Response<Exchange> response) {
+            if (response.isSuccessful()) {
+                exchangeListener.onSuccess(response.body());
+            } else {
+                exchangeListener.onFailure(new Exception());
+            }
+        }
+
+        @Override
+        public void onFailure(Call<Exchange> call, Throwable t) {
+            exchangeListener.onFailure(t);
+        }
+    };
 
     /**
      * Get latest(today) EUR based {@code Exchange} object.
      *
-     * @return latest(today) EUR based {@code Exchange} object
+     * @param exchangeListener an ExchangeListener interface.
+     * @see ExchangeListener
      */
-    @GET("/latest")
-    Call<Exchange> getLatestExchange();
+    public static void getLatestExchange(ExchangeListener exchangeListener) {
+        ExchangeFactory.exchangeListener = exchangeListener;
+        ExchangeAPIClient.getAPIExchangeFactory().getLatestExchange().enqueue(callback);
+    }
 
     /**
      * Get latest(today) custom BaseCurrency based {@code Exchange} object.
      *
-     * @param baseCurrency custom baseCurrency. We strongly recommend set the value from Currency enumeration.
-     * @return latest(today) custom BaseCurrency based {@code Exchange} object
+     * @param baseCurrency Currency enum
+     * @param exchangeListener an ExchangeListener interface.
+     * @see ExchangeListener
      * @see exchangecalculator.Currency
      */
-    @GET("/latest")
-    Call<Exchange> getLatestExchange(@Query("base") String baseCurrency);
+    public static void getLatestExchange(Currency baseCurrency, ExchangeListener exchangeListener) {
+        ExchangeFactory.exchangeListener = exchangeListener;
+        ExchangeAPIClient.getAPIExchangeFactory().getLatestExchange(baseCurrency.name()).enqueue(callback);
+    }
 
     /**
      * Get specific date EUR based {@code Exchange} objects.
-     * @param date String date expression. That must be yyyy-MM-dd format.
-     * @return specific date EUR based {@code Exchange} objects
+     * @param date Joda-Time Date instance
+     * @param exchangeListener an ExchangeListener interface.
+     * @see ExchangeListener
      */
-    @GET("/{date}")
-    Call<Exchange> getSpecificDateExchange(@Path("date") String date);
+    public static void getSpecificDateExchange(DateTime date, ExchangeListener exchangeListener) {
+        ExchangeFactory.exchangeListener = exchangeListener;
+        ExchangeAPIClient.getAPIExchangeFactory().getSpecificDateExchange(ExchangeUtil.dateTimeToString(date)).enqueue(callback);
+    }
 
     /**
      * Get specific date custom base currency based {@code Exchange} objects.
-     * @param date String date expression. That must be yyyy-MM-dd format.
-     * @param baseCurrency custom baseCurrency. We strongly recommend set the value from Currency enumeration.
-     * @return specific date custom base currency based {@code Exchange} objects.
+     * @param date Joda-Time Date instance
+     * @param baseCurrency Currency enum
+     * @param exchangeListener an ExchangeListener interface.
+     * @see ExchangeListener
      */
-    @GET("/{date}")
-    Call<Exchange> getSpecificDateExchange(@Path("date") String date, @Query("base") String baseCurrency);
+    public static void getSpecificDateExchange(DateTime date, Currency baseCurrency, ExchangeListener exchangeListener) {
+        ExchangeFactory.exchangeListener = exchangeListener;
+        ExchangeAPIClient.getAPIExchangeFactory().getSpecificDateExchange(ExchangeUtil.dateTimeToString(date), baseCurrency.name()).enqueue(callback);
+    }
 }

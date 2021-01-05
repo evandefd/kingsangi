@@ -8,20 +8,23 @@ import retrofit2.Retrofit;
  * <p>Note that this class is based on Retrofit2.</p>
  *
  * @see Retrofit
- * @see ExchangeFactory
+ * @see APIExchangeFactory
  */
-public class ExchangeAPIClient {
-    private static Retrofit retrofit = null;
+class ExchangeAPIClient {
+    private volatile static Retrofit retrofit = null;
 
     private static Retrofit getClient() {
         OkHttpClient client = new OkHttpClient.Builder().build();
 
-        if (retrofit == null)
-            retrofit = new Retrofit.Builder()
-                    .baseUrl("https://api.exchangeratesapi.io/")
-                    .addConverterFactory(new CurrencyConvertFactory())
-                    .client(client)
-                    .build();
+        if (retrofit == null) {
+            synchronized (ExchangeAPIClient.class) {
+                retrofit = new Retrofit.Builder()
+                        .baseUrl("https://api.exchangeratesapi.io/")
+                        .addConverterFactory(new CurrencyConvertFactory())
+                        .client(client)
+                        .build();
+            }
+        }
 
         return retrofit;
     }
@@ -31,7 +34,7 @@ public class ExchangeAPIClient {
      *
      * @return {@code ExchangeFactory} instance
      */
-    public static ExchangeFactory getExchangeFactory() {
-        return getClient().create(ExchangeFactory.class);
+    public static APIExchangeFactory getAPIExchangeFactory() {
+        return getClient().create(APIExchangeFactory.class);
     }
 }

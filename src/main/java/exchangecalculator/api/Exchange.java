@@ -3,7 +3,6 @@ package exchangecalculator.api;
 import exchangecalculator.Currency;
 import org.joda.time.DateTime;
 
-import java.io.IOException;
 import java.util.Map;
 
 /**
@@ -12,7 +11,7 @@ import java.util.Map;
  * <p>e.g)If base currency is USD, target currency is KRW, it works like 1 USD to 1100 KRW
  * If you want to change base currency, you must get other base currency {@code Exchange} object from ExchangeFactory.</p>
  *
- * @see ExchangeFactory
+ * @see APIExchangeFactory
  */
 public class Exchange {
     private final Currency baseCurrency;

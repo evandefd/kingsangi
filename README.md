@@ -55,11 +55,11 @@ e.g. Currency.USD, Currency.KRW, Currency.HKD ...
 1. ExchangeFactory 객체를 가져온다.
   ```
   //Get exchange factory instance that used to get Exchange object.
-  ExchangeFactory exchangeFactory = ExchangeAPIClient.getExchangeFactory();
+  ExchangeFactory APIExchangeFactory = ExchangeAPIClient.getExchangeFactory();
   ```
 2. ExchangeFactory 내의 적절한 메소드를 사용하여 Exchange 객체를 가져온다.
   ```
-  Call<Exchange> exchangeCall = exchangeFactory.getLatestExchange(Currency.USD.name());
+  Call<Exchange> exchangeCall = APIExchangeFactory.getLatestExchange(Currency.USD.name());
   ```
   - 지원되는 메소드는 다음과 같다
     - ```Call<Exchange> getLatestExchange();```
