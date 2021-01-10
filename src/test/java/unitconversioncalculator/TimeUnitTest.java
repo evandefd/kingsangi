@@ -70,31 +70,31 @@ public class TimeUnitTest {
     public void testMINUTEToWeek() {
         Assert.assertEquals(0.00099206349206349, TimeUnit.MINUTE.convert(suitable, TimeUnit.WEEK), delta);
         Assert.assertEquals(9.920634920634921 * Math.pow(10, 5), TimeUnit.MINUTE.convert(bigger, TimeUnit.WEEK), delta);
-        Assert.assertEquals( -9.9206349206349 * Math.pow(10, -16), TimeUnit.MINUTE.convert(smaller, TimeUnit.WEEK), delta);
+        Assert.assertEquals(-9.9206349206349 * Math.pow(10, -16), TimeUnit.MINUTE.convert(smaller, TimeUnit.WEEK), delta);
     }
     @Test
     public void testHOURToSecond() {
         Assert.assertEquals(3.6 * Math.pow(10, 4), TimeUnit.HOUR.convert(suitable, TimeUnit.SECOND), delta);
         Assert.assertEquals(3.6 * Math.pow(10, 13), TimeUnit.HOUR.convert(bigger, TimeUnit.SECOND), delta);
-        Assert.assertEquals( -3.6 * Math.pow(10, -8), TimeUnit.HOUR.convert(smaller, TimeUnit.SECOND), delta);
+        Assert.assertEquals(-3.6 * Math.pow(10, -8), TimeUnit.HOUR.convert(smaller, TimeUnit.SECOND), delta);
     }
     @Test
     public void testHOURToMinute() {
         Assert.assertEquals(600, TimeUnit.HOUR.convert(suitable, TimeUnit.MINUTE), delta);
         Assert.assertEquals(6 * Math.pow(10, 11), TimeUnit.HOUR.convert(bigger, TimeUnit.MINUTE), delta);
-        Assert.assertEquals( -6 * Math.pow(10, -10), TimeUnit.HOUR.convert(smaller, TimeUnit.MINUTE), delta);
+        Assert.assertEquals(-6 * Math.pow(10, -10), TimeUnit.HOUR.convert(smaller, TimeUnit.MINUTE), delta);
     }
     @Test
     public void testHOURToHour() {
         Assert.assertEquals(10, TimeUnit.HOUR.convert(suitable, TimeUnit.HOUR), delta);
         Assert.assertEquals(10000000000.0, TimeUnit.HOUR.convert(bigger, TimeUnit.HOUR), delta);
-        Assert.assertEquals( -0.00000000001, TimeUnit.HOUR.convert(smaller, TimeUnit.HOUR), delta);
+        Assert.assertEquals(-0.00000000001, TimeUnit.HOUR.convert(smaller, TimeUnit.HOUR), delta);
     }
     @Test
     public void testHOURToDay() {
         Assert.assertEquals(0.41666666666667, TimeUnit.HOUR.convert(suitable, TimeUnit.DAY), delta);
         Assert.assertEquals(4.1666666666666667 * Math.pow(10, 8), TimeUnit.HOUR.convert(bigger, TimeUnit.DAY), delta);
-        Assert.assertEquals( -4.1666666666667 * Math.pow(10, -13), TimeUnit.HOUR.convert(smaller, TimeUnit.DAY), delta);
+        Assert.assertEquals(-4.1666666666667 * Math.pow(10, -13), TimeUnit.HOUR.convert(smaller, TimeUnit.DAY), delta);
     }
     @Test
     public void testHOURToWeek() {
