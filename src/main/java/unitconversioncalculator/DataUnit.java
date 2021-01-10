@@ -19,7 +19,7 @@ public enum DataUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case MEGABYTE:
-                    calculateValue = 1.19209290 * Math.pow(10, -7);
+                    calculateValue = 1.1920928955078 * Math.pow(10, -7);
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case GIGABYTE:
@@ -27,7 +27,7 @@ public enum DataUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case TERABYTE:
-                    calculateValue = 1.13686838 * Math.pow(10, -13);
+                    calculateValue = 1.1368683772162 * Math.pow(10, -13);
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case PETABYTE:
@@ -56,7 +56,7 @@ public enum DataUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case MEGABYTE:
-                    calculateValue = 9.53674316 * Math.pow(10, -7);
+                    calculateValue = 9.5367431640625 * Math.pow(10, -7);
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case GIGABYTE:
@@ -97,7 +97,7 @@ public enum DataUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case GIGABYTE:
-                    calculateValue = 9.53674316 * Math.pow(10, -7);
+                    calculateValue = 9.5367431640625 * Math.pow(10, -7);
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case TERABYTE:
@@ -105,7 +105,7 @@ public enum DataUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case PETABYTE:
-                    calculateValue = 9.0949 * Math.pow(10, -13);
+                    calculateValue = 0.00000000000090949470177293;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
             }
@@ -138,11 +138,11 @@ public enum DataUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case TERABYTE:
-                    calculateValue = 9.53674316 * Math.pow(10, -7);
+                    calculateValue = 9.5367431640625 * Math.pow(10, -7);
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case PETABYTE:
-                    calculateValue = 9.3132 * Math.pow(10, -10);
+                    calculateValue = 9.3132257461548 * Math.pow(10, -10);
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
             }
@@ -179,7 +179,7 @@ public enum DataUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case PETABYTE:
-                    calculateValue = 9.5367 * Math.pow(10, -7);
+                    calculateValue = 9.5367431640625 * Math.pow(10, -7);
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
             }
@@ -193,7 +193,7 @@ public enum DataUnit {
             double calculatedValue;
             switch (dataUnit) {
                 case BIT:
-                    calculateValue = 2796093022208.0;
+                    calculateValue = 8796093022208.0;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case BYTE:
@@ -216,7 +216,7 @@ public enum DataUnit {
                     calculatedValue = value;
                     return calculatedValue;
                 case PETABYTE:
-                    calculateValue = 0.000977;
+                    calculateValue = 9.765625 * Math.pow(10, -4);
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
             }
@@ -230,19 +230,19 @@ public enum DataUnit {
             double calculatedValue;
             switch (dataUnit) {
                 case BIT:
-                    calculateValue = 9.0072 * Math.pow(10, 15);
+                    calculateValue = 9007199254741000.0;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case BYTE:
-                    calculateValue = 1.1259 * Math.pow(10, 15);
+                    calculateValue = 1125899906842624.0;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case KILOBYTE:
-                    calculateValue = 1.0995 * Math.pow(10, 12);
+                    calculateValue = 1.099511627776 * Math.pow(10, 12);
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case MEGABYTE:
-                    calculateValue = 1.0737 * Math.pow(10, 9);
+                    calculateValue = 1.073741824 * Math.pow(10, 9);
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case GIGABYTE:
