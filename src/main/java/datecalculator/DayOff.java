@@ -1,3 +1,5 @@
+package datecalculator;
+
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -104,7 +106,7 @@ public class DayOff {
         Calendar calendar = Calendar.getInstance();
         Date lunarNewYear=new Date();
         calendar.set(year,0,1);
-        lunarNewYear.setTime(DateToLunarDate.lunarDateToDate(calendar.getTimeInMillis()));
+        lunarNewYear.setTime(datecalculator.DateToLunarDate.getLunarDate(calendar.getTimeInMillis()));
         calendar.setTime(lunarNewYear);
         return calendar.getTimeInMillis();
     }
@@ -120,7 +122,7 @@ public class DayOff {
         Calendar calendar = Calendar.getInstance();
         Date thanksgiving=new Date();
         calendar.set(year,7,15);
-        thanksgiving.setTime(DateToLunarDate.lunarDateToDate(calendar.getTimeInMillis()));
+        thanksgiving.setTime(datecalculator.DateToLunarDate.getLunarDate(calendar.getTimeInMillis()));
         calendar.setTime(thanksgiving);
         return calendar.getTimeInMillis();
     }
@@ -129,7 +131,7 @@ public class DayOff {
         Calendar calendar = Calendar.getInstance();
         Date buddhasDay=new Date();
         calendar.set(year,3,8);
-        buddhasDay.setTime(DateToLunarDate.lunarDateToDate(calendar.getTimeInMillis()));
+        buddhasDay.setTime(datecalculator.DateToLunarDate.getLunarDate(calendar.getTimeInMillis()));
         calendar.setTime(buddhasDay);
         return calendar.getTimeInMillis();
     }

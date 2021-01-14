@@ -1,6 +1,6 @@
 package datecalculator;
 
-import com.ibm.icu.util.ChineseCalendar;
+import com.ibm.icu.util.DangiCalendar;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -8,42 +8,61 @@ import java.util.Calendar;
 
 public class DateToLunarDate {
 
-    public static final int different = 2637; //음력과 양력간 년수 차이
+    public static final int different = 2333; //음력과 양력간 년수 차이
 
-    public static long dateToLunarDate(long millisecond){
+    public static long getLunarDate(long millisecond){
         DateFormat dfm = SimpleDateFormat.getDateInstance(DateFormat.DEFAULT);
 
         Calendar cal = Calendar.getInstance();
-        ChineseCalendar chineseCalendar = new ChineseCalendar();
+        DangiCalendar dangiCalendar = new DangiCalendar();
 
         cal.setTimeInMillis(millisecond);
 
-        chineseCalendar.setTimeInMillis(cal.getTimeInMillis());
+        dangiCalendar.setTimeInMillis(cal.getTimeInMillis());
 
-        int year= chineseCalendar.get(ChineseCalendar.EXTENDED_YEAR)-different;
-        int month = chineseCalendar.get(ChineseCalendar.MONTH);
-        int day = chineseCalendar.get(ChineseCalendar.DAY_OF_MONTH);
+        int year= dangiCalendar.get(DangiCalendar.EXTENDED_YEAR)-different;
+        int month = dangiCalendar.get(DangiCalendar.MONTH);
+        int day = dangiCalendar.get(DangiCalendar.DAY_OF_MONTH);
 
         cal.set(year,month,day);
 
         return cal.getTimeInMillis();
     }
 
-    public static long lunarDateToDate (long millisecond){ //음력을 양력으로 변환
+    public static long getSolarDate(long millisecond){ //음력을 양력으로 변환
         DateFormat dfm = SimpleDateFormat.getDateInstance(DateFormat.DEFAULT);
 
         Calendar cal = Calendar.getInstance();
-        ChineseCalendar chineseCalendar = new ChineseCalendar();
+        DangiCalendar dangiCalendar = new DangiCalendar();
 
         cal.setTimeInMillis(millisecond);
 
-        chineseCalendar.set(ChineseCalendar.EXTENDED_YEAR,cal.get(Calendar.YEAR)+different);
-        chineseCalendar.set(ChineseCalendar.MONTH,cal.get(Calendar.MONTH));
-        chineseCalendar.set(ChineseCalendar.DAY_OF_MONTH,cal.get(Calendar.DAY_OF_MONTH));
+        dangiCalendar.set(DangiCalendar.EXTENDED_YEAR,cal.get(Calendar.YEAR)+different);
+        dangiCalendar.set(DangiCalendar.MONTH,cal.get(Calendar.MONTH));
+        dangiCalendar.set(DangiCalendar.DAY_OF_MONTH,cal.get(Calendar.DAY_OF_MONTH));
 
-        cal.setTimeInMillis(chineseCalendar.getTimeInMillis());
+        cal.setTimeInMillis(dangiCalendar.getTimeInMillis());
         return cal.getTimeInMillis();
 
+    }
+
+    public static long getLeapMonth(long lunarDate) {
+        Calendar cal = Calendar.getInstance();
+        DangiCalendar dangicalendar = new DangiCalendar();
+
+        cal.setTimeInMillis(lunarDate);
+        dangicalendar.set(DangiCalendar.MONTH, cal.get(Calendar.MONTH));
+
+        long milliSolar = DateToLunarDate.getSolarDate(cal.getTimeInMillis());
+        cal.setTimeInMillis(milliSolar);
+        int maxDay = dangicalendar.getActualMaximum(DangiCalendar.DAY_OF_MONTH);
+
+        cal.add(Calendar.DAY_OF_MONTH, maxDay);
+        dangicalendar.setTimeInMillis(cal.getTimeInMillis());
+        int leapMonth = dangicalendar.get(DangiCalendar.IS_LEAP_MONTH);
+
+        if (leapMonth == 1) return cal.getTimeInMillis();
+        else return 0;
     }
 }
 

@@ -1,17 +1,13 @@
 package datecalculator;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.Calendar;
 
 public class DayToWeek {
-    public static String dateToWeek(long millisecond) {
-        DateFormat outputDataFormat = SimpleDateFormat.getDateInstance(DateFormat.FULL);
+    public static int dateToWeek(long millisecond) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(millisecond);
+        int week = calendar.get(Calendar.DAY_OF_WEEK);
 
-        Date millisecondToDate = new Date(millisecond);
-
-        String dateToString = outputDataFormat.format(millisecondToDate);
-
-        return dateToString;
+        return week;
     }
 }
