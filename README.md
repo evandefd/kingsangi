@@ -12,9 +12,11 @@ King + 계산기 = 킹산기
 
 -특정 날짜의 요일 구하기 (dayToWeek)
 
--양력을 음력으로 변환 (dateToLunarDate)
+-양력을 음력으로 변환 (getLunarDate)
 
--음력을 양력으로 변환 (lunarDateToDate)
+-음력을 양력으로 변환 (getSolarDate)
+
+-음력을 양력으로 변환시 윤달 계산 (getLeapMonth)
 
 -특정 년도의 공휴일을 반환 (getHoliday)
 
@@ -24,7 +26,8 @@ King + 계산기 = 킹산기
 -todayAddDay를 제외한 함수들은 long millisecond를 parameter로 갖는다.
 -getHoliday메소드는 parameter로 (int)year과 (int)holidayType을 받는다.
  holidayType은 Holiday class에 정의 되어있다.
- 
+-getLeapMonth는 반환형은 long이고 윤달이 존재할 시 millisecond 값으로 해당 음력일의 윤달값을 반환한다. 윤달이 존재하지 않으면 0을 반환한다.
+
  대부분의 메소드가 millisecond를 반환하여 이를 사용할 시 Calendar를 선언하여 사용하는 것이 편하다.
  또한 이를 출력할 경우 DateFormat을 사용하여 표현해준다.
  자세한 내용은 예시를 참고.
@@ -57,9 +60,11 @@ System.out.println(dateFormat.format(cal.getTime()));
   링크: https://www.unicode.org/copyright.html
   
 -getAlternativeHoliday 사용시 대체공휴일은 설날, 추석, 어린이날에만 해당됨으로 parameter에 LUNARNEWYEAR, THANKSGIVING, CHILDRENSDAY만 사용가능
-  
+
+-음력을 양력으로 변환할 시 윤달이 존재한다. getSolar 메소드 사용시 getLeapMonth를 같이 써주어야 한다.
+ex) 음력 2020년 4월은 윤달이 있는 달이다. 이때 사용자가 윤달 4월을 검색할지 평달 4월을 검색할지 모르기에 getSolar함수를 쓸 때 getLeapMonth를 같이 써주어야 한다.
   #### Improvements
   -DayOff 클래스의 vote메소드들 현재 void형으로 되어있음. (좀 더 다듬을 예정)
   -여성용 계산기 (생리주기, 배란일, 가임기간 계산기)
-  AND SO ON...
+  -AND SO ON...
   
