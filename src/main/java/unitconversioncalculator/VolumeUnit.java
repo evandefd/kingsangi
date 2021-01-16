@@ -5,36 +5,35 @@ public enum VolumeUnit {
         @Override
         public double convert(double value, VolumeUnit volumeUnit) {
             double calculateValue;
-            
             double calculatedValue;
             switch (volumeUnit) {
                 case BRITISHGALLON: 
                     calculatedValue = value;
                     return calculatedValue;
                 case USGALLON: 
-                    calculateValue = 1.2009499255;
+                    calculateValue = 0.96893897192093;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case LITER: 
-                    calculateValue = 4.54609;
+                    calculateValue = 4.40488377086;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case MILLILITER:
                 case CUBICCENTIMETER: 
-                    calculateValue = 4546.09;
+                    calculateValue = 4404.88377086;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case CUBICMETER: 
-                    calculateValue = 220;
-                    calculatedValue = value / calculateValue;
+                    calculateValue = 0.00440488377086;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case CUBICINCH: 
-                    calculateValue = 277.4194327916;
+                    calculateValue = 268.8025;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case CUBICFEET: 
-                    calculateValue = 6.229;
-                    calculatedValue = value / calculateValue;
+                    calculateValue = 0.1555570023;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
             }
             throw new IllegalArgumentException();
@@ -47,32 +46,32 @@ public enum VolumeUnit {
             double calculatedValue;
             switch (volumeUnit) {
                 case BRITISHGALLON: 
-                    calculateValue = 1.201;
-                    calculatedValue = value / calculateValue;
+                    calculateValue = 1.0320567434887;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case USGALLON: 
                     calculatedValue = value;
                     return calculatedValue;
                 case LITER: 
-                    calculateValue = 3.785411784;
+                    calculateValue = 4.54609;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case MILLILITER:
                 case CUBICCENTIMETER: 
-                    calculateValue = 3785.411784;
+                    calculateValue = 4546.09;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case CUBICMETER: 
-                    calculateValue = 264;
-                    calculatedValue = value / calculateValue;
+                    calculateValue = 0.00454609;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case CUBICINCH: 
-                    calculateValue = 231;
+                    calculateValue = 277.41943279162;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case CUBICFEET: 
-                    calculateValue = 7.481;
-                    calculatedValue = value / calculateValue;
+                    calculateValue = 0.16054365323589;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
             }
             throw new IllegalArgumentException();
@@ -85,12 +84,12 @@ public enum VolumeUnit {
             double calculatedValue;
             switch (volumeUnit) {
                 case BRITISHGALLON: 
-                    calculateValue = 4.546;
-                    calculatedValue = value / calculateValue;
+                    calculateValue = 0.22702074606721;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case USGALLON: 
-                    calculateValue = 3.785;
-                    calculatedValue = value / calculateValue;
+                    calculateValue = 0.21996924829909;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case LITER: 
                     calculatedValue = value;
@@ -105,12 +104,12 @@ public enum VolumeUnit {
                     calculatedValue = value / calculateValue;
                     return calculatedValue;
                 case CUBICINCH: 
-                    calculateValue = 61.0237440947;
+                    calculateValue = 61.023744094732;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case CUBICFEET: 
-                    calculateValue = 28.317;
-                    calculatedValue = value / calculateValue;
+                    calculateValue = 0.035314666721489;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
             }
             throw new IllegalArgumentException();
@@ -123,16 +122,16 @@ public enum VolumeUnit {
             double calculatedValue;
             switch (volumeUnit) {
                 case BRITISHGALLON: 
-                    calculateValue = 4546;
-                    calculatedValue = value / calculateValue;
+                    calculateValue = 0.00022702074606721;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case USGALLON: 
-                    calculateValue = 0.0002641721;
+                    calculateValue = 0.00021996924829909;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case LITER: 
-                    calculateValue = 3785;
-                    calculatedValue = value / calculateValue;
+                    calculateValue = 0.001;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case MILLILITER:
                 case CUBICCENTIMETER: 
@@ -143,12 +142,12 @@ public enum VolumeUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case CUBICINCH: 
-                    calculateValue = 16.387;
-                    calculatedValue = value / calculateValue;
+                    calculateValue = 0.061023744094732;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case CUBICFEET: 
-                    calculateValue = 28317;
-                    calculatedValue = value / calculateValue;
+                    calculateValue = 0.000035314666721489;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
             }
             throw new IllegalArgumentException();
@@ -161,16 +160,16 @@ public enum VolumeUnit {
             double calculatedValue;
             switch (volumeUnit) {
                 case BRITISHGALLON:
-                    calculateValue = 4546;
-                    calculatedValue = value / calculateValue;
+                    calculateValue = 0.00022702074606721;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case USGALLON:
-                    calculateValue = 0.0002641721;
+                    calculateValue = 0.00021996924829909;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case LITER:
-                    calculateValue = 3785;
-                    calculatedValue = value / calculateValue;
+                    calculateValue = 0.001;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case MILLILITER:
                 case CUBICCENTIMETER:
@@ -181,12 +180,12 @@ public enum VolumeUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case CUBICINCH:
-                    calculateValue = 16.387;
-                    calculatedValue = value / calculateValue;
+                    calculateValue = 0.061023744094732;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case CUBICFEET:
-                    calculateValue = 28317;
-                    calculatedValue = value / calculateValue;
+                    calculateValue = 0.000035314666721489;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
             }
             throw new IllegalArgumentException();
@@ -200,11 +199,11 @@ public enum VolumeUnit {
             double calculatedValue;
             switch (volumeUnit) {
                 case BRITISHGALLON: 
-                    calculateValue = 219.9692482991;
+                    calculateValue = 227.02074606721;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case USGALLON: 
-                    calculateValue = 234.1720523581;
+                    calculateValue = 219.96924829909;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case LITER: 
@@ -224,7 +223,7 @@ public enum VolumeUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case CUBICFEET: 
-                    calculateValue = 35.3146667215;
+                    calculateValue = 35.314666721489;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
             }
@@ -238,15 +237,15 @@ public enum VolumeUnit {
             double calculatedValue;
             switch (volumeUnit) {
                 case BRITISHGALLON: 
-                    calculateValue = 277;
-                    calculatedValue = value / calculateValue;
+                    calculateValue = 0.0037202034951312;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case USGALLON: 
-                    calculateValue = 231;
+                    calculateValue = 0.003604650149909;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case LITER: 
-                    calculateValue = 61.024;
+                    calculateValue = 0.016387064;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case MILLILITER:
@@ -255,14 +254,14 @@ public enum VolumeUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case CUBICMETER: 
-                    calculateValue = 61024;
-                    calculatedValue = value / calculateValue;
+                    calculateValue = 0.000016387064;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case CUBICINCH: 
                     calculatedValue = value;
                     return calculatedValue;
                 case CUBICFEET: 
-                    calculateValue = 1728;
+                    calculateValue = 5.787037037037 * Math.pow(10, -4);
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
             }
@@ -276,11 +275,11 @@ public enum VolumeUnit {
             double calculatedValue;
             switch (volumeUnit) {
                 case BRITISHGALLON: 
-                    calculateValue = 6.228835459;
+                    calculateValue = 6.4285116395867;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case USGALLON: 
-                    calculateValue = 7.4805194805;
+                    calculateValue = 6.2288354590428;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case LITER: 
@@ -293,7 +292,7 @@ public enum VolumeUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case CUBICMETER: 
-                    calculateValue = 35.315;
+                    calculateValue = 0.028316846592;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case CUBICINCH: 
