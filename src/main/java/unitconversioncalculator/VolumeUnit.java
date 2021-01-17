@@ -11,46 +11,8 @@ public enum VolumeUnit {
                     calculatedValue = value;
                     return calculatedValue;
                 case USGALLON: 
-                    calculateValue = 0.96893897192093;
-                    calculatedValue = value * calculateValue;
-                    return calculatedValue;
-                case LITER: 
-                    calculateValue = 4.40488377086;
-                    calculatedValue = value * calculateValue;
-                    return calculatedValue;
-                case MILLILITER:
-                case CUBICCENTIMETER: 
-                    calculateValue = 4404.88377086;
-                    calculatedValue = value * calculateValue;
-                    return calculatedValue;
-                case CUBICMETER: 
-                    calculateValue = 0.00440488377086;
-                    calculatedValue = value * calculateValue;
-                    return calculatedValue;
-                case CUBICINCH: 
-                    calculateValue = 268.8025;
-                    calculatedValue = value * calculateValue;
-                    return calculatedValue;
-                case CUBICFEET: 
-                    calculateValue = 0.1555570023;
-                    calculatedValue = value * calculateValue;
-                    return calculatedValue;
-            }
-            throw new IllegalArgumentException();
-        }
-    },
-    USGALLON{
-        @Override
-        public double convert(double value, VolumeUnit volumeUnit) {
-            double calculateValue;
-            double calculatedValue;
-            switch (volumeUnit) {
-                case BRITISHGALLON: 
                     calculateValue = 1.0320567434887;
                     calculatedValue = value * calculateValue;
-                    return calculatedValue;
-                case USGALLON: 
-                    calculatedValue = value;
                     return calculatedValue;
                 case LITER: 
                     calculateValue = 4.54609;
@@ -71,6 +33,44 @@ public enum VolumeUnit {
                     return calculatedValue;
                 case CUBICFEET: 
                     calculateValue = 0.16054365323589;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
+            }
+            throw new IllegalArgumentException();
+        }
+    },
+    USGALLON{
+        @Override
+        public double convert(double value, VolumeUnit volumeUnit) {
+            double calculateValue;
+            double calculatedValue;
+            switch (volumeUnit) {
+                case BRITISHGALLON: 
+                    calculateValue = 0.96893897192093;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
+                case USGALLON: 
+                    calculatedValue = value;
+                    return calculatedValue;
+                case LITER: 
+                    calculateValue = 4.40488377086;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
+                case MILLILITER:
+                case CUBICCENTIMETER: 
+                    calculateValue = 4404.88377086;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
+                case CUBICMETER: 
+                    calculateValue = 0.00440488377086;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
+                case CUBICINCH: 
+                    calculateValue = 268.8025;
+                    calculatedValue = value * calculateValue;
+                    return calculatedValue;
+                case CUBICFEET: 
+                    calculateValue = 0.15555700231;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
             }
