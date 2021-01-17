@@ -20,51 +20,51 @@ public class VolumeUnitTest {
     }
     @Test
     public void testBRITISHGALLONToUsGallon() {
-        Assert.assertEquals(9.6893897192093, VolumeUnit.BRITISHGALLON.convert(suitable, VolumeUnit.USGALLON), delta);
-        Assert.assertEquals(9.6893897192093 * Math.pow(10, 9), VolumeUnit.BRITISHGALLON.convert(bigger, VolumeUnit.USGALLON), delta);
-        Assert.assertEquals(-9.6893897192093 * Math.pow(10, -12), VolumeUnit.BRITISHGALLON.convert(smaller, VolumeUnit.USGALLON), delta);
+        Assert.assertEquals(10.320567434887, VolumeUnit.BRITISHGALLON.convert(suitable, VolumeUnit.USGALLON), delta);
+        Assert.assertEquals(1.0320567434887 * Math.pow(10, 10), VolumeUnit.BRITISHGALLON.convert(bigger, VolumeUnit.USGALLON), delta);
+        Assert.assertEquals(-1.0320567434887 * Math.pow(10, -11), VolumeUnit.BRITISHGALLON.convert(smaller, VolumeUnit.USGALLON), delta);
     }
     @Test
     public void testBRITISHGALLONToLiter() {
-        Assert.assertEquals(44.0488377086, VolumeUnit.BRITISHGALLON.convert(suitable, VolumeUnit.LITER), delta);
-        Assert.assertEquals(4.40488377086 * Math.pow(10, 10), VolumeUnit.BRITISHGALLON.convert(bigger, VolumeUnit.LITER), delta);
-        Assert.assertEquals(-4.40488377086 * Math.pow(10, -11), VolumeUnit.BRITISHGALLON.convert(smaller, VolumeUnit.LITER), delta);
+        Assert.assertEquals(45.4609, VolumeUnit.BRITISHGALLON.convert(suitable, VolumeUnit.LITER), delta);
+        Assert.assertEquals(4.54609 * Math.pow(10, 10), VolumeUnit.BRITISHGALLON.convert(bigger, VolumeUnit.LITER), delta);
+        Assert.assertEquals(-4.54609 * Math.pow(10, -11), VolumeUnit.BRITISHGALLON.convert(smaller, VolumeUnit.LITER), delta);
     }
     @Test
     public void testBRITISHGALLONToMilliLiter() {
-        Assert.assertEquals(44048.8377086, VolumeUnit.BRITISHGALLON.convert(suitable, VolumeUnit.MILLILITER), delta);
-        Assert.assertEquals(4.40488377086 * Math.pow(10, 13), VolumeUnit.BRITISHGALLON.convert(bigger, VolumeUnit.MILLILITER), delta);
-        Assert.assertEquals(-4.40488377086 * Math.pow(10, -8), VolumeUnit.BRITISHGALLON.convert(smaller, VolumeUnit.MILLILITER), delta);
+        Assert.assertEquals(4.54609 * Math.pow(10, 4), VolumeUnit.BRITISHGALLON.convert(suitable, VolumeUnit.MILLILITER), delta);
+        Assert.assertEquals(45460900000000.0, VolumeUnit.BRITISHGALLON.convert(bigger, VolumeUnit.MILLILITER), delta);
+        Assert.assertEquals(-4.54609 * Math.pow(10, -8), VolumeUnit.BRITISHGALLON.convert(smaller, VolumeUnit.MILLILITER), delta);
     }
     @Test
     public void testBRITISHGALLONToCubicCentimeter() {
-        Assert.assertEquals(44048.8377086, VolumeUnit.BRITISHGALLON.convert(suitable, VolumeUnit.CUBICCENTIMETER), delta);
-        Assert.assertEquals(4.40488377086 * Math.pow(10, 13), VolumeUnit.BRITISHGALLON.convert(bigger, VolumeUnit.CUBICCENTIMETER), delta);
-        Assert.assertEquals(-4.40488377086 * Math.pow(10, -8), VolumeUnit.BRITISHGALLON.convert(smaller, VolumeUnit.CUBICCENTIMETER), delta);
+        Assert.assertEquals(4.54609 * Math.pow(10, 4), VolumeUnit.BRITISHGALLON.convert(suitable, VolumeUnit.CUBICCENTIMETER), delta);
+        Assert.assertEquals(45460900000000.0, VolumeUnit.BRITISHGALLON.convert(bigger, VolumeUnit.CUBICCENTIMETER), delta);
+        Assert.assertEquals(-4.54609 * Math.pow(10, -8), VolumeUnit.BRITISHGALLON.convert(smaller, VolumeUnit.CUBICCENTIMETER), delta);
     }
     @Test
     public void testBRITISHGALLONToCubicMeter() {
-        Assert.assertEquals(0.0440488377086, VolumeUnit.BRITISHGALLON.convert(suitable, VolumeUnit.CUBICMETER), delta);
-        Assert.assertEquals(4.40488377086 * Math.pow(10, 7), VolumeUnit.BRITISHGALLON.convert(bigger, VolumeUnit.CUBICMETER), delta);
-        Assert.assertEquals(-4.40488377086 * Math.pow(10, -14), VolumeUnit.BRITISHGALLON.convert(smaller, VolumeUnit.CUBICMETER), delta);
+        Assert.assertEquals(0.0454609, VolumeUnit.BRITISHGALLON.convert(suitable, VolumeUnit.CUBICMETER), delta);
+        Assert.assertEquals(4.54609 * Math.pow(10, 7), VolumeUnit.BRITISHGALLON.convert(bigger, VolumeUnit.CUBICMETER), delta);
+        Assert.assertEquals(-4.54609 * Math.pow(10, -14), VolumeUnit.BRITISHGALLON.convert(smaller, VolumeUnit.CUBICMETER), delta);
     }
     @Test
     public void testBRITISHGALLONToCubicInch() {
-        Assert.assertEquals(2688.025, VolumeUnit.BRITISHGALLON.convert(suitable, VolumeUnit.CUBICINCH), delta);
-        Assert.assertEquals(2.688025 * Math.pow(10, 12), VolumeUnit.BRITISHGALLON.convert(bigger, VolumeUnit.CUBICINCH), delta);
-        Assert.assertEquals(-2.688025 * Math.pow(10, -9), VolumeUnit.BRITISHGALLON.convert(smaller, VolumeUnit.CUBICINCH), delta);
+        Assert.assertEquals(2774.1943279162, VolumeUnit.BRITISHGALLON.convert(suitable, VolumeUnit.CUBICINCH), delta);
+        Assert.assertEquals(2.7741943279162 * Math.pow(10, 12), VolumeUnit.BRITISHGALLON.convert(bigger, VolumeUnit.CUBICINCH), delta);
+        Assert.assertEquals(-2.7741943279162 * Math.pow(10, -9), VolumeUnit.BRITISHGALLON.convert(smaller, VolumeUnit.CUBICINCH), delta);
     }
     @Test
     public void testBRITISHGALLONToCubicFeet() {
-        Assert.assertEquals(1.5555700231481, VolumeUnit.BRITISHGALLON.convert(suitable, VolumeUnit.CUBICFEET), delta);
-        Assert.assertEquals(1.555570023 * Math.pow(10, 9), VolumeUnit.BRITISHGALLON.convert(bigger, VolumeUnit.CUBICFEET), delta);
-        Assert.assertEquals(-1.5555700231481 * Math.pow(10, -12), VolumeUnit.BRITISHGALLON.convert(smaller, VolumeUnit.CUBICFEET), delta);
+        Assert.assertEquals(1.6054365323589, VolumeUnit.BRITISHGALLON.convert(suitable, VolumeUnit.CUBICFEET), delta);
+        Assert.assertEquals(1605436532.3589, VolumeUnit.BRITISHGALLON.convert(bigger, VolumeUnit.CUBICFEET), delta);
+        Assert.assertEquals(-1.6054365323589 * Math.pow(10, -12), VolumeUnit.BRITISHGALLON.convert(smaller, VolumeUnit.CUBICFEET), delta);
     }
     @Test
     public void testUSGALLONToBritishGallon() {
-        Assert.assertEquals(10.320567434887, VolumeUnit.USGALLON.convert(suitable, VolumeUnit.BRITISHGALLON), delta);
-        Assert.assertEquals(1.0320567434887 * Math.pow(10, 10), VolumeUnit.USGALLON.convert(bigger, VolumeUnit.BRITISHGALLON), delta);
-        Assert.assertEquals(-1.0320567434887 * Math.pow(10, -11), VolumeUnit.USGALLON.convert(smaller, VolumeUnit.BRITISHGALLON), delta);
+        Assert.assertEquals(9.6893897192093, VolumeUnit.USGALLON.convert(suitable, VolumeUnit.BRITISHGALLON), delta);
+        Assert.assertEquals(9.6893897192093 * Math.pow(10, 9), VolumeUnit.USGALLON.convert(bigger, VolumeUnit.BRITISHGALLON), delta);
+        Assert.assertEquals(-9.6893897192093 * Math.pow(10, -12), VolumeUnit.USGALLON.convert(smaller, VolumeUnit.BRITISHGALLON), delta);
     }
     @Test
     public void testUSGALLONToUsGallon() {
@@ -74,39 +74,39 @@ public class VolumeUnitTest {
     }
     @Test
     public void testUSGALLONToLiter() {
-        Assert.assertEquals(45.4609, VolumeUnit.USGALLON.convert(suitable, VolumeUnit.LITER), delta);
-        Assert.assertEquals(4.54609 * Math.pow(10, 10), VolumeUnit.USGALLON.convert(bigger, VolumeUnit.LITER), delta);
-        Assert.assertEquals(-4.54609 * Math.pow(10, -11), VolumeUnit.USGALLON.convert(smaller, VolumeUnit.LITER), delta);
+        Assert.assertEquals(44.0488377086, VolumeUnit.USGALLON.convert(suitable, VolumeUnit.LITER), delta);
+        Assert.assertEquals(4.40488377086 * Math.pow(10, 10), VolumeUnit.USGALLON.convert(bigger, VolumeUnit.LITER), delta);
+        Assert.assertEquals(-4.40488377086 * Math.pow(10, -11), VolumeUnit.USGALLON.convert(smaller, VolumeUnit.LITER), delta);
     }
     @Test
     public void testUSGALLONToMilliLiter() {
-        Assert.assertEquals(4.54609 * Math.pow(10, 4), VolumeUnit.USGALLON.convert(suitable, VolumeUnit.MILLILITER), delta);
-        Assert.assertEquals(45460900000000.0, VolumeUnit.USGALLON.convert(bigger, VolumeUnit.MILLILITER), delta);
-        Assert.assertEquals(-4.54609 * Math.pow(10, -8), VolumeUnit.USGALLON.convert(smaller, VolumeUnit.MILLILITER), delta);
+        Assert.assertEquals(44048.8377086, VolumeUnit.USGALLON.convert(suitable, VolumeUnit.MILLILITER), delta);
+        Assert.assertEquals(4.40488377086 * Math.pow(10, 13), VolumeUnit.USGALLON.convert(bigger, VolumeUnit.MILLILITER), delta);
+        Assert.assertEquals(-4.40488377086 * Math.pow(10, -8), VolumeUnit.USGALLON.convert(smaller, VolumeUnit.MILLILITER), delta);
     }
     @Test
     public void testUSGALLONToCubicCentimeter() {
-        Assert.assertEquals(4.54609 * Math.pow(10, 4), VolumeUnit.USGALLON.convert(suitable, VolumeUnit.CUBICCENTIMETER), delta);
-        Assert.assertEquals(45460900000000.0, VolumeUnit.USGALLON.convert(bigger, VolumeUnit.CUBICCENTIMETER), delta);
-        Assert.assertEquals(-4.54609 * Math.pow(10, -8), VolumeUnit.USGALLON.convert(smaller, VolumeUnit.CUBICCENTIMETER), delta);
+        Assert.assertEquals(44048.8377086, VolumeUnit.USGALLON.convert(suitable, VolumeUnit.CUBICCENTIMETER), delta);
+        Assert.assertEquals(4.40488377086 * Math.pow(10, 13), VolumeUnit.USGALLON.convert(bigger, VolumeUnit.CUBICCENTIMETER), delta);
+        Assert.assertEquals(-4.40488377086 * Math.pow(10, -8), VolumeUnit.USGALLON.convert(smaller, VolumeUnit.CUBICCENTIMETER), delta);
     }
     @Test
     public void testUSGALLONToCubicMeter() {
-        Assert.assertEquals(0.0454609, VolumeUnit.USGALLON.convert(suitable, VolumeUnit.CUBICMETER), delta);
-        Assert.assertEquals(4.54609 * Math.pow(10, 7), VolumeUnit.USGALLON.convert(bigger, VolumeUnit.CUBICMETER), delta);
-        Assert.assertEquals(-4.54609 * Math.pow(10, -14), VolumeUnit.USGALLON.convert(smaller, VolumeUnit.CUBICMETER), delta);
+        Assert.assertEquals(0.0440488377086, VolumeUnit.USGALLON.convert(suitable, VolumeUnit.CUBICMETER), delta);
+        Assert.assertEquals(4.40488377086 * Math.pow(10, 7), VolumeUnit.USGALLON.convert(bigger, VolumeUnit.CUBICMETER), delta);
+        Assert.assertEquals(-4.40488377086 * Math.pow(10, -14), VolumeUnit.USGALLON.convert(smaller, VolumeUnit.CUBICMETER), delta);
     }
     @Test
     public void testUSGALLONToCubicInch() {
-        Assert.assertEquals(2774.1943279162, VolumeUnit.USGALLON.convert(suitable, VolumeUnit.CUBICINCH), delta);
-        Assert.assertEquals(2.7741943279162 * Math.pow(10, 12), VolumeUnit.USGALLON.convert(bigger, VolumeUnit.CUBICINCH), delta);
-        Assert.assertEquals(-2.7741943279162 * Math.pow(10, -9), VolumeUnit.USGALLON.convert(smaller, VolumeUnit.CUBICINCH), delta);
+        Assert.assertEquals(2688.025, VolumeUnit.USGALLON.convert(suitable, VolumeUnit.CUBICINCH), delta);
+        Assert.assertEquals(2.688025 * Math.pow(10, 12), VolumeUnit.USGALLON.convert(bigger, VolumeUnit.CUBICINCH), delta);
+        Assert.assertEquals(-2.688025 * Math.pow(10, -9), VolumeUnit.USGALLON.convert(smaller, VolumeUnit.CUBICINCH), delta);
     }
     @Test
     public void testUSGALLONToCubicFeet() {
-        Assert.assertEquals(1.6054365323589, VolumeUnit.USGALLON.convert(suitable, VolumeUnit.CUBICFEET), delta);
-        Assert.assertEquals(1605436532.3589, VolumeUnit.USGALLON.convert(bigger, VolumeUnit.CUBICFEET), delta);
-        Assert.assertEquals(-1.6054365323589 * Math.pow(10, -12), VolumeUnit.USGALLON.convert(smaller, VolumeUnit.CUBICFEET), delta);
+        Assert.assertEquals(1.5555700231481, VolumeUnit.USGALLON.convert(suitable, VolumeUnit.CUBICFEET), delta);
+        Assert.assertEquals(1555570023.1, VolumeUnit.USGALLON.convert(bigger, VolumeUnit.CUBICFEET), delta);
+        Assert.assertEquals(-1.5555700231481 * Math.pow(10, -12), VolumeUnit.USGALLON.convert(smaller, VolumeUnit.CUBICFEET), delta);
     }
     @Test
     public void testLITERToBritishGallon() {
