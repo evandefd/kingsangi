@@ -461,7 +461,7 @@ public enum LengthUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case KILOMETER:
-                    calculateValue = 0.0000000254000000;
+                    calculateValue = 0.0000000254;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case INCH:
