@@ -23,27 +23,27 @@ public enum LengthUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case INCH:
-                    calculateValue = 0.0393700787;
+                    calculateValue = 0.039370078740157;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case FEET:
-                    calculateValue = 0.0032808399;
+                    calculateValue = 0.0032808398950131;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case YARD:
-                    calculateValue = 0.0010936133;
+                    calculateValue = 0.0010936132983377;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case MILE:
-                    calculateValue = 6.2137119 * Math.pow(10, -7);
+                    calculateValue = 6.2137119223733 * Math.pow(10, -7);
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case NMILE:
-                    calculateValue = 5.39956803 * Math.pow(10, -7);
+                    calculateValue = 5.3995680345572 * Math.pow(10, -7);
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case MIL:
-                    calculateValue = 39.3700787402;
+                    calculateValue = 39.370078740157;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
             }
@@ -72,27 +72,27 @@ public enum LengthUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case INCH:
-                    calculateValue = 0.3937007874;
+                    calculateValue = 0.39370078740157;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case FEET:
-                    calculateValue = 0.032808399;
+                    calculateValue = 0.032808398950131;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case YARD:
-                    calculateValue = 0.010936133;
+                    calculateValue = 0.010936132983377;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case MILE:
-                    calculateValue = 0.0000062137;
+                    calculateValue = 6.2137119223733 * Math.pow(10, -6);
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case NMILE:
-                    calculateValue = 0.0000053996;
+                    calculateValue = 5.3995680345572 * Math.pow(10, -6);
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case MIL:
-                    calculateValue = 393.7007874016;
+                    calculateValue = 393.70078740157;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
             }
@@ -125,23 +125,23 @@ public enum LengthUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case FEET:
-                    calculateValue = 3.280839895;
+                    calculateValue = 3.2808398950131;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case YARD:
-                    calculateValue = 1.0936132983;
+                    calculateValue = 1.0936132983377;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case MILE:
-                    calculateValue = 0.0006213712;
+                    calculateValue = 0.00062137119223733;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case NMILE:
-                    calculateValue = 0.0005399568;
+                    calculateValue = 0.00053995680345572;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case MIL:
-                    calculateValue = 39370.078740158;
+                    calculateValue = 39370.078740157;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
             }
@@ -170,7 +170,7 @@ public enum LengthUnit {
                     calculatedValue = value;
                     return calculatedValue;
                 case INCH:
-                    calculateValue = 39370.078740158;
+                    calculateValue = 39370.078740157;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case FEET:
@@ -182,15 +182,15 @@ public enum LengthUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case MILE:
-                    calculateValue = 0.621371192;
+                    calculateValue = 0.62137119223733;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case NMILE:
-                    calculateValue = 0.5399568035;
+                    calculateValue = 0.53995680345572;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case MIL:
-                    calculateValue = 39370.078740157;
+                    calculateValue = 39370078.740157;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
             }
@@ -223,15 +223,15 @@ public enum LengthUnit {
                     calculatedValue = value;
                     return calculatedValue;
                 case FEET:
-                    calculateValue = 0.0833333333;
+                    calculateValue = 0.08333333333;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case YARD:
-                    calculateValue = 0.0277777778;
+                    calculateValue = 0.027777777777778;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case MILE:
-                    calculateValue = 0.0000157828;
+                    calculateValue = 0.000015782828282828;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case NMILE:
@@ -276,15 +276,15 @@ public enum LengthUnit {
                     calculatedValue = value;
                     return calculatedValue;
                 case YARD:
-                    calculateValue = 0.33333333;
+                    calculateValue = 0.3333333;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case MILE:
-                    calculateValue = 0.0001893939;
+                    calculateValue = 0.00018939393939394;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case NMILE:
-                    calculateValue = 0.0001645788;
+                    calculateValue = 0.0001645788336933;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case MIL:
@@ -329,11 +329,11 @@ public enum LengthUnit {
                     calculatedValue = value;
                     return calculatedValue;
                 case MILE:
-                    calculateValue = 0.0005681818;
+                    calculateValue = 0.00056818181818182;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case NMILE:
-                    calculateValue = 0.0004937365;
+                    calculateValue = 0.00049373650107991;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case MIL:
@@ -382,7 +382,7 @@ public enum LengthUnit {
                     calculatedValue = value;
                     return calculatedValue;
                 case NMILE:
-                    calculateValue = 0.8689762419;
+                    calculateValue = 0.86897624190065;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case MIL:
@@ -428,7 +428,7 @@ public enum LengthUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case MILE:
-                    calculateValue = 1.150779448;
+                    calculateValue = 1.1507794480235;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case NMILE:
@@ -461,7 +461,7 @@ public enum LengthUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case KILOMETER:
-                    calculateValue = 2.54000000 * Math.pow(10, -8);
+                    calculateValue = 0.0000000254000000;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case INCH:
@@ -469,19 +469,19 @@ public enum LengthUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case FEET:
-                    calculateValue = 0.0000833333;
+                    calculateValue = 0.00008333333333;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case YARD:
-                    calculateValue = 0.0000277778;
+                    calculateValue = 0.000027777777777778;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case MILE:
-                    calculateValue = 1.57828283 * Math.pow(10, -8);
+                    calculateValue = 1.5782828282828 * Math.pow(10, -8);
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case NMILE:
-                    calculateValue = 1.37149028 * Math.pow(10, -8);
+                    calculateValue = 1.3714902807775 * Math.pow(10, -8);
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case MIL:
