@@ -11,11 +11,11 @@ public enum WeightUnit {
                     calculatedValue = value;
                     return calculatedValue;
                 case BRITISHTON:
-                    calculateValue = 1.016;
-                    calculatedValue = value / calculateValue;
+                    calculateValue = 0.98420652761106;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case USTON:
-                    calculateValue = 1.1023113109;
+                    calculateValue = 1.1023113109244;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case POUND: 
@@ -82,12 +82,12 @@ public enum WeightUnit {
             double calculatedValue;
             switch (weightUnit) {
                 case TON:
-                    calculateValue = 1.102;
-                    calculatedValue = value / calculateValue;
+                    calculateValue = 0.90718474;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case BRITISHTON:
-                    calculateValue = 1.12;
-                    calculatedValue = value / calculateValue;
+                    calculateValue = 0.89285714285714;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case USTON:
                     calculatedValue = value;
@@ -119,15 +119,15 @@ public enum WeightUnit {
             double calculatedValue;
             switch (weightUnit) {
                 case TON:
-                    calculateValue = 2205;
-                    calculatedValue = value / calculateValue;
+                    calculateValue = 0.00045359237;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case BRITISHTON:
-                    calculateValue = 2240;
-                    calculatedValue = value / calculateValue;
+                    calculateValue = 0.00044642857142857;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case USTON:
-                    calculateValue = 2000;
+                    calculateValue = 0.0005;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case POUND:
@@ -138,8 +138,8 @@ public enum WeightUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case KILOGRAM:
-                    calculateValue = 2.205;
-                    calculatedValue = value / calculateValue;
+                    calculateValue = 0.45359237;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case GRAM:
                     calculateValue = 453.59237;
@@ -156,27 +156,27 @@ public enum WeightUnit {
             double calculatedValue;
             switch (weightUnit) {
                 case TON:
-                    calculateValue = 35274;
-                    calculatedValue = value / calculateValue;
+                    calculateValue = 0.000028349523125;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case BRITISHTON:
-                    calculateValue = 35840;
-                    calculatedValue = value / calculateValue;
+                    calculateValue = 0.000027901785714286;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case USTON:
-                    calculateValue = 32000;
-                    calculatedValue = value / calculateValue;
+                    calculateValue = 0.00003125;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case POUND:
-                    calculateValue = 16;
-                    calculatedValue = value / calculateValue;
+                    calculateValue = 0.0625;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case OUNCE:
                     calculatedValue = value;
                     return calculatedValue;
                 case KILOGRAM:
-                    calculateValue = 35.274;
-                    calculatedValue = value / calculateValue;
+                    calculateValue = 0.028349523125;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case GRAM:
                     calculateValue = 28.349523125;
@@ -193,23 +193,23 @@ public enum WeightUnit {
             double calculatedValue;
             switch (weightUnit) {
                 case TON:
-                    calculateValue = 1000;
-                    calculatedValue = value / calculateValue;
+                    calculateValue = 0.001;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case BRITISHTON:
-                    calculateValue = 1016;
-                    calculatedValue = value / calculateValue;
+                    calculateValue = 0.00098420652761106;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case USTON:
-                    calculateValue = 907;
-                    calculatedValue = value / calculateValue;
+                    calculateValue = 0.0011023113109244;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case POUND:
-                    calculateValue = 2.2046226218;
+                    calculateValue = 2.2046226218488;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case OUNCE:
-                    calculateValue = 35.2739619496;
+                    calculateValue = 35.27396195;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case KILOGRAM:
@@ -234,24 +234,24 @@ public enum WeightUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case BRITISHTON:
-                    calculateValue = 1.013 * Math.pow(10, 6);
-                    calculatedValue = value / calculateValue;
+                    calculateValue = 9.8420652761106 * Math.pow(10, -7);
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case USTON:
-                    calculateValue = 907185;
-                    calculatedValue = value / calculateValue;
+                    calculateValue = 1.1023113109244 * Math.pow(10, -6);
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case POUND:
-                    calculateValue = 454;
-                    calculatedValue = value / calculateValue;
+                    calculateValue = 0.0022046226218488;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case OUNCE:
-                    calculateValue = 28.35;
-                    calculatedValue = value / calculateValue;
+                    calculateValue = 0.03527396195;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case KILOGRAM:
-                    calculateValue = 1000;
-                    calculatedValue = value / calculateValue;
+                    calculateValue = 0.001;
+                    calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case GRAM:
                     calculatedValue = value;
