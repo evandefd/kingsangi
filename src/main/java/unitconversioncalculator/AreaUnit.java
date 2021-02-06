@@ -15,7 +15,7 @@ public enum AreaUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case HECTARE:
-                    calculateValue = 0.40468564224;
+                    calculateValue = 0.404685642;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case SQUARECENTIMETER:
@@ -49,7 +49,7 @@ public enum AreaUnit {
             double calculatedValue;
             switch (areaUnit) {
                 case ACRE:
-                    calculateValue = 0.0247105381;
+                    calculateValue = 0.024710538;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case ARE:
@@ -117,7 +117,7 @@ public enum AreaUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case PYEONG:
-                    calculateValue = 3025.0001134375;
+                    calculateValue = 3025.00011344;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
             }
@@ -131,7 +131,7 @@ public enum AreaUnit {
             double calculatedValue;
             switch (areaUnit) {
                 case ACRE:
-                    calculateValue = 2.47105381 * Math.pow(10, -8);
+                    calculateValue = 2.4710538146717 * Math.pow(10, -8);
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case ARE:
@@ -146,7 +146,7 @@ public enum AreaUnit {
                     calculatedValue = value;
                     return calculatedValue;
                 case SQUAREFEET:
-                    calculateValue = 0.001076391;
+                    calculateValue = 0.001076391041671;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case SQUAREINCH:
@@ -180,7 +180,7 @@ public enum AreaUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case HECTARE:
-                    calculateValue = 0.0000092903;
+                    calculateValue = 0.000009290304;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case SQUARECENTIMETER:
@@ -229,7 +229,7 @@ public enum AreaUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case SQUAREFEET:
-                    calculateValue = 0.0069444444;
+                    calculateValue = 0.0069444444444444;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case SQUAREINCH:
@@ -254,7 +254,7 @@ public enum AreaUnit {
             double calculatedValue;
             switch (areaUnit) {
                 case ACRE:
-                    calculateValue = 0.0002471054;
+                    calculateValue = 0.00024710538146717;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case ARE:
@@ -270,7 +270,7 @@ public enum AreaUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case SQUAREFEET:
-                    calculateValue = 10.7639104167;
+                    calculateValue = 10.76391041671;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case SQUAREINCH:
@@ -295,31 +295,31 @@ public enum AreaUnit {
             double calculatedValue;
             switch (areaUnit) {
                 case ACRE:
-                    calculateValue = 0.0008168773;
+                    calculateValue = 0.0008168772941145;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case ARE:
-                    calculateValue = 0.03305785;
+                    calculateValue = 0.03305785124;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case HECTARE:
-                    calculateValue = 0.0003305785;
+                    calculateValue = 0.0003305785124;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case SQUARECENTIMETER:
-                    calculateValue = 33057.85;
+                    calculateValue = 33057.8512;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case SQUAREFEET:
-                    calculateValue = 35.5831735969;
+                    calculateValue = 35.58317493163;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case SQUAREINCH:
-                    calculateValue = 5123.946997954;
+                    calculateValue = 5123.9771902;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case SQUAREMETER:
-                    calculateValue = 3.305785;
+                    calculateValue = 3.30578512;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case PYEONG:
