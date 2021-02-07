@@ -23,7 +23,7 @@ public enum SpeedUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case INCHPERSECOND:
-                    calculateValue = 39.3700787402;
+                    calculateValue = 39.370078740157;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case INCHPERHOUR:
@@ -31,23 +31,23 @@ public enum SpeedUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case FEETPERSECOND:
-                    calculateValue = 3.28084;
+                    calculateValue = 3.2808398950131;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case FEETPERHOUR:
-                    calculateValue = 11811.0236;
+                    calculateValue = 11811.02362204;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case MILEPERSECOND:
-                    calculateValue = 0.000621;
+                    calculateValue = 0.00062137119223733;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case MILEPERHOUR:
-                    calculateValue = 2.236936;
+                    calculateValue = 2.2369362920544;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case KNOT:
-                    calculateValue = 1.943844;
+                    calculateValue = 1.9438461717893;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
             }
@@ -61,14 +61,14 @@ public enum SpeedUnit {
             double calculatedValue;
             switch (speedUnit) {
                 case METERPERSECOND:
-                    calculateValue = 0.0002777778;
+                    calculateValue = 0.00027777777777778;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case METERPERHOUR:
                     calculatedValue = value;
                     return calculatedValue;
                 case KILOMETERPERSECOND:
-                    calculateValue = 2.77777778 * Math.pow(10, -7);
+                    calculateValue = 2.777777777778 * Math.pow(10, -7);
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case KILOMETERPERHOUR:
@@ -76,31 +76,31 @@ public enum SpeedUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case INCHPERSECOND:
-                    calculateValue = 0.010936133;
+                    calculateValue = 0.010936132983377;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case INCHPERHOUR:
-                    calculateValue = 39.3700787402;
+                    calculateValue = 39.370078740157;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case FEETPERSECOND:
-                    calculateValue = 0.0009113444;
+                    calculateValue = 0.00091134441528142;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case FEETPERHOUR:
-                    calculateValue = 3.280839895;
+                    calculateValue = 3.2808398950131;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case MILEPERSECOND:
-                    calculateValue = 1.72603109 * Math.pow(10, -7);
+                    calculateValue = 1.7260310895481 * Math.pow(10, -7);
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case MILEPERHOUR:
-                    calculateValue = 0.0006213712;
+                    calculateValue = 0.00062137119223733;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case KNOT:
-                    calculateValue = 0.0005399568;
+                    calculateValue = 0.00053995726994149;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
             }
@@ -129,11 +129,11 @@ public enum SpeedUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case INCHPERSECOND:
-                    calculateValue = 39370.078740158;
+                    calculateValue = 39370.078740157;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case INCHPERHOUR:
-                    calculateValue = 141732283.46457;
+                    calculateValue = 141732283.4;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case FEETPERSECOND:
@@ -141,11 +141,11 @@ public enum SpeedUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case FEETPERHOUR:
-                    calculateValue = 11811023;
+                    calculateValue = 11811023.622047;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case MILEPERSECOND:
-                    calculateValue = 0.6213711922;
+                    calculateValue = 0.6213711922373;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case MILEPERHOUR:
@@ -153,7 +153,7 @@ public enum SpeedUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case KNOT:
-                    calculateValue = 1943.8444924406;
+                    calculateValue = 1943.8461717893;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
             }
@@ -167,7 +167,7 @@ public enum SpeedUnit {
             double calculatedValue;
             switch (speedUnit) {
                 case METERPERSECOND:
-                    calculateValue = 0.2777777778;
+                    calculateValue = 0.27777777777778;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case METERPERHOUR:
@@ -175,22 +175,22 @@ public enum SpeedUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case KILOMETERPERSECOND:
-                    calculateValue = 0.0002777778;
+                    calculateValue = 0.00027777777777778;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case KILOMETERPERHOUR:
                     calculatedValue = value;
                     return calculatedValue;
                 case INCHPERSECOND:
-                    calculateValue = 10.9361329834;
+                    calculateValue = 10.936132983377;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case INCHPERHOUR:
-                    calculateValue = 39370.078740158;
+                    calculateValue = 39370.078740157;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case FEETPERSECOND:
-                    calculateValue = 0.9113444153;
+                    calculateValue = 0.91134441528142;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case FEETPERHOUR:
@@ -198,15 +198,15 @@ public enum SpeedUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case MILEPERSECOND:
-                    calculateValue = 0.0001726031;
+                    calculateValue = 0.00017260310895481;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case MILEPERHOUR:
-                    calculateValue = 0.6213711922;
+                    calculateValue = 0.6213711922373;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case KNOT:
-                    calculateValue = 0.5399568035;
+                    calculateValue = 0.53995726994149;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
             }
@@ -232,7 +232,7 @@ public enum SpeedUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case KILOMETERPERHOUR:
-                    calculateValue = 0.09144;
+                    calculateValue = 0.0914;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case INCHPERSECOND:
@@ -243,7 +243,7 @@ public enum SpeedUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case FEETPERSECOND:
-                    calculateValue = 0.0833333333;
+                    calculateValue = 0.08333333333333;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case FEETPERHOUR:
@@ -251,15 +251,15 @@ public enum SpeedUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case MILEPERSECOND:
-                    calculateValue = 0.0000157828;
+                    calculateValue = 0.000015782828282828;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case MILEPERHOUR:
-                    calculateValue = 0.0568181818;
+                    calculateValue = 0.05681818181818;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case KNOT:
-                    calculateValue = 0.0493736501;
+                    calculateValue = 0.049373692763449;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
             }
@@ -273,7 +273,7 @@ public enum SpeedUnit {
             double calculatedValue;
             switch (speedUnit) {
                 case METERPERSECOND:
-                    calculateValue = 0.0000070556;
+                    calculateValue = 7.0555555555556 * Math.pow(10, -6);
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case METERPERHOUR:
@@ -281,7 +281,7 @@ public enum SpeedUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case KILOMETERPERSECOND:
-                    calculateValue = 7.05555556 * Math.pow(10, -9);
+                    calculateValue = 7.0555555555556 * Math.pow(10, -9);
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case KILOMETERPERHOUR:
@@ -289,30 +289,30 @@ public enum SpeedUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case INCHPERSECOND:
-                    calculateValue = 0.0002777778;
+                    calculateValue = 7.0555555555556 * Math.pow(10, -4);
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case INCHPERHOUR:
                     calculatedValue = value;
                     return calculatedValue;
                 case FEETPERSECOND:
-                    calculateValue = 0.0000231481;
+                    calculateValue = 0.000023148148148148;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case FEETPERHOUR:
-                    calculateValue = 0.0833333333;
+                    calculateValue = 0.08333333333333;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case MILEPERSECOND:
-                    calculateValue = 4.38411897 * Math.pow(10, -9);
+                    calculateValue = 4.3841189674523 * Math.pow(10, -9);
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case MILEPERHOUR:
-                    calculateValue = 0.0000157828;
+                    calculateValue = 0.000015782828282828;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case KNOT:
-                    calculateValue = 0.0000137149;
+                    calculateValue = 0.000013714914656514;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
             }
@@ -357,15 +357,15 @@ public enum SpeedUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case MILEPERSECOND:
-                    calculateValue = 0.0001893939;
+                    calculateValue = 0.00018939393939394;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case MILEPERHOUR:
-                    calculateValue = 0.6818181818;
+                    calculateValue = 0.68181818181818;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case KNOT:
-                    calculateValue = 0.5924838013;
+                    calculateValue = 0.59248431316139;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
             }
@@ -379,7 +379,7 @@ public enum SpeedUnit {
             double calculatedValue;
             switch (speedUnit) {
                 case METERPERSECOND:
-                    calculateValue = 0.0000846667;
+                    calculateValue = 0.000084666666666667;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case METERPERHOUR:
@@ -387,7 +387,7 @@ public enum SpeedUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case KILOMETERPERSECOND:
-                    calculateValue = 8.46666667 * Math.pow(10, -8);
+                    calculateValue = 8.4666666666667 * Math.pow(10, -8);
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case KILOMETERPERHOUR:
@@ -395,7 +395,7 @@ public enum SpeedUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case INCHPERSECOND:
-                    calculateValue = 0.0033333333;
+                    calculateValue = 0.0033333333333333;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case INCHPERHOUR:
@@ -403,22 +403,22 @@ public enum SpeedUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case FEETPERSECOND:
-                    calculateValue = 0.0002777778;
+                    calculateValue = 0.00027777777777778;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case FEETPERHOUR:
                     calculatedValue = value;
                     return calculatedValue;
                 case MILEPERSECOND:
-                    calculateValue = 5.26094276 * Math.pow(10, -8);
+                    calculateValue = 5.2609427609428 * Math.pow(10, -8);
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case MILEPERHOUR:
-                    calculateValue = 0.0001893939;
+                    calculateValue = 0.00018939393939394;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case KNOT:
-                    calculateValue = 0.0001645788;
+                    calculateValue = 0.00016457897587816;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
             }
@@ -471,7 +471,7 @@ public enum SpeedUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case KNOT:
-                    calculateValue = 3128.3411708423;
+                    calculateValue = 3128.317173492;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
             }
@@ -509,7 +509,7 @@ public enum SpeedUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case FEETPERSECOND:
-                    calculateValue = 1.4666666667;
+                    calculateValue = 1.4666666666667;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case FEETPERHOUR:
@@ -517,14 +517,14 @@ public enum SpeedUnit {
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case MILEPERSECOND:
-                    calculateValue = 0.0002777778;
+                    calculateValue = 0.00027777777777778;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case MILEPERHOUR:
                     calculatedValue = value;
                     return calculatedValue;
                 case KNOT:
-                    calculateValue = 0.8689762419;
+                    calculateValue = 0.86897699263671;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
             }
@@ -538,43 +538,43 @@ public enum SpeedUnit {
             double calculatedValue;
             switch (speedUnit) {
                 case METERPERSECOND:
-                    calculateValue = 0.5144444444;
+                    calculateValue = 0.514444;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case METERPERHOUR:
-                    calculateValue = 1852;
+                    calculateValue = 1851.9984;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case KILOMETERPERSECOND:
-                    calculateValue = 0.0005144444;
+                    calculateValue = 5.14444 * Math.pow(10, -4);
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case KILOMETERPERHOUR:
-                    calculateValue = 1.852;
+                    calculateValue = 1.8519984;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case INCHPERSECOND:
-                    calculateValue = 20.2537182852;
+                    calculateValue = 20.253700787402;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case INCHPERHOUR:
-                    calculateValue = 72913.385826772;
+                    calculateValue = 72913.322834646;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case FEETPERSECOND:
-                    calculateValue = 1.6878095271;
+                    calculateValue = 1.6878083989501;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case FEETPERHOUR:
-                    calculateValue = 6076.1154855643;
+                    calculateValue = 6076.1102362205;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case MILEPERSECOND:
-                    calculateValue = 0.00319661;
+                    calculateValue = 0.00031966068161934;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case MILEPERHOUR:
-                    calculateValue = 1.150779448;
+                    calculateValue = 1.1507784538296;
                     calculatedValue = value * calculateValue;
                     return calculatedValue;
                 case KNOT:
